@@ -10,25 +10,31 @@ import creator7 from "@/assets/creator-7.jpg";
 import creator8 from "@/assets/creator-8.jpg";
 
 const topRow = [
-  { name: "Hannah Marbles", img: creator1 },
-  { name: "Harriet Parkes", img: creator2 },
-  { name: "Jarvis", img: creator3 },
-  { name: "Niah xoxo", img: creator4 },
-  { name: "Charlotte Parkes", img: creator5 },
-  { name: "Mia Rose", img: creator6 },
-  { name: "Luna Kim", img: creator7 },
-  { name: "Sophie James", img: creator8 },
+  { name: "Charlotte Parkes", img: creator1 },
+  { name: "Azra", img: creator2 },
+  { name: "Bella Rama", img: creator3 },
+  { name: "K Jane Caron", img: creator4 },
+  { name: "Ellie Vandeel", img: creator5 },
+  { name: "Teeqo", img: creator6 },
+  { name: "HighSky", img: creator7 },
+  { name: "Cam", img: creator8 },
+  { name: "Ariel", img: creator1 },
+  { name: "Amber Exclusive", img: creator2 },
+  { name: "Temper", img: creator3 },
 ];
 
 const bottomRow = [
-  { name: "Luna Kim", img: creator7 },
-  { name: "Sophie James", img: creator8 },
-  { name: "Hannah Marbles", img: creator1 },
-  { name: "Jarvis", img: creator3 },
-  { name: "Charlotte Parkes", img: creator5 },
+  { name: "Khanada", img: creator4 },
+  { name: "Allinabe", img: creator5 },
+  { name: "Samulx", img: creator6 },
+  { name: "Amber Jay", img: creator7 },
+  { name: "Adelia", img: creator8 },
+  { name: "Hailey", img: creator1 },
   { name: "Harriet Parkes", img: creator2 },
-  { name: "Niah xoxo", img: creator4 },
-  { name: "Mia Rose", img: creator6 },
+  { name: "Hannah Marbles", img: creator3 },
+  { name: "Keep Chambers", img: creator4 },
+  { name: "Nora", img: creator5 },
+  { name: "Aleksandra Mariana", img: creator6 },
 ];
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
