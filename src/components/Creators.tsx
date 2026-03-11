@@ -1,52 +1,80 @@
 import { motion } from "framer-motion";
 
-const creators = [
-  "Hannah Marbles",
-  "Harriet Parkes",
-  "Jarvis",
-  "Niah xoxo",
-  "Charlotte Parkes",
+import creator1 from "@/assets/creator-1.jpg";
+import creator2 from "@/assets/creator-2.jpg";
+import creator3 from "@/assets/creator-3.jpg";
+import creator4 from "@/assets/creator-4.jpg";
+import creator5 from "@/assets/creator-5.jpg";
+import creator6 from "@/assets/creator-6.jpg";
+import creator7 from "@/assets/creator-7.jpg";
+import creator8 from "@/assets/creator-8.jpg";
+
+const topRow = [
+  { name: "Hannah Marbles", img: creator1 },
+  { name: "Harriet Parkes", img: creator2 },
+  { name: "Jarvis", img: creator3 },
+  { name: "Niah xoxo", img: creator4 },
+  { name: "Charlotte Parkes", img: creator5 },
+  { name: "Mia Rose", img: creator6 },
+  { name: "Luna Kim", img: creator7 },
+  { name: "Sophie James", img: creator8 },
 ];
 
-const colors = [
-  "from-pink-400 to-rose-500",
-  "from-rose-400 to-pink-500",
-  "from-fuchsia-400 to-pink-500",
-  "from-pink-300 to-rose-400",
-  "from-rose-300 to-fuchsia-400",
+const bottomRow = [
+  { name: "Luna Kim", img: creator7 },
+  { name: "Sophie James", img: creator8 },
+  { name: "Hannah Marbles", img: creator1 },
+  { name: "Jarvis", img: creator3 },
+  { name: "Charlotte Parkes", img: creator5 },
+  { name: "Harriet Parkes", img: creator2 },
+  { name: "Niah xoxo", img: creator4 },
+  { name: "Mia Rose", img: creator6 },
 ];
+
+const CreatorCard = ({ name, img }: { name: string; img: string }) => (
+  <div className="flex-shrink-0 w-44 md:w-52 group cursor-pointer">
+    <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
+      <img
+        src={img}
+        alt={name}
+        className="w-44 h-52 md:w-52 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <p className="absolute bottom-3 left-3 right-3 font-display text-xl tracking-wide text-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {name.toUpperCase()}
+      </p>
+    </div>
+  </div>
+);
 
 const Creators = () => {
   return (
-    <section className="py-24 md:py-32" style={{ background: "linear-gradient(180deg, hsl(340,60%,95%) 0%, hsl(0,0%,100%) 100%)" }}>
-      <div className="container mx-auto px-6">
+    <section className="py-24 md:py-32 overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(340,60%,95%) 0%, hsl(0,0%,100%) 100%)" }}>
+      <div className="container mx-auto px-6 mb-14">
         <motion.h2
-          className="text-4xl md:text-5xl font-display font-bold text-center mb-16"
+          className="text-5xl md:text-7xl font-display tracking-wider text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           OUR <span className="text-gradient-pink">CREATORS</span>
         </motion.h2>
+      </div>
 
-        <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-          {creators.map((name, i) => (
-            <motion.div
-              key={name}
-              className="relative group cursor-pointer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className={`w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br ${colors[i]} flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow`}>
-                <span className="text-3xl md:text-4xl font-display font-bold text-primary-foreground opacity-80">
-                  {name.charAt(0)}
-                </span>
-              </div>
-              <p className="text-center mt-3 font-display font-semibold text-sm">{name}</p>
-            </motion.div>
+      {/* Top row - scrolls right */}
+      <div className="relative mb-6">
+        <div className="flex gap-5 animate-scroll-right">
+          {[...topRow, ...topRow].map((c, i) => (
+            <CreatorCard key={`top-${i}`} name={c.name} img={c.img} />
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom row - scrolls left */}
+      <div className="relative">
+        <div className="flex gap-5 animate-scroll-left">
+          {[...bottomRow, ...bottomRow].map((c, i) => (
+            <CreatorCard key={`bot-${i}`} name={c.name} img={c.img} />
           ))}
         </div>
       </div>
