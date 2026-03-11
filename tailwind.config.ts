@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Outfit", "sans-serif"],
+        display: ["'Bebas Neue'", "sans-serif"],
         body: ["Space Grotesk", "sans-serif"],
       },
       colors: {

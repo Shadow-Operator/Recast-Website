@@ -1,17 +1,15 @@
 import { motion } from "framer-motion";
 import recastLogo from "@/assets/recast-logo.png";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-soft via-background to-pink-soft/50" 
-        style={{ background: "linear-gradient(135deg, hsl(340,60%,95%) 0%, hsl(0,0%,100%) 40%, hsl(340,60%,95%) 100%)" }} 
-      />
-      
-      {/* Floating orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 rounded-full gradient-pink opacity-10 blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full gradient-pink opacity-10 blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsla(340,60%,10%,0.4) 0%, hsla(340,60%,10%,0.6) 100%)" }} />
+      </div>
       
       <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.img
@@ -24,7 +22,7 @@ const Hero = () => {
         />
         
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-display font-900 tracking-tight leading-[0.95] mb-8"
+          className="text-6xl md:text-8xl lg:text-9xl font-display tracking-wider leading-[1.05] mb-8 text-primary-foreground"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -39,7 +37,7 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p
-          className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-10 font-light"
+          className="max-w-2xl mx-auto text-lg md:text-xl mb-10 font-light text-primary-foreground/80"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -49,12 +47,12 @@ const Hero = () => {
 
         <motion.a
           href="#work-with-us"
-          className="inline-block gradient-pink text-primary-foreground font-display font-semibold px-10 py-4 rounded-full text-lg glow-pink hover:scale-105 transition-transform cursor-pointer"
+          className="inline-block gradient-pink text-primary-foreground font-display text-2xl tracking-wider px-10 py-4 rounded-full glow-pink hover:scale-105 transition-transform cursor-pointer"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          Apply Now
+          APPLY NOW
         </motion.a>
       </div>
     </section>
