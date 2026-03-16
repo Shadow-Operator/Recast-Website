@@ -2,39 +2,50 @@ import { motion } from "framer-motion";
 
 const CTA = () => {
   return (
-    <section id="work-with-us" className="py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 gradient-pink opacity-95" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsla(0,0%,100%,0.15),transparent_60%)]" />
-      
+    <section id="work-with-us" className="py-24 md:py-32 relative overflow-hidden bg-background">
+      {/* Scrolling marquee */}
+      <div className="w-full overflow-hidden mb-16">
+        <div className="marquee-track animate-scroll-left">
+          {[...Array(6)].map((_, i) => (
+            <span key={i} className="flex items-center gap-6 mr-6">
+              <span className="text-5xl md:text-7xl font-display tracking-wider text-foreground/10 whitespace-nowrap">
+                READY TO GROW?
+              </span>
+              <span className="text-3xl md:text-5xl text-primary/20">—</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.h2
-          className="text-4xl md:text-6xl font-display font-bold text-primary-foreground mb-6"
+          className="text-5xl md:text-7xl font-display tracking-wider text-foreground mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          WORK WITH US
+          WORK <span className="text-gradient-pink">WITH US</span>
         </motion.h2>
         <motion.p
-          className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10"
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Our team works closely with you to manage your brand and distribute content in a way that best serves your unique business while staying in step with your mission and style.
+          Bring your ideas, and we'll bring the strategy. We'll unlock the creator space for you and create something designed for real impact.
         </motion.p>
         <motion.a
           href="https://recast.gg"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-primary-foreground text-primary font-display font-semibold px-10 py-4 rounded-full text-lg hover:scale-105 transition-transform cursor-pointer shadow-xl"
+          className="inline-block gradient-pink text-primary-foreground font-display text-2xl tracking-wider px-10 py-4 rounded-full glow-pink hover:scale-105 transition-transform cursor-pointer"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          Apply Now
+          GET STARTED
         </motion.a>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import SuccessStories from "@/components/SuccessStories";
@@ -9,6 +10,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <main className="overflow-hidden">
+      <Navbar />
       <Hero />
       <Services />
       <SuccessStories />

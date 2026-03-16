@@ -1,43 +1,34 @@
 import { motion } from "framer-motion";
-import recastLogo from "@/assets/recast-logo.png";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsla(340,60%,10%,0.4) 0%, hsla(340,60%,10%,0.6) 100%)" }} />
-      </div>
-      
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <motion.img
-          src={recastLogo}
-          alt="Recast Logo"
-          className="mx-auto h-16 md:h-20 mb-10"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        />
-        
-        <motion.h1
-          className="text-6xl md:text-8xl lg:text-9xl font-display tracking-wider leading-[1.05] mb-8 text-primary-foreground"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          STRETCH YOUR
-          <br />
-          <span className="text-gradient-pink">REACH</span>
-          <br />
-          WITHOUT STRETCHING
-          <br />
-          YOURSELF THIN
-        </motion.h1>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20 bg-background">
+      {/* Subtle gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px]" />
 
+      {/* Scrolling marquee headline */}
+      <div className="w-full overflow-hidden mb-12">
+        <motion.div
+          className="marquee-track animate-scroll-right"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          {[...Array(4)].map((_, i) => (
+            <span key={i} className="flex items-center gap-6 mr-6">
+              <span className="text-7xl md:text-[8rem] lg:text-[10rem] font-display tracking-wider text-foreground whitespace-nowrap">
+                STRETCH YOUR REACH
+              </span>
+              <span className="text-5xl md:text-7xl text-primary">—</span>
+            </span>
+          ))}
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.p
-          className="max-w-2xl mx-auto text-lg md:text-xl mb-10 font-light text-primary-foreground/80"
+          className="max-w-2xl mx-auto text-lg md:text-xl mb-10 text-muted-foreground font-light leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -55,6 +46,19 @@ const Hero = () => {
           APPLY NOW
         </motion.a>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+      >
+        <div className="w-10 h-10 rounded-full border border-muted-foreground/30 flex items-center justify-center">
+          <svg className="w-4 h-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </motion.div>
     </section>
   );
 };
