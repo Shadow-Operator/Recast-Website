@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20 bg-background">
-      {/* Subtle gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px]" />
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/40" />
+      </div>
 
       {/* Scrolling marquee headline */}
-      <div className="w-full overflow-hidden mb-12">
+      <div className="relative z-10 w-full overflow-hidden mb-12">
         <motion.div
           className="marquee-track animate-scroll-right"
           initial={{ opacity: 0 }}
@@ -49,7 +52,7 @@ const Hero = () => {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
       >
