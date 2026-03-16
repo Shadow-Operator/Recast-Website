@@ -39,14 +39,14 @@ const bottomRow = [
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
   <div className="flex-shrink-0 w-44 md:w-52 group cursor-pointer">
-    <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
+    <div className="relative overflow-hidden rounded-2xl border border-border group-hover:border-primary/40 transition-all duration-500">
       <img
         src={img}
         alt={name}
-        className="w-44 h-52 md:w-52 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+        className="w-44 h-56 md:w-52 md:h-68 object-cover group-hover:scale-105 transition-transform duration-500"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <p className="absolute bottom-3 left-3 right-3 font-display text-xl tracking-wide text-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <p className="absolute bottom-3 left-3 right-3 font-display text-lg tracking-wide text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         {name.toUpperCase()}
       </p>
     </div>
@@ -55,8 +55,16 @@ const CreatorCard = ({ name, img }: { name: string; img: string }) => (
 
 const Creators = () => {
   return (
-    <section className="py-24 md:py-32 overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(340,60%,95%) 0%, hsl(0,0%,100%) 100%)" }}>
+    <section className="py-24 md:py-32 overflow-hidden bg-background">
       <div className="container mx-auto px-6 mb-14">
+        <motion.p
+          className="text-sm font-mono tracking-[0.3em] uppercase text-muted-foreground mb-4 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          Representing the best creators
+        </motion.p>
         <motion.h2
           className="text-5xl md:text-7xl font-display tracking-wider text-center"
           initial={{ opacity: 0, y: 20 }}
