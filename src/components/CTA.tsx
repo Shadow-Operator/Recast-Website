@@ -4,7 +4,7 @@ import FloatingSuits from "./FloatingSuits";
 
 const CTA = () => {
   return (
-    <section id="contact" className="pt-6 pb-16 md:pt-8 md:pb-24 px-6 text-center relative overflow-hidden">
+    <section id="contact" className="pt-4 pb-12 md:pt-8 md:pb-24 px-4 md:px-6 text-center relative overflow-hidden">
       <FloatingSuits suits={[
         { suit: "♠", x: "5%", y: "20%", className: "text-foreground", rotate: -15, delay: 0 },
         { suit: "♥", x: "90%", y: "15%", className: "text-red-500", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
