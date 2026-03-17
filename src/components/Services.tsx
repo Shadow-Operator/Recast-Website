@@ -56,7 +56,7 @@ const Services = () => {
         {capabilities.map((cap, i) => (
           <motion.div
             key={cap.num}
-            className="px-6 md:px-12 py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card group transition-colors duration-300 relative overflow-hidden"
+            className="px-4 md:px-12 py-10 md:py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card group transition-colors duration-300 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
