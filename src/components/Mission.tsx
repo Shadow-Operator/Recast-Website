@@ -1,16 +1,13 @@
 import { motion } from "framer-motion";
+import FloatingSuits from "./FloatingSuits";
 
 const Mission = () => {
   return (
     <section id="about" className="py-24 md:py-32 px-6 md:px-12 max-w-[1400px] mx-auto relative">
-      {/* Decorative element */}
-      <motion.div
-        className="absolute top-20 right-10 text-primary/10 text-8xl font-bold select-none pointer-events-none hidden md:block"
-        animate={{ rotate: [0, 5, -5, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      >
-        ♣
-      </motion.div>
+      <FloatingSuits suits={[
+        { suit: "♣", x: "85%", y: "10%", className: "text-foreground", rotate: -15, delay: 0 },
+        { suit: "♥", x: "75%", y: "60%", className: "text-red-500", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1.5 },
+      ]} />
 
       <motion.p
         className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-8"
