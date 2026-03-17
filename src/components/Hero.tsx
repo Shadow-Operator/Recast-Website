@@ -80,7 +80,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom two-col */}
-      <div className="grid md:grid-cols-2 gap-12 items-end max-w-[1400px]">
+      <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-end max-w-[1400px]">
         <motion.p
           className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[520px]"
           initial={{ opacity: 0, y: 32 }}
