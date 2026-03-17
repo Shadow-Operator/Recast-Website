@@ -31,7 +31,7 @@ const Services = () => {
         { suit: "♠", x: "90%", y: "15%", className: "text-foreground", rotate: -10, delay: 0.5, duration: 8 },
         { suit: "♦", x: "5%", y: "55%", className: "text-primary", size: "text-[100px] md:text-[150px]", rotate: 12, delay: 2 },
       ]} />
-      <div className="px-6 md:px-12 py-16 md:py-20 max-w-[1400px] mx-auto">
+      <div className="px-4 md:px-12 py-12 md:py-20 max-w-[1400px] mx-auto">
         <motion.p
           className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-8"
           initial={{ opacity: 0 }}
