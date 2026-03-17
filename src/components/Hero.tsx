@@ -4,7 +4,7 @@ const cardSuits = ["♠", "♥", "♦", "♣"];
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-32 pb-20 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center px-4 md:px-12 pt-24 md:pt-32 pb-12 md:pb-20 relative overflow-hidden">
       {/* Ambient blue glow */}
       <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.08)_0%,_transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.05)_0%,_transparent_70%)] pointer-events-none" />
