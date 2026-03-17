@@ -1,33 +1,32 @@
 import { motion } from "framer-motion";
-import { Users, Camera, Handshake } from "lucide-react";
 
-const services = [
+const capabilities = [
   {
-    icon: Users,
-    label: "Agents",
-    title: "Not all eyeballs are created equal",
-    description: "We hand-select creators with loyal, highly-engaged audiences so your messaging resonates with the right people and drives real results.",
+    num: "01",
+    title: "Creator Monetisation",
+    sub: "For Creators",
+    body: "We connect Twitch and YouTube creators with passive revenue streams that require zero extra effort. Overlay deals, affiliate partnerships, and brand campaigns that run in the background while you stream.",
   },
   {
-    icon: Camera,
-    label: "Content",
-    title: "Born outside the box",
-    description: "Our team brings brands and creators together through relatable, entertaining content that makes lasting impressions and delivers measurable impact.",
+    num: "02",
+    title: "Brand Partnerships",
+    sub: "For Brands",
+    body: "Access a curated network of gaming and betting-aligned creators with real, engaged audiences. We handle everything — creator selection, onboarding, compliance, campaign management, and performance reporting.",
   },
   {
-    icon: Handshake,
-    label: "Partnerships",
-    title: "Measure smarter, scale bigger",
-    description: "We go beyond surface-level metrics with insights from audience engagement and sentiment to deliver scalable, adaptable partnerships.",
+    num: "03",
+    title: "Gambling Niche Specialists",
+    sub: "Our Speciality",
+    body: "From securing deals to negotiating terms, retaining partnerships, and managing affiliate stats — we are the only agency that truly specialises in the betting and gaming creator space end to end.",
   },
 ];
 
 const Services = () => {
   return (
-    <section className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="brands" className="border-t border-border">
+      <div className="px-6 md:px-12 py-16 md:py-20 max-w-[1400px] mx-auto">
         <motion.p
-          className="text-sm font-mono tracking-[0.3em] uppercase text-muted-foreground mb-4 text-center"
+          className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -35,45 +34,41 @@ const Services = () => {
           What we do
         </motion.p>
         <motion.h2
-          className="text-5xl md:text-7xl font-display tracking-wider text-center mb-6"
+          className="text-[clamp(36px,4vw,60px)] font-body font-extrabold tracking-[-2px] leading-[1.1] max-w-[780px]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          BUILD YOUR BRAND
+          Everything a creator needs.
           <br />
-          <span className="text-gradient-pink">UNDER ONE ROOF</span>
+          Everything a brand wants.
         </motion.h2>
-        <motion.p
-          className="text-center text-muted-foreground mb-20 max-w-2xl mx-auto text-lg"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          With world-class creators and decades of experience, we streamline the entire process. We turn ideas into meaningful moments.
-        </motion.p>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              className="rounded-2xl p-8 border border-border bg-card hover:border-primary/30 transition-all duration-500 group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="w-14 h-14 rounded-xl gradient-pink flex items-center justify-center mb-6 group-hover:glow-pink transition-all">
-                <service.icon className="w-7 h-7 text-primary-foreground" />
-              </div>
-              <p className="text-xs font-mono tracking-[0.2em] uppercase text-primary mb-3">{service.label}</p>
-              <h3 className="text-2xl font-display tracking-wide mb-4">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid md:grid-cols-3 border-y border-border">
+        {capabilities.map((cap, i) => (
+          <motion.div
+            key={cap.num}
+            className="px-6 md:px-12 py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card transition-colors duration-300"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+          >
+            <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-12">
+              {cap.num}
+            </p>
+            <h3 className="text-[28px] font-body font-extrabold tracking-[-0.5px] mb-4">
+              {cap.title}
+            </h3>
+            <p className="text-[13px] font-semibold text-muted-foreground uppercase tracking-[0.1em] mb-5">
+              {cap.sub}
+            </p>
+            <p className="text-[15px] text-muted-foreground leading-relaxed">
+              {cap.body}
+            </p>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
