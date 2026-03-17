@@ -1,4 +1,4 @@
-import recastLogo from "@/assets/recast-logo.png";
+import recastIcon from "@/assets/recast-icon.png";
 
 const Footer = () => {
   return (
