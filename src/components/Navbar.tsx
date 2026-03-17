@@ -1,15 +1,65 @@
+import { useState } from "react";
 import recastLogo from "@/assets/recast-logo.png";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 py-5 px-6 md:px-10 flex items-center justify-between bg-background/80 backdrop-blur-md border-b border-border/50">
-      <img src={recastLogo} alt="Recast" className="h-8 md:h-10" />
-      <a
-        href="#work-with-us"
-        className="gradient-pink text-primary-foreground font-display text-lg tracking-wider px-6 py-2.5 rounded-full hover:scale-105 transition-transform"
-      >
-        GET STARTED
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-5 px-6 md:px-12 bg-background/85 backdrop-blur-xl border-b border-border/50">
+      <a href="#" className="flex items-center gap-1">
+        <img src={recastLogo} alt="Recast" className="h-7 md:h-8" />
       </a>
+
+      {/* Desktop links */}
+      <ul className="hidden md:flex items-center gap-10">
+        <li><NavLink href="#brands">For Brands</NavLink></li>
+        <li><NavLink href="#creators">For Creators</NavLink></li>
+        <li><NavLink href="#how">How It Works</NavLink></li>
+        <li>
+          <a
+            href="#contact"
+            className="bg-foreground text-background font-semibold text-sm px-6 py-2.5 rounded-full hover:opacity-85 transition-opacity"
+          >
+            Get started
+          </a>
+        </li>
+      </ul>
+
+      {/* Mobile hamburger */}
+      <button
+        className="md:hidden text-foreground"
+        onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label="Toggle menu"
+      >
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          {mobileOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          )}
+        </svg>
+      </button>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/50 md:hidden">
+          <ul className="flex flex-col items-center gap-6 py-8">
+            <li><NavLink href="#brands" onClick={() => setMobileOpen(false)}>For Brands</NavLink></li>
+            <li><NavLink href="#creators" onClick={() => setMobileOpen(false)}>For Creators</NavLink></li>
+            <li><NavLink href="#how" onClick={() => setMobileOpen(false)}>How It Works</NavLink></li>
+            <li>
+              <a
+                href="#contact"
+                onClick={() => setMobileOpen(false)}
+                className="bg-foreground text-background font-semibold text-sm px-6 py-2.5 rounded-full"
+              >
+                Get started
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

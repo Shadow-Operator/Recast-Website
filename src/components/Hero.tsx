@@ -1,17 +1,10 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/40" />
-      </div>
-
-      {/* Scrolling marquee headline */}
-      <div className="relative z-10 w-full overflow-hidden mb-12">
+    <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-32 pb-20 relative overflow-hidden">
+      {/* Ticker */}
+      <div className="overflow-hidden mb-16">
         <motion.div
           className="marquee-track animate-scroll-right"
           initial={{ opacity: 0 }}
@@ -19,49 +12,50 @@ const Hero = () => {
           transition={{ duration: 1 }}
         >
           {[...Array(4)].map((_, i) => (
-            <span key={i} className="flex items-center gap-6 mr-6">
-              <span className="text-7xl md:text-[8rem] lg:text-[10rem] font-display tracking-wider text-foreground whitespace-nowrap">
-                STRETCH YOUR REACH
+            <span key={i} className="flex items-center pr-20">
+              <span className="text-[clamp(52px,8vw,110px)] font-body font-black tracking-[-3px] leading-none lowercase whitespace-nowrap">
+                where gaming meets gambling
               </span>
-              <span className="text-5xl md:text-7xl text-primary">—</span>
+              <span className="text-muted-foreground mx-20 text-4xl">✦</span>
             </span>
           ))}
         </motion.div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      {/* Bottom two-col */}
+      <div className="grid md:grid-cols-2 gap-12 items-end max-w-[1400px]">
         <motion.p
-          className="max-w-2xl mx-auto text-lg md:text-xl mb-10 text-muted-foreground font-light leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[520px]"
+          initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Recast empowers you to efficiently and effectively streamline your brand by creating, managing, and facilitating content for you.
+          <strong className="text-foreground font-semibold">
+            Recast is the talent agency connecting the world's top content creators with leading betting and gaming brands.
+          </strong>{" "}
+          We specialise in high-value partnerships that perform — built on real audiences, real influence, and real results.
         </motion.p>
 
-        <motion.a
-          href="#work-with-us"
-          className="inline-block gradient-pink text-primary-foreground font-display text-2xl tracking-wider px-10 py-4 rounded-full glow-pink hover:scale-105 transition-transform cursor-pointer"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+        <motion.div
+          className="flex gap-4 md:justify-end"
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
         >
-          APPLY NOW
-        </motion.a>
+          <a
+            href="#contact"
+            className="bg-foreground text-background font-bold text-[15px] px-8 py-3.5 rounded-full hover:opacity-85 transition-opacity"
+          >
+            Get started
+          </a>
+          <a
+            href="#how"
+            className="border border-border text-foreground font-medium text-[15px] px-8 py-3.5 rounded-full hover:border-foreground/40 hover:bg-foreground/5 transition-all"
+          >
+            How it works
+          </a>
+        </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <div className="w-10 h-10 rounded-full border border-muted-foreground/30 flex items-center justify-center">
-          <svg className="w-4 h-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </motion.div>
     </section>
   );
 };
