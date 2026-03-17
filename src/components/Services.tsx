@@ -31,7 +31,7 @@ const Services = () => {
         { suit: "♠", x: "90%", y: "15%", className: "text-foreground", rotate: -10, delay: 0.5, duration: 8 },
         { suit: "♦", x: "5%", y: "55%", className: "text-primary", size: "text-[100px] md:text-[150px]", rotate: 12, delay: 2 },
       ]} />
-      <div className="px-6 md:px-12 py-16 md:py-20 max-w-[1400px] mx-auto">
+      <div className="px-4 md:px-12 py-12 md:py-20 max-w-[1400px] mx-auto">
         <motion.p
           className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-8"
           initial={{ opacity: 0 }}
@@ -56,7 +56,7 @@ const Services = () => {
         {capabilities.map((cap, i) => (
           <motion.div
             key={cap.num}
-            className="px-6 md:px-12 py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card group transition-colors duration-300 relative overflow-hidden"
+            className="px-4 md:px-12 py-10 md:py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card group transition-colors duration-300 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -65,11 +65,11 @@ const Services = () => {
             {/* Hover glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_hsla(199,89%,58%,0.06)_0%,_transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            <p className="text-3xl mb-6">{cap.icon}</p>
-            <p className="text-[11px] font-semibold tracking-[0.1em] text-primary mb-12 relative z-10">
+            <p className="text-2xl md:text-3xl mb-4 md:mb-6">{cap.icon}</p>
+            <p className="text-[11px] font-semibold tracking-[0.1em] text-primary mb-6 md:mb-12 relative z-10">
               {cap.num}
             </p>
-            <h3 className="text-[28px] font-body font-extrabold tracking-[-0.5px] mb-4 relative z-10">
+            <h3 className="text-[22px] md:text-[28px] font-body font-extrabold tracking-[-0.5px] mb-3 md:mb-4 relative z-10">
               {cap.title}
             </h3>
             <p className="text-[13px] font-semibold text-muted-foreground uppercase tracking-[0.1em] mb-5 relative z-10">

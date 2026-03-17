@@ -4,7 +4,7 @@ import FloatingSuits from "./FloatingSuits";
 
 const CTA = () => {
   return (
-    <section id="contact" className="pt-6 pb-16 md:pt-8 md:pb-24 px-6 text-center relative overflow-hidden">
+    <section id="contact" className="pt-4 pb-12 md:pt-8 md:pb-24 px-4 md:px-6 text-center relative overflow-hidden">
       <FloatingSuits suits={[
         { suit: "♠", x: "5%", y: "20%", className: "text-foreground", rotate: -15, delay: 0 },
         { suit: "♥", x: "90%", y: "15%", className: "text-red-500", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
@@ -26,7 +26,7 @@ const CTA = () => {
       </motion.div>
 
       <motion.h2
-        className="text-[clamp(48px,7vw,96px)] font-body font-black tracking-[-3px] leading-none mb-8 max-w-[900px] mx-auto relative z-10"
+        className="text-[clamp(36px,7vw,96px)] font-body font-black tracking-[-2px] md:tracking-[-3px] leading-none mb-6 md:mb-8 max-w-[900px] mx-auto relative z-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -37,7 +37,7 @@ const CTA = () => {
       </motion.h2>
 
       <motion.p
-        className="text-lg text-muted-foreground max-w-[480px] mx-auto mb-12 leading-relaxed relative z-10"
+        className="text-base md:text-lg text-muted-foreground max-w-[480px] mx-auto mb-8 md:mb-12 leading-relaxed relative z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -47,7 +47,7 @@ const CTA = () => {
         looking to reach the right audience — let's talk.
       </motion.p>
       <motion.div
-        className="flex gap-4 justify-center relative z-10"
+        className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center relative z-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -55,13 +55,13 @@ const CTA = () => {
       >
         <a
           href="mailto:harry@recast.gg"
-          className="gradient-blue text-primary-foreground font-bold text-[15px] px-8 py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue"
+          className="gradient-blue text-primary-foreground font-bold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue"
         >
           Get in touch
         </a>
         <a
           href="#about"
-          className="border border-primary/40 text-primary font-medium text-[15px] px-8 py-3.5 rounded-full hover:bg-primary/10 transition-all"
+          className="border border-primary/40 text-primary font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:bg-primary/10 transition-all"
         >
           Learn more
         </a>

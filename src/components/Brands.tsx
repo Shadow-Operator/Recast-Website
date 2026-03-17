@@ -6,9 +6,9 @@ const brandNames = [
 
 const Brands = () => {
   return (
-    <section className="py-20 border-y border-border overflow-hidden">
+    <section className="py-12 md:py-20 border-y border-border overflow-hidden">
       <motion.p
-        className="text-center text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-12"
+        className="text-center text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-8 md:mb-12"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

@@ -38,12 +38,12 @@ const bottomRow = [
 ];
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
-  <div className="flex-shrink-0 w-44 md:w-52 group cursor-pointer">
+  <div className="flex-shrink-0 w-36 md:w-52 group cursor-pointer">
     <div className="relative overflow-hidden rounded-2xl border border-border group-hover:border-primary/40 transition-all duration-500">
       <img
         src={img}
         alt={name}
-        className="w-44 h-56 md:w-52 md:h-68 object-cover group-hover:scale-105 transition-transform duration-500"
+        className="w-36 h-48 md:w-52 md:h-68 object-cover group-hover:scale-105 transition-transform duration-500"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <p className="absolute bottom-3 left-3 right-3 font-display text-lg tracking-wide text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -55,8 +55,8 @@ const CreatorCard = ({ name, img }: { name: string; img: string }) => (
 
 const Creators = () => {
   return (
-    <section className="py-24 md:py-32 overflow-hidden bg-background">
-      <div className="container mx-auto px-6 mb-14">
+    <section className="py-16 md:py-32 overflow-hidden bg-background">
+      <div className="container mx-auto px-4 md:px-6 mb-10 md:mb-14">
         <motion.p
           className="text-sm font-mono tracking-[0.3em] uppercase text-primary mb-4 text-center"
           initial={{ opacity: 0 }}
@@ -66,7 +66,7 @@ const Creators = () => {
           Representing the best creators
         </motion.p>
         <motion.h2
-          className="text-5xl md:text-7xl font-display tracking-wider text-center"
+          className="text-4xl md:text-7xl font-display tracking-wider text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -76,8 +76,8 @@ const Creators = () => {
       </div>
 
       {/* Top row - scrolls right */}
-      <div className="relative mb-6">
-        <div className="flex gap-5 animate-scroll-right">
+      <div className="relative mb-4 md:mb-6">
+        <div className="flex gap-3 md:gap-5 animate-scroll-right">
           {[...topRow, ...topRow].map((c, i) => (
             <CreatorCard key={`top-${i}`} name={c.name} img={c.img} />
           ))}
@@ -86,7 +86,7 @@ const Creators = () => {
 
       {/* Bottom row - scrolls left */}
       <div className="relative">
-        <div className="flex gap-5 animate-scroll-left">
+        <div className="flex gap-3 md:gap-5 animate-scroll-left">
           {[...bottomRow, ...bottomRow].map((c, i) => (
             <CreatorCard key={`bot-${i}`} name={c.name} img={c.img} />
           ))}

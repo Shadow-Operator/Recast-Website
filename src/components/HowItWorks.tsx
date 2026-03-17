@@ -25,7 +25,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how" className="border-t border-border py-24 md:py-32 px-6 md:px-12 relative overflow-hidden">
+    <section id="how" className="border-t border-border py-16 md:py-32 px-4 md:px-12 relative overflow-hidden">
       <FloatingSuits suits={[
         { suit: "♥", x: "88%", y: "30%", className: "text-red-500", rotate: 8, delay: 0.3, duration: 9 },
         { suit: "♣", x: "2%", y: "65%", className: "text-foreground", size: "text-[90px] md:text-[130px]", rotate: -12, delay: 1.8 },
@@ -41,7 +41,7 @@ const HowItWorks = () => {
           How it works
         </motion.p>
         <motion.h2
-          className="text-[clamp(36px,4vw,60px)] font-body font-extrabold tracking-[-2px] leading-[1.1] max-w-[780px] mb-20"
+          className="text-[clamp(28px,4vw,60px)] font-body font-extrabold tracking-[-1px] md:tracking-[-2px] leading-[1.1] max-w-[780px] mb-12 md:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +51,7 @@ const HowItWorks = () => {
           Powerful for brands.
         </motion.h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}

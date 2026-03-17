@@ -4,15 +4,15 @@ const cardSuits = ["♠", "♥", "♦", "♣"];
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-32 pb-20 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center px-4 md:px-12 pt-24 md:pt-32 pb-12 md:pb-20 relative overflow-hidden">
       {/* Ambient blue glow */}
       <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.08)_0%,_transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.05)_0%,_transparent_70%)] pointer-events-none" />
 
       {/* Headline */}
-      <div className="relative mb-16">
-        {/* Animated card suits that fan out */}
-        <div className="absolute -right-4 md:right-20 top-1/2 -translate-y-1/2 flex items-center">
+      <div className="relative mb-8 md:mb-16">
+        {/* Animated card suits that fan out - hidden on small mobile */}
+        <div className="absolute -right-4 md:right-20 top-1/2 -translate-y-1/2 hidden sm:flex items-center">
           {cardSuits.map((suit, i) => (
             <motion.span
               key={i}
@@ -39,7 +39,7 @@ const Hero = () => {
           ))}
         </div>
 
-        <h1 className="text-[clamp(52px,9vw,120px)] font-body font-black tracking-[-4px] leading-[0.95] capitalize">
+        <h1 className="text-[clamp(40px,9vw,120px)] font-body font-black tracking-[-2px] md:tracking-[-4px] leading-[0.95] capitalize">
           <motion.span
             className="block overflow-hidden"
             initial={{ opacity: 0 }}
@@ -80,9 +80,9 @@ const Hero = () => {
       </div>
 
       {/* Bottom two-col */}
-      <div className="grid md:grid-cols-2 gap-12 items-end max-w-[1400px]">
+      <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-end max-w-[1400px]">
         <motion.p
-          className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[520px]"
+          className="text-base md:text-xl text-muted-foreground leading-relaxed max-w-[520px]"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.8 }}
@@ -94,20 +94,20 @@ const Hero = () => {
         </motion.p>
 
         <motion.div
-          className="flex gap-4 md:justify-end"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4 md:justify-end"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95 }}
         >
           <a
             href="#contact"
-            className="gradient-blue text-primary-foreground font-bold text-[15px] px-8 py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue"
+            className="gradient-blue text-primary-foreground font-bold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue text-center"
           >
             Get started
           </a>
           <a
             href="#how"
-            className="border border-border text-foreground font-medium text-[15px] px-8 py-3.5 rounded-full hover:border-primary/40 hover:bg-primary/5 transition-all"
+            className="border border-border text-foreground font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:border-primary/40 hover:bg-primary/5 transition-all text-center"
           >
             How it works
           </a>
