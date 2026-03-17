@@ -19,7 +19,7 @@ const Stats = () => {
           viewport={{ once: true }}
           transition={{ delay: i * 0.1 }}
         >
-          <p className="text-[clamp(40px,4vw,64px)] font-body font-black tracking-[-2px] leading-none mb-2">
+          <p className="text-[clamp(32px,4vw,64px)] font-body font-black tracking-[-1px] md:tracking-[-2px] leading-none mb-1 md:mb-2">
             {stat.number}
           </p>
           <p className="text-sm text-muted-foreground">{stat.label}</p>
