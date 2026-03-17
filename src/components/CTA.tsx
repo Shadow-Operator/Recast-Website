@@ -3,7 +3,7 @@ import RollingDice from "./RollingDice";
 
 const CTA = () => {
   return (
-    <section id="contact" className="py-32 md:py-40 px-6 text-center relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-24 px-6 text-center relative overflow-hidden">
       {/* Blue radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.08)_0%,_transparent_70%)] pointer-events-none" />
 
