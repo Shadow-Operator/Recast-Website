@@ -25,7 +25,7 @@ const TwoCol = () => {
         </a>
       </motion.div>
       <motion.div
-        className="px-6 md:px-12 py-16 md:py-20 relative overflow-hidden group"
+        className="px-4 md:px-12 py-12 md:py-20 relative overflow-hidden group"
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
