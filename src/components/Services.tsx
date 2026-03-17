@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import FloatingSuits from "./FloatingSuits";
 const capabilities = [
   {
     num: "01",
