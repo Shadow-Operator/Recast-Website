@@ -94,7 +94,7 @@ const Hero = () => {
         </motion.p>
 
         <motion.div
-          className="flex gap-4 md:justify-end"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4 md:justify-end"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95 }}
