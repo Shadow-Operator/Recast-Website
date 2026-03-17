@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import RollingDice from "./RollingDice";
+import FloatingSuits from "./FloatingSuits";
 
 const CTA = () => {
   return (
