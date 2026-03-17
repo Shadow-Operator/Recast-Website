@@ -2,9 +2,18 @@ import { motion } from "framer-motion";
 
 const Mission = () => {
   return (
-    <section id="about" className="py-24 md:py-32 px-6 md:px-12 max-w-[1400px] mx-auto">
+    <section id="about" className="py-24 md:py-32 px-6 md:px-12 max-w-[1400px] mx-auto relative">
+      {/* Decorative element */}
+      <motion.div
+        className="absolute top-20 right-10 text-primary/10 text-8xl font-bold select-none pointer-events-none hidden md:block"
+        animate={{ rotate: [0, 5, -5, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
+        ♣
+      </motion.div>
+
       <motion.p
-        className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-8"
+        className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -18,7 +27,7 @@ const Mission = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
       >
-        The bridge between gambling brands and gaming creators.
+        The bridge between <span className="text-gradient-blue">gambling brands</span> and gaming creators.
       </motion.h2>
       <motion.p
         className="text-lg text-muted-foreground leading-relaxed max-w-[580px]"

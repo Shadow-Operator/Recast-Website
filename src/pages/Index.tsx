@@ -1,10 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
+import Brands from "@/components/Brands";
 import Mission from "@/components/Mission";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
-import Brands from "@/components/Brands";
 import TwoCol from "@/components/TwoCol";
 import Creators from "@/components/Creators";
 import CTA from "@/components/CTA";
@@ -15,11 +14,10 @@ const Index = () => {
     <main className="overflow-hidden bg-background text-foreground">
       <Navbar />
       <Hero />
-      <Stats />
+      <Brands />
       <Mission />
       <Services />
       <HowItWorks />
-      <Brands />
       <TwoCol />
       <Creators />
       <CTA />
