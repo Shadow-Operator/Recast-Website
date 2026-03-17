@@ -37,7 +37,7 @@ const CTA = () => {
       </motion.h2>
 
       <motion.p
-        className="text-lg text-muted-foreground max-w-[480px] mx-auto mb-12 leading-relaxed relative z-10"
+        className="text-base md:text-lg text-muted-foreground max-w-[480px] mx-auto mb-8 md:mb-12 leading-relaxed relative z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
