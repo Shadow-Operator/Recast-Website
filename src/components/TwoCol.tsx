@@ -35,7 +35,7 @@ const TwoCol = () => {
         <h3 className="text-[22px] md:text-[28px] font-body font-extrabold tracking-[-0.5px] mb-4 md:mb-5 relative z-10">
           For Brands
         </h3>
-        <p className="text-[15px] text-muted-foreground leading-relaxed mb-8 relative z-10">
+        <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed mb-6 md:mb-8 relative z-10">
           Reach highly engaged betting and gaming audiences through creators they already trust. We handle the entire partnership lifecycle — from creator selection to live campaign management and performance reporting.
         </p>
         <a
