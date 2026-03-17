@@ -38,7 +38,7 @@ const bottomRow = [
 ];
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
-  <div className="flex-shrink-0 w-44 md:w-52 group cursor-pointer">
+  <div className="flex-shrink-0 w-36 md:w-52 group cursor-pointer">
     <div className="relative overflow-hidden rounded-2xl border border-border group-hover:border-primary/40 transition-all duration-500">
       <img
         src={img}
