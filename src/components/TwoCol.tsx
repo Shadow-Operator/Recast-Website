@@ -32,7 +32,7 @@ const TwoCol = () => {
         transition={{ duration: 0.6, delay: 0.1 }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,_hsla(199,89%,58%,0.05)_0%,_transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <h3 className="text-[28px] font-body font-extrabold tracking-[-0.5px] mb-5 relative z-10">
+        <h3 className="text-[22px] md:text-[28px] font-body font-extrabold tracking-[-0.5px] mb-4 md:mb-5 relative z-10">
           For Brands
         </h3>
         <p className="text-[15px] text-muted-foreground leading-relaxed mb-8 relative z-10">
