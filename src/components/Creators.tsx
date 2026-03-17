@@ -43,7 +43,7 @@ const CreatorCard = ({ name, img }: { name: string; img: string }) => (
       <img
         src={img}
         alt={name}
-        className="w-44 h-56 md:w-52 md:h-68 object-cover group-hover:scale-105 transition-transform duration-500"
+        className="w-36 h-48 md:w-52 md:h-68 object-cover group-hover:scale-105 transition-transform duration-500"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <p className="absolute bottom-3 left-3 right-3 font-display text-lg tracking-wide text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
