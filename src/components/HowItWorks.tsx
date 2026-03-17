@@ -14,7 +14,7 @@ const steps = [
   {
     num: "Step 03",
     title: "Go Live",
-    body: "Brand overlays and campaigns go live during streams. Fully passive — creators stream as normal while revenue builds in real time through their Recast dashboard.",
+    body: "Brand deals, ad overlays, and content integrations go live across your channels. Fully passive — creators stream as normal while revenue builds in real time through their Recast dashboard.",
   },
   {
     num: "Step 04",

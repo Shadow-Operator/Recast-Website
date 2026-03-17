@@ -6,21 +6,21 @@ const capabilities = [
     title: "Creator Monetisation",
     sub: "For Creators",
     icon: "🎰",
-    body: "We connect Twitch and YouTube creators with passive revenue streams that require zero extra effort. Overlay deals, affiliate partnerships, and brand campaigns that run in the background while you stream.",
+    body: "We connect Twitch and YouTube creators with diverse revenue streams — from brand deals and sponsorships to ad overlays, affiliate partnerships, and integrated content campaigns. Multiple income channels, zero extra effort.",
   },
   {
     num: "02",
     title: "Brand Partnerships",
     sub: "For Brands",
     icon: "🃏",
-    body: "Access a curated network of gaming and betting-aligned creators with real, engaged audiences. We handle everything — creator selection, onboarding, compliance, campaign management, and performance reporting.",
+    body: "Access a curated network of gaming and betting-aligned creators with real, engaged audiences. We manage the full campaign lifecycle — creator selection, deal negotiation, content integration, ad placement, and performance reporting.",
   },
   {
     num: "03",
-    title: "Gambling Niche Specialists",
+    title: "Betting & Gaming Specialists",
     sub: "Our Speciality",
     icon: "🎲",
-    body: "From securing deals to negotiating terms, retaining partnerships, and managing affiliate stats — we are the only agency that truly specialises in the betting and gaming creator space end to end.",
+    body: "From securing sponsorship deals and managing ad overlays to coordinating content integrations and tracking affiliate performance — we are the only agency built end-to-end for the betting and gaming creator space.",
   },
 ];
 
