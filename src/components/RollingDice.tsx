@@ -20,14 +20,13 @@ const DiceFace = ({ face, offset }: { face: number; offset: [number, number, num
     6: [[-0.2, 0.2, 0], [0.2, 0.2, 0], [-0.2, 0, 0], [0.2, 0, 0], [-0.2, -0.2, 0], [0.2, -0.2, 0]],
   };
 
-  // Rotate dots to align with the face normal
   const rotations: Record<string, [number, number, number]> = {
-    "0,0,0.51": [0, 0, 0],         // front (face towards camera)
-    "0,0,-0.51": [0, Math.PI, 0],   // back
-    "0.51,0,0": [0, Math.PI / 2, 0], // right
-    "-0.51,0,0": [0, -Math.PI / 2, 0], // left
-    "0,0.51,0": [-Math.PI / 2, 0, 0],  // top
-    "0,-0.51,0": [Math.PI / 2, 0, 0],  // bottom
+    "0,0,0.51": [0, 0, 0],
+    "0,0,-0.51": [0, Math.PI, 0],
+    "0.51,0,0": [0, Math.PI / 2, 0],
+    "-0.51,0,0": [0, -Math.PI / 2, 0],
+    "0,0.51,0": [-Math.PI / 2, 0, 0],
+    "0,-0.51,0": [Math.PI / 2, 0, 0],
   };
 
   const key = offset.join(",");
@@ -42,19 +41,14 @@ const DiceFace = ({ face, offset }: { face: number; offset: [number, number, num
   );
 };
 
-const Dice = ({ scrollProgress }: { scrollProgress: { current: number } }) => {
+const Dice = () => {
   const meshRef = useRef<THREE.Group>(null);
 
-  useFrame(() => {
+  useFrame(({ clock }) => {
     if (meshRef.current) {
-      const p = scrollProgress.current;
-      // Spin the dice as scroll progresses
-      meshRef.current.rotation.x = p * Math.PI * 4;
-      meshRef.current.rotation.y = p * Math.PI * 3;
-      meshRef.current.rotation.z = p * Math.PI * 2;
-      // Scale up as it comes into view
-      const scale = 0.5 + p * 0.5;
-      meshRef.current.scale.setScalar(scale);
+      const t = clock.getElapsedTime();
+      meshRef.current.rotation.x = t * 0.5;
+      meshRef.current.rotation.y = t * 0.7;
     }
   });
 
@@ -63,7 +57,6 @@ const Dice = ({ scrollProgress }: { scrollProgress: { current: number } }) => {
       <RoundedBox args={[1, 1, 1]} radius={0.1} smoothness={4}>
         <meshStandardMaterial color="hsl(199, 89%, 58%)" />
       </RoundedBox>
-      {/* 6 faces */}
       <DiceFace face={1} offset={[0, 0, 0.51]} />
       <DiceFace face={6} offset={[0, 0, -0.51]} />
       <DiceFace face={3} offset={[0.51, 0, 0]} />
@@ -74,14 +67,14 @@ const Dice = ({ scrollProgress }: { scrollProgress: { current: number } }) => {
   );
 };
 
-const RollingDice = ({ scrollProgress }: { scrollProgress: { current: number } }) => {
+const RollingDice = () => {
   return (
-    <div className="w-32 h-32 md:w-48 md:h-48 mx-auto">
+    <div className="w-40 h-40 md:w-56 md:h-56 mx-auto">
       <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
         <pointLight position={[-3, -3, 2]} intensity={0.5} color="hsl(199, 89%, 58%)" />
-        <Dice scrollProgress={scrollProgress} />
+        <Dice />
       </Canvas>
     </div>
   );
