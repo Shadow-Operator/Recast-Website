@@ -41,7 +41,7 @@ const HowItWorks = () => {
           How it works
         </motion.p>
         <motion.h2
-          className="text-[clamp(36px,4vw,60px)] font-body font-extrabold tracking-[-2px] leading-[1.1] max-w-[780px] mb-20"
+          className="text-[clamp(28px,4vw,60px)] font-body font-extrabold tracking-[-1px] md:tracking-[-2px] leading-[1.1] max-w-[780px] mb-12 md:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
