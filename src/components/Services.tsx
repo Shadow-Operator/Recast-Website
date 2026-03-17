@@ -65,11 +65,11 @@ const Services = () => {
             {/* Hover glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_hsla(199,89%,58%,0.06)_0%,_transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            <p className="text-3xl mb-6">{cap.icon}</p>
-            <p className="text-[11px] font-semibold tracking-[0.1em] text-primary mb-12 relative z-10">
+            <p className="text-2xl md:text-3xl mb-4 md:mb-6">{cap.icon}</p>
+            <p className="text-[11px] font-semibold tracking-[0.1em] text-primary mb-6 md:mb-12 relative z-10">
               {cap.num}
             </p>
-            <h3 className="text-[28px] font-body font-extrabold tracking-[-0.5px] mb-4 relative z-10">
+            <h3 className="text-[22px] md:text-[28px] font-body font-extrabold tracking-[-0.5px] mb-3 md:mb-4 relative z-10">
               {cap.title}
             </h3>
             <p className="text-[13px] font-semibold text-muted-foreground uppercase tracking-[0.1em] mb-5 relative z-10">

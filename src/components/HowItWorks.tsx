@@ -51,7 +51,7 @@ const HowItWorks = () => {
           Powerful for brands.
         </motion.h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}

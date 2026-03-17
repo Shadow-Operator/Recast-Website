@@ -24,7 +24,7 @@ const FloatingSuits = ({ suits }: { suits: SuitConfig[] }) => {
       {suits.map((s, i) => (
         <motion.span
           key={i}
-          className={`absolute pointer-events-none select-none ${s.size || "text-[120px] md:text-[180px]"} ${s.className || defaultColor[s.suit] || "text-foreground"} opacity-[0.04]`}
+          className={`absolute pointer-events-none select-none hidden sm:block ${s.size || "text-[120px] md:text-[180px]"} ${s.className || defaultColor[s.suit] || "text-foreground"} opacity-[0.04]`}
           style={{ left: s.x, top: s.y }}
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 0.04, scale: 1 }}

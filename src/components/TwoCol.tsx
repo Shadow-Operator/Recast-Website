@@ -40,7 +40,7 @@ const TwoCol = () => {
         </p>
         <a
           href="#contact"
-          className="inline-block border border-primary/40 text-primary font-medium text-[15px] px-8 py-3.5 rounded-full hover:bg-primary/10 transition-all relative z-10"
+          className="inline-block border border-primary/40 text-primary font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:bg-primary/10 transition-all relative z-10"
         >
           Partner with us
         </a>

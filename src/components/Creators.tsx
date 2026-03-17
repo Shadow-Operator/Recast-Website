@@ -86,7 +86,7 @@ const Creators = () => {
 
       {/* Bottom row - scrolls left */}
       <div className="relative">
-        <div className="flex gap-5 animate-scroll-left">
+        <div className="flex gap-3 md:gap-5 animate-scroll-left">
           {[...bottomRow, ...bottomRow].map((c, i) => (
             <CreatorCard key={`bot-${i}`} name={c.name} img={c.img} />
           ))}

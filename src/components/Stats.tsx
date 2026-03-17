@@ -22,7 +22,7 @@ const Stats = () => {
           <p className="text-[clamp(32px,4vw,64px)] font-body font-black tracking-[-1px] md:tracking-[-2px] leading-none mb-1 md:mb-2">
             {stat.number}
           </p>
-          <p className="text-sm text-muted-foreground">{stat.label}</p>
+          <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
         </motion.div>
       ))}
     </section>

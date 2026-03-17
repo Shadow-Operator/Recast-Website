@@ -107,7 +107,7 @@ const Hero = () => {
           </a>
           <a
             href="#how"
-            className="border border-border text-foreground font-medium text-[15px] px-8 py-3.5 rounded-full hover:border-primary/40 hover:bg-primary/5 transition-all"
+            className="border border-border text-foreground font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:border-primary/40 hover:bg-primary/5 transition-all text-center"
           >
             How it works
           </a>

@@ -61,7 +61,7 @@ const CTA = () => {
         </a>
         <a
           href="#about"
-          className="border border-primary/40 text-primary font-medium text-[15px] px-8 py-3.5 rounded-full hover:bg-primary/10 transition-all"
+          className="border border-primary/40 text-primary font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:bg-primary/10 transition-all"
         >
           Learn more
         </a>

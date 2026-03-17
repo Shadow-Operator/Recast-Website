@@ -2,7 +2,7 @@ import recastIcon from "@/assets/recast-icon.png";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-[hsl(0,0%,0%)] px-6 md:px-12 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="border-t border-border bg-[hsl(0,0%,0%)] px-4 md:px-12 py-8 md:py-10 flex flex-col items-center gap-6 md:flex-row md:justify-between">
       <a href="#" className="flex items-center">
         <img src={recastIcon} alt="Recast" className="h-16" />
       </a>
