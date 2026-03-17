@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border px-6 md:px-12 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
       <a href="#" className="flex items-center gap-2">
-        <img src={recastIcon} alt="Recast" className="h-5" />
+        <img src={recastIcon} alt="Recast" className="h-5 invert" />
         <span className="text-foreground font-body font-bold text-sm tracking-tight">RECAST</span>
       </a>
       <ul className="flex flex-wrap justify-center gap-8">
