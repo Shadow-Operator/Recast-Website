@@ -55,7 +55,7 @@ const CTA = () => {
       >
         <a
           href="mailto:harry@recast.gg"
-          className="gradient-blue text-primary-foreground font-bold text-[15px] px-8 py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue"
+          className="gradient-blue text-primary-foreground font-bold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue"
         >
           Get in touch
         </a>
