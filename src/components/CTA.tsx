@@ -26,7 +26,7 @@ const CTA = () => {
       </motion.div>
 
       <motion.h2
-        className="text-[clamp(48px,7vw,96px)] font-body font-black tracking-[-3px] leading-none mb-8 max-w-[900px] mx-auto relative z-10"
+        className="text-[clamp(36px,7vw,96px)] font-body font-black tracking-[-2px] md:tracking-[-3px] leading-none mb-6 md:mb-8 max-w-[900px] mx-auto relative z-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
