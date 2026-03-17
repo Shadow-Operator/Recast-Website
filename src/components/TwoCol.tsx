@@ -14,7 +14,7 @@ const TwoCol = () => {
         <h3 className="text-[22px] md:text-[28px] font-body font-extrabold tracking-[-0.5px] mb-4 md:mb-5 relative z-10">
           For Creators
         </h3>
-        <p className="text-[15px] text-muted-foreground leading-relaxed mb-8 relative z-10">
+        <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed mb-6 md:mb-8 relative z-10">
           Stop leaving money on the table. Recast turns your existing stream into a passive revenue engine — with no extra work, no brand scripts, and no compromise on your content.
         </p>
         <a
