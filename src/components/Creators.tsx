@@ -76,8 +76,8 @@ const Creators = () => {
       </div>
 
       {/* Top row - scrolls right */}
-      <div className="relative mb-6">
-        <div className="flex gap-5 animate-scroll-right">
+      <div className="relative mb-4 md:mb-6">
+        <div className="flex gap-3 md:gap-5 animate-scroll-right">
           {[...topRow, ...topRow].map((c, i) => (
             <CreatorCard key={`top-${i}`} name={c.name} img={c.img} />
           ))}
