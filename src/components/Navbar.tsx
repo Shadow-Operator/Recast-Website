@@ -11,7 +11,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-5 px-6 md:px-12 bg-background border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-5 px-6 md:px-12 bg-[hsl(0,0%,0%)] border-b border-border/50">
       <a href="#" className="flex items-center">
         <img src={recastIcon} alt="Recast" className="h-20 md:h-24" />
       </a>
