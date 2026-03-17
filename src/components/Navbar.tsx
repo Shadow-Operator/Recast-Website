@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-5 px-6 md:px-12 bg-primary/10 backdrop-blur-xl border-b border-primary/20">
       <a href="#" className="flex items-center">
-        <img src={recastIcon} alt="Recast" className="h-12 md:h-14" />
+        <img src={recastIcon} alt="Recast" className="h-20 md:h-24" />
       </a>
 
       <ul className="hidden md:flex items-center gap-10">
