@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border px-6 md:px-12 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
       <a href="#" className="flex items-center">
-        <img src={recastIcon} alt="Recast" className="h-6 invert" />
+        <img src={recastIcon} alt="Recast" className="h-10 invert" />
       </a>
       <ul className="flex flex-wrap justify-center gap-8">
         <li><a href="#brands" className="text-muted-foreground text-[13px] hover:text-primary transition-colors">For Brands</a></li>
