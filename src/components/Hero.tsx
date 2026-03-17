@@ -10,9 +10,9 @@ const Hero = () => {
       <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.05)_0%,_transparent_70%)] pointer-events-none" />
 
       {/* Headline */}
-      <div className="relative mb-16">
-        {/* Animated card suits that fan out */}
-        <div className="absolute -right-4 md:right-20 top-1/2 -translate-y-1/2 flex items-center">
+      <div className="relative mb-8 md:mb-16">
+        {/* Animated card suits that fan out - hidden on small mobile */}
+        <div className="absolute -right-4 md:right-20 top-1/2 -translate-y-1/2 hidden sm:flex items-center">
           {cardSuits.map((suit, i) => (
             <motion.span
               key={i}
