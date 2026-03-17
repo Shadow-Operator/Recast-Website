@@ -5,6 +5,12 @@ import FloatingSuits from "./FloatingSuits";
 const CTA = () => {
   return (
     <section id="contact" className="pt-6 pb-16 md:pt-8 md:pb-24 px-6 text-center relative overflow-hidden">
+      <FloatingSuits suits={[
+        { suit: "♠", x: "5%", y: "20%", className: "text-foreground", rotate: -15, delay: 0 },
+        { suit: "♥", x: "90%", y: "15%", className: "text-red-500", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
+        { suit: "♦", x: "8%", y: "70%", className: "text-primary", size: "text-[90px] md:text-[120px]", rotate: 20, delay: 2 },
+        { suit: "♣", x: "85%", y: "65%", className: "text-foreground", size: "text-[100px] md:text-[150px]", rotate: -8, delay: 0.5 },
+      ]} />
       {/* Blue radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.08)_0%,_transparent_70%)] pointer-events-none" />
 

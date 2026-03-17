@@ -25,7 +25,12 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how" className="border-t border-border py-24 md:py-32 px-6 md:px-12">
+    <section id="how" className="border-t border-border py-24 md:py-32 px-6 md:px-12 relative overflow-hidden">
+      <FloatingSuits suits={[
+        { suit: "♥", x: "88%", y: "30%", className: "text-red-500", rotate: 8, delay: 0.3, duration: 9 },
+        { suit: "♣", x: "2%", y: "65%", className: "text-foreground", size: "text-[90px] md:text-[130px]", rotate: -12, delay: 1.8 },
+        { suit: "♠", x: "70%", y: "75%", className: "text-foreground", size: "text-[80px] md:text-[110px]", rotate: 20, delay: 3 },
+      ]} />
       <div className="max-w-[1400px] mx-auto">
         <motion.p
           className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-8"
