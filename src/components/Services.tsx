@@ -5,18 +5,21 @@ const capabilities = [
     num: "01",
     title: "Creator Monetisation",
     sub: "For Creators",
+    icon: "🎰",
     body: "We connect Twitch and YouTube creators with passive revenue streams that require zero extra effort. Overlay deals, affiliate partnerships, and brand campaigns that run in the background while you stream.",
   },
   {
     num: "02",
     title: "Brand Partnerships",
     sub: "For Brands",
+    icon: "🃏",
     body: "Access a curated network of gaming and betting-aligned creators with real, engaged audiences. We handle everything — creator selection, onboarding, compliance, campaign management, and performance reporting.",
   },
   {
     num: "03",
     title: "Gambling Niche Specialists",
     sub: "Our Speciality",
+    icon: "🎲",
     body: "From securing deals to negotiating terms, retaining partnerships, and managing affiliate stats — we are the only agency that truly specialises in the betting and gaming creator space end to end.",
   },
 ];
@@ -26,7 +29,7 @@ const Services = () => {
     <section id="brands" className="border-t border-border">
       <div className="px-6 md:px-12 py-16 md:py-20 max-w-[1400px] mx-auto">
         <motion.p
-          className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-8"
+          className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -49,22 +52,26 @@ const Services = () => {
         {capabilities.map((cap, i) => (
           <motion.div
             key={cap.num}
-            className="px-6 md:px-12 py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card transition-colors duration-300"
+            className="px-6 md:px-12 py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card group transition-colors duration-300 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ delay: i * 0.15 }}
           >
-            <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-12">
+            {/* Hover glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_hsla(199,89%,58%,0.06)_0%,_transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <p className="text-3xl mb-6">{cap.icon}</p>
+            <p className="text-[11px] font-semibold tracking-[0.1em] text-primary mb-12 relative z-10">
               {cap.num}
             </p>
-            <h3 className="text-[28px] font-body font-extrabold tracking-[-0.5px] mb-4">
+            <h3 className="text-[28px] font-body font-extrabold tracking-[-0.5px] mb-4 relative z-10">
               {cap.title}
             </h3>
-            <p className="text-[13px] font-semibold text-muted-foreground uppercase tracking-[0.1em] mb-5">
+            <p className="text-[13px] font-semibold text-muted-foreground uppercase tracking-[0.1em] mb-5 relative z-10">
               {cap.sub}
             </p>
-            <p className="text-[15px] text-muted-foreground leading-relaxed">
+            <p className="text-[15px] text-muted-foreground leading-relaxed relative z-10">
               {cap.body}
             </p>
           </motion.div>

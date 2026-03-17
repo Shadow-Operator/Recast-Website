@@ -28,7 +28,7 @@ const HowItWorks = () => {
     <section id="how" className="border-t border-border py-24 md:py-32 px-6 md:px-12">
       <div className="max-w-[1400px] mx-auto">
         <motion.p
-          className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-8"
+          className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -50,16 +50,21 @@ const HowItWorks = () => {
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
-              className="border-t border-border pt-8"
+              className="border-t border-primary/30 pt-8 group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.12 }}
             >
-              <p className="text-[11px] font-semibold text-muted-foreground tracking-[0.1em] mb-6">
+              <motion.p
+                className="text-[11px] font-semibold text-primary tracking-[0.1em] mb-6"
+                whileInView={{ opacity: [0, 1] }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12 + 0.3 }}
+              >
                 {step.num}
-              </p>
-              <h3 className="text-xl font-body font-bold tracking-[-0.3px] mb-3">
+              </motion.p>
+              <h3 className="text-xl font-body font-bold tracking-[-0.3px] mb-3 group-hover:text-primary transition-colors">
                 {step.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

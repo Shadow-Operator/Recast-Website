@@ -12,20 +12,20 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-5 px-6 md:px-12 bg-background/85 backdrop-blur-xl border-b border-border/50">
-      <a href="#" className="flex items-center gap-1">
+      <a href="#" className="flex items-center gap-2">
         <img src={recastLogo} alt="Recast" className="h-7 md:h-8" />
       </a>
 
       <ul className="hidden md:flex items-center gap-10">
         {navLinks.map((link) => (
           <li key={link.href}>
-            <a href={link.href} className="text-muted-foreground text-sm font-medium tracking-wide hover:text-foreground transition-colors">
+            <a href={link.href} className="text-muted-foreground text-sm font-medium tracking-wide hover:text-primary transition-colors">
               {link.label}
             </a>
           </li>
         ))}
         <li>
-          <a href="#contact" className="bg-foreground text-background font-semibold text-sm px-6 py-2.5 rounded-full hover:opacity-85 transition-opacity">
+          <a href="#contact" className="gradient-blue text-primary-foreground font-semibold text-sm px-6 py-2.5 rounded-full hover:opacity-85 transition-opacity">
             Get started
           </a>
         </li>
@@ -46,13 +46,13 @@ const Navbar = () => {
           <ul className="flex flex-col items-center gap-6 py-8">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground text-sm font-medium hover:text-foreground transition-colors">
+                <a href={link.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground text-sm font-medium hover:text-primary transition-colors">
                   {link.label}
                 </a>
               </li>
             ))}
             <li>
-              <a href="#contact" onClick={() => setMobileOpen(false)} className="bg-foreground text-background font-semibold text-sm px-6 py-2.5 rounded-full">
+              <a href="#contact" onClick={() => setMobileOpen(false)} className="gradient-blue text-primary-foreground font-semibold text-sm px-6 py-2.5 rounded-full">
                 Get started
               </a>
             </li>

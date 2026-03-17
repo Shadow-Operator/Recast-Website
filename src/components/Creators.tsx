@@ -58,7 +58,7 @@ const Creators = () => {
     <section className="py-24 md:py-32 overflow-hidden bg-background">
       <div className="container mx-auto px-6 mb-14">
         <motion.p
-          className="text-sm font-mono tracking-[0.3em] uppercase text-muted-foreground mb-4 text-center"
+          className="text-sm font-mono tracking-[0.3em] uppercase text-primary mb-4 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -71,7 +71,7 @@ const Creators = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          OUR <span className="text-gradient-pink">CREATORS</span>
+          OUR <span className="text-gradient-blue">CREATORS</span>
         </motion.h2>
       </div>
 
