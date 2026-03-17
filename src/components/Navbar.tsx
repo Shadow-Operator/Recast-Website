@@ -1,6 +1,5 @@
 import { useState } from "react";
 import recastLogo from "@/assets/recast-logo.png";
-import NavLink from "./NavLink";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
