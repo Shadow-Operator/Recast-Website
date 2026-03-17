@@ -47,7 +47,7 @@ const CTA = () => {
         looking to reach the right audience — let's talk.
       </motion.p>
       <motion.div
-        className="flex gap-4 justify-center relative z-10"
+        className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center relative z-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
