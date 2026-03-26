@@ -13,7 +13,7 @@ const Brands = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        Brands we work with
+        Premium brand partners
       </motion.p>
       <div className="overflow-hidden">
         <div className="marquee-track animate-scroll-right">

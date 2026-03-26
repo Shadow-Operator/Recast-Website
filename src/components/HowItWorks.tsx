@@ -1,25 +1,26 @@
 import { motion } from "framer-motion";
 import FloatingSuits from "./FloatingSuits";
+
 const steps = [
   {
     num: "Step 01",
-    title: "Onboarding",
-    body: "Creators join the Recast network in under 10 minutes. We handle all brand verification and Twitch compliance setup on your behalf.",
+    title: "Agreement",
+    body: "Campaign agreement sent. Simple, transparent terms — our fee is purely a percentage of earnings. We only make money when you do.",
   },
   {
     num: "Step 02",
-    title: "Campaign Match",
-    body: "We match creators with brands that fit their audience, content style, and platform. No misaligned deals — every partnership is curated for performance.",
+    title: "Setup Call",
+    body: "A quick 1-on-1 call to walk through the technical integration. Standard identity and payment details collected for brand compliance.",
   },
   {
     num: "Step 03",
     title: "Go Live",
-    body: "Brand deals, ad overlays, and content integrations go live across your channels. Fully passive — creators stream as normal while revenue builds in real time through their Recast dashboard.",
+    body: "Non-intrusive ad overlays go live on your stream within 72 hours. Fully passive — stream exactly as you normally would while revenue builds in real time.",
   },
   {
     num: "Step 04",
     title: "Get Paid",
-    body: "Revenue is calculated on average concurrent viewership with no caps and no ceiling. Payments come directly to creators, transparently, every month.",
+    body: "Revenue is calculated on average concurrent viewership at $15 CPM with no caps. Real-time visibility on earnings, impressions, and performance through your dashboard.",
   },
 ];
 
@@ -46,9 +47,9 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Simple for creators.
+          Live and earning
           <br />
-          Powerful for brands.
+          <span className="text-gradient-blue">within 72 hours.</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">

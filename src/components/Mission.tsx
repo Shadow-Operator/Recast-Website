@@ -24,7 +24,7 @@ const Mission = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
       >
-        The bridge between <span className="text-gradient-blue">gambling brands</span> and gaming creators.
+        The <span className="text-gradient-blue">ad overlay agency</span> built for streamers.
       </motion.h2>
       <motion.p
         className="text-lg text-muted-foreground leading-relaxed max-w-[580px]"
@@ -33,9 +33,9 @@ const Mission = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
       >
-        Recast was built for a space most agencies don't understand. We know the creators, we know the brands, and we know what it takes to make a partnership land in the betting and gaming world.{" "}
+        Recast is a specialised talent agency connecting Twitch and Kick streamers with global brands across sports, entertainment, and lifestyle. We pioneered non-intrusive ad overlays that let creators earn passively — no scripts, no pausing gameplay, no chasing invoices.{" "}
         <strong className="text-foreground">
-          No wasted spend. No misaligned deals. Just the right creators, with the right brands, at the right time.
+          Stream. We handle the rest.
         </strong>
       </motion.p>
     </section>
