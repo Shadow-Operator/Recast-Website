@@ -43,8 +43,8 @@ const CTA = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.15 }}
       >
-        Whether you're a creator looking to monetise your stream or a brand
-        looking to reach the right audience — let's talk.
+        Whether you're a streamer looking for passive income or a brand
+        wanting to reach engaged gaming audiences — let's talk.
       </motion.p>
       <motion.div
         className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center relative z-10"

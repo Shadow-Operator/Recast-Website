@@ -1,26 +1,27 @@
 import { motion } from "framer-motion";
 import FloatingSuits from "./FloatingSuits";
+
 const capabilities = [
   {
     num: "01",
-    title: "Creator Monetisation",
-    sub: "For Creators",
+    title: "Non-Intrusive Ad Overlays",
+    sub: "The Mechanism",
     icon: "🎰",
-    body: "We connect Twitch and YouTube creators with diverse revenue streams — from brand deals and sponsorships to ad overlays, affiliate partnerships, and integrated content campaigns. Multiple income channels, zero extra effort.",
+    body: "A small branded overlay appears in the bottom-right corner of your stream every 10 minutes. No scripts, no interruptions to content, no change to your stream. It's seamless, silent, and fully passive.",
   },
   {
     num: "02",
-    title: "Brand Partnerships",
-    sub: "For Brands",
-    icon: "🃏",
-    body: "Access a curated network of gaming and betting-aligned creators with real, engaged audiences. We manage the full campaign lifecycle — creator selection, deal negotiation, content integration, ad placement, and performance reporting.",
+    title: "Uncapped Earnings at $15 CPM",
+    sub: "The Earnings Engine",
+    icon: "💰",
+    body: "Earn $15 per 1,000 viewers per ad, with 6 ads running every hour. Revenue scales infinitely with your audience — no caps, no ceiling. A streamer with 5,000 viewers can earn over $100K annually.",
   },
   {
     num: "03",
-    title: "Betting & Gaming Specialists",
-    sub: "Our Speciality",
-    icon: "🎲",
-    body: "From securing sponsorship deals and managing ad overlays to coordinating content integrations and tracking affiliate performance — we are the only agency built end-to-end for the betting and gaming creator space.",
+    title: "Premium Brand Partners",
+    sub: "Major Brands",
+    icon: "🃏",
+    body: "Rotating campaigns with major global brands across sports, entertainment, and lifestyle. Full transparency on earnings, impressions, and performance through your real-time dashboard. No content restrictions on your end.",
   },
 ];
 
@@ -46,9 +47,9 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Everything a creator needs.
+          Passive income from major brands.
           <br />
-          Everything a brand wants.
+          <span className="text-gradient-blue">Zero effort required.</span>
         </motion.h2>
       </div>
 

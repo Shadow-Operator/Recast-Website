@@ -52,7 +52,7 @@ const Hero = () => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               >
-                Where Gaming
+                Passive Income
               </motion.span>
             </motion.span>
             <motion.span
@@ -66,7 +66,7 @@ const Hero = () => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
-                Meets Gambling
+                For Streamers
               </motion.span>
             </motion.span>
           </h1>
@@ -88,9 +88,9 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.7 }}
         >
           <strong className="text-foreground font-semibold">
-            Recast is the talent agency connecting the world's top content creators with leading betting and gaming brands.
+            Recast connects Twitch and Kick streamers with major brands through non-intrusive ad overlays.
           </strong>{" "}
-          We specialise in high-value partnerships that perform — built on real audiences, real influence, and real results.
+          You earn simply by doing what you already do — no scripts, no interruptions, no effort. Major brands. Zero compromise.
         </motion.p>
 
         {/* Buttons */}
@@ -104,7 +104,7 @@ const Hero = () => {
             href="#contact"
             className="gradient-blue text-primary-foreground font-bold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue text-center"
           >
-            Get started
+            Start earning
           </a>
           <a
             href="#how"
