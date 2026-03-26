@@ -1,22 +1,15 @@
 import { motion } from "framer-motion";
 import RollingDice from "./RollingDice";
-import FloatingSuits from "./FloatingSuits";
 
 const CTA = () => {
   return (
-    <section id="contact" className="pt-4 pb-12 md:pt-8 md:pb-24 px-4 md:px-6 text-center relative overflow-hidden">
-      <FloatingSuits suits={[
-        { suit: "♠", x: "5%", y: "20%", className: "text-foreground", rotate: -15, delay: 0 },
-        { suit: "♥", x: "90%", y: "15%", className: "text-red-500", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
-        { suit: "♦", x: "8%", y: "70%", className: "text-primary", size: "text-[90px] md:text-[120px]", rotate: 20, delay: 2 },
-        { suit: "♣", x: "85%", y: "65%", className: "text-foreground", size: "text-[100px] md:text-[150px]", rotate: -8, delay: 0.5 },
-      ]} />
-      {/* Blue radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.08)_0%,_transparent_70%)] pointer-events-none" />
+    <section id="contact" className="py-20 md:py-32 px-4 md:px-6 text-center relative overflow-hidden hud-grid">
+      {/* Radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.08)_0%,_transparent_60%)] pointer-events-none" />
 
       {/* 3D Dice */}
       <motion.div
-        className="relative z-10 mb-8"
+        className="relative z-10 mb-6"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -26,7 +19,7 @@ const CTA = () => {
       </motion.div>
 
       <motion.h2
-        className="text-[clamp(36px,7vw,96px)] font-body font-black tracking-[-2px] md:tracking-[-3px] leading-none mb-6 md:mb-8 max-w-[900px] mx-auto relative z-10"
+        className="text-[clamp(36px,7vw,80px)] font-body font-bold tracking-[-2px] md:tracking-[-3px] leading-none mb-6 md:mb-8 max-w-[800px] mx-auto relative z-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -37,7 +30,7 @@ const CTA = () => {
       </motion.h2>
 
       <motion.p
-        className="text-base md:text-lg text-muted-foreground max-w-[480px] mx-auto mb-8 md:mb-12 leading-relaxed relative z-10"
+        className="text-sm md:text-base text-muted-foreground max-w-[480px] mx-auto mb-10 md:mb-14 leading-relaxed relative z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -46,8 +39,9 @@ const CTA = () => {
         Whether you're a streamer looking for passive income or a brand
         wanting to reach engaged gaming audiences — let's talk.
       </motion.p>
+
       <motion.div
-        className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center relative z-10"
+        className="flex flex-col sm:flex-row gap-4 justify-center relative z-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -55,17 +49,27 @@ const CTA = () => {
       >
         <a
           href="mailto:harry@recast.gg"
-          className="gradient-blue text-primary-foreground font-bold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue"
+          className="gradient-blue text-primary-foreground font-bold text-sm px-8 py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue"
         >
-          Get in touch
+          Initialize Setup
         </a>
         <a
           href="#about"
-          className="border border-primary/40 text-primary font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:bg-primary/10 transition-all"
+          className="border border-primary/30 text-primary font-medium text-sm px-8 py-3.5 rounded-full hover:bg-primary/10 transition-all"
         >
           Learn more
         </a>
       </motion.div>
+
+      <motion.p
+        className="mt-16 text-xs font-mono text-muted-foreground/30 relative z-10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5 }}
+      >
+        Recast. The standard for creator monetization.
+      </motion.p>
     </section>
   );
 };
