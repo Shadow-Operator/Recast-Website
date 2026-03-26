@@ -15,7 +15,7 @@ const TwoCol = () => {
           For Creators
         </h3>
         <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed mb-6 md:mb-8 relative z-10">
-          Stop leaving money on the table. Recast turns your existing stream into a passive revenue engine — with non-intrusive ad overlays, no brand scripts, and no compromise on your content. Turn campaigns on or off whenever you want. Full control, always.
+          Stop leaving money on the table. Recast turns your existing stream into a passive revenue engine — with no extra work, no brand scripts, and no compromise on your content.
         </p>
         <a
           href="#contact"
@@ -36,7 +36,7 @@ const TwoCol = () => {
           For Brands
         </h3>
         <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed mb-6 md:mb-8 relative z-10">
-          Reach highly engaged gaming audiences through creators they already trust. Non-intrusive overlay placements that feel native, not forced. We handle the entire campaign lifecycle — creator selection, tech integration, live management, and performance reporting.
+          Reach highly engaged betting and gaming audiences through creators they already trust. We handle the entire partnership lifecycle — from creator selection to live campaign management and performance reporting.
         </p>
         <a
           href="#contact"

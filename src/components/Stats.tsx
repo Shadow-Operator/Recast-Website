@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { number: "$15", label: "CPM per 1,000 viewers" },
-  { number: "6", label: "Ads per hour, every 10 minutes" },
-  { number: "72hrs", label: "From signup to live and earning" },
+  { number: "77+", label: "Creators in our network" },
+  { number: "$20M+", label: "Annual creator revenue managed" },
   { number: "100%", label: "Passive — zero content obligations" },
+  { number: "10min", label: "Average creator onboarding time" },
 ];
 
 const Stats = () => {

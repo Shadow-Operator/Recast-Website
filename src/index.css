@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,47 +8,47 @@ html { scroll-behavior: smooth; }
 
 @layer base {
   :root {
-    --background: 220 20% 4%;
+    --background: 220 15% 8%;
     --foreground: 210 20% 95%;
 
-    --card: 220 18% 8%;
+    --card: 220 15% 12%;
     --card-foreground: 210 20% 95%;
 
-    --popover: 220 18% 8%;
+    --popover: 220 15% 12%;
     --popover-foreground: 210 20% 95%;
 
     --primary: 199 89% 58%;
-    --primary-foreground: 220 20% 4%;
+    --primary-foreground: 220 20% 6%;
 
-    --secondary: 220 14% 12%;
+    --secondary: 220 12% 16%;
     --secondary-foreground: 210 15% 88%;
 
-    --muted: 220 14% 14%;
-    --muted-foreground: 210 10% 50%;
+    --muted: 220 12% 18%;
+    --muted-foreground: 210 10% 55%;
 
     --accent: 199 89% 58%;
-    --accent-foreground: 220 20% 4%;
+    --accent-foreground: 220 20% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 14% 14%;
-    --input: 220 14% 14%;
+    --border: 220 12% 18%;
+    --input: 220 12% 18%;
     --ring: 199 89% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --blue-glow: 199 90% 68%;
     --blue-deep: 199 85% 48%;
     --blue-soft: 199 60% 20%;
 
-    --sidebar-background: 220 20% 4%;
+    --sidebar-background: 220 15% 8%;
     --sidebar-foreground: 210 15% 88%;
     --sidebar-primary: 199 89% 58%;
-    --sidebar-primary-foreground: 220 20% 4%;
-    --sidebar-accent: 220 14% 12%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 12% 16%;
     --sidebar-accent-foreground: 210 15% 88%;
-    --sidebar-border: 220 14% 14%;
+    --sidebar-border: 220 12% 18%;
     --sidebar-ring: 199 89% 58%;
   }
 }
@@ -64,9 +64,12 @@ html { scroll-behavior: smooth; }
 }
 
 @layer utilities {
-  /* Gradient utilities */
   .gradient-blue {
     background: linear-gradient(135deg, hsl(199, 89%, 58%), hsl(199, 90%, 68%));
+  }
+
+  .gradient-blue-deep {
+    background: linear-gradient(135deg, hsl(199, 85%, 48%), hsl(199, 89%, 58%));
   }
 
   .text-gradient-blue {
@@ -76,93 +79,40 @@ html { scroll-behavior: smooth; }
     background-clip: text;
   }
 
+  .glass-card {
+    background: hsla(210, 20%, 95%, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(210, 20%, 95%, 0.08);
+  }
+
   .glow-blue {
     box-shadow: 0 0 40px hsla(199, 89%, 58%, 0.3), 0 0 80px hsla(199, 89%, 58%, 0.1);
   }
 
-  .glow-blue-intense {
-    box-shadow: 0 0 20px hsla(199, 89%, 58%, 0.4), 0 0 60px hsla(199, 89%, 58%, 0.2), 0 0 100px hsla(199, 89%, 58%, 0.1);
-  }
-
-  /* HUD Grid background */
-  .hud-grid {
-    background-image:
-      linear-gradient(hsla(199, 89%, 58%, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsla(199, 89%, 58%, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .hud-grid-dense {
-    background-image:
-      linear-gradient(hsla(199, 89%, 58%, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, hsla(199, 89%, 58%, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-  }
-
-  /* Glass card */
-  .glass-card {
-    background: hsla(220, 18%, 8%, 0.7);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsla(199, 89%, 58%, 0.08);
-    border-radius: 12px;
-  }
-
-  .glass-card-bright {
-    background: hsla(199, 89%, 58%, 0.06);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsla(199, 89%, 58%, 0.2);
-    border-radius: 12px;
-  }
-
-  /* HUD corner brackets */
-  .hud-corners {
-    position: relative;
-  }
-
-  .hud-corners::before,
-  .hud-corners::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-color: hsla(199, 89%, 58%, 0.3);
-    pointer-events: none;
-  }
-
-  .hud-corners::before {
-    top: -1px;
-    left: -1px;
-    border-top: 2px solid;
-    border-left: 2px solid;
-    border-color: inherit;
-  }
-
-  .hud-corners::after {
-    bottom: -1px;
-    right: -1px;
-    border-bottom: 2px solid;
-    border-right: 2px solid;
-    border-color: inherit;
-  }
-
-  /* Marquee */
   .marquee-track {
     display: flex;
     width: max-content;
   }
 
-  /* Scanline effect */
-  .scanline::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      hsla(199, 89%, 58%, 0.01) 2px,
-      hsla(199, 89%, 58%, 0.01) 4px
-    );
-    pointer-events: none;
+  /* Gaming dice spin */
+  @keyframes dice-spin {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(1); }
+    75% { transform: rotate(270deg) scale(1.1); }
+  }
+
+  .animate-dice {
+    animation: dice-spin 4s ease-in-out infinite;
+  }
+
+  /* Slot machine flicker */
+  @keyframes slot-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  .animate-slot {
+    animation: slot-flicker 1.5s ease-in-out infinite;
   }
 }
