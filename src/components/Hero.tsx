@@ -1,117 +1,76 @@
 import { motion } from "framer-motion";
-
-const cardSuits = ["♠", "♥", "♦", "♣"];
+import recastIcon from "@/assets/recast-icon.png";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center px-4 md:px-12 lg:px-20 relative overflow-hidden">
-      {/* Ambient blue glow */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.08)_0%,_transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.05)_0%,_transparent_70%)] pointer-events-none" />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden hud-grid">
+      {/* Radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,_hsla(199,89%,58%,0.06)_0%,_transparent_60%)] pointer-events-none" />
 
-      <div className="max-w-[750px] w-full">
-        {/* Headline */}
-        <div className="relative mb-6 md:mb-10">
-          {/* Animated card suits that fan out - hidden on small mobile */}
-          <div className="absolute -right-4 md:-right-24 top-1/2 -translate-y-1/2 hidden sm:flex items-center">
-            {cardSuits.map((suit, i) => (
-              <motion.span
-                key={i}
-                className={`absolute text-5xl md:text-7xl select-none pointer-events-none ${
-                  i === 1 ? "text-red-500" : i === 2 ? "text-primary" : "text-foreground"
-                }`}
-                style={{ opacity: 0.12 }}
-                initial={{ rotate: 0, x: 0, y: 0, scale: 0 }}
-                animate={{
-                  rotate: -20 + i * 15,
-                  x: (i - 1.5) * 45,
-                  y: Math.sin(i * 1.2) * 20,
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 0.8,
-                  delay: 1.2 + i * 0.15,
-                  type: "spring",
-                  stiffness: 120,
-                }}
-              >
-                {suit}
-              </motion.span>
-            ))}
-          </div>
-
-          <h1 className="text-[clamp(40px,9vw,120px)] font-body font-black tracking-[-2px] md:tracking-[-4px] leading-[0.95] capitalize">
-            <motion.span
-              className="block overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              <motion.span
-                className="block"
-                initial={{ x: "-100%", opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              >
-                Passive Income
-              </motion.span>
-            </motion.span>
-            <motion.span
-              className="block overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              <motion.span
-                className="block text-gradient-blue"
-                initial={{ x: "-100%", opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              >
-                For Streamers
-              </motion.span>
-            </motion.span>
-          </h1>
-
-          {/* Horizontal line wipe */}
-          <motion.div
-            className="h-[2px] mt-6 rounded-full gradient-blue max-w-[600px]"
-            initial={{ scaleX: 0, originX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 1, ease: "easeOut" }}
-          />
-        </div>
-
-        {/* Sub paragraph */}
-        <motion.p
-          className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-[520px] mb-8"
-          initial={{ x: -60, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
+      <div className="text-center px-4 max-w-[900px] relative z-10">
+        {/* Logo */}
+        <motion.div
+          className="mb-10 md:mb-14"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
         >
-          <strong className="text-foreground font-semibold">
-            Recast connects Twitch and Kick streamers with major brands through non-intrusive ad overlays.
-          </strong>{" "}
-          You earn simply by doing what you already do — no scripts, no interruptions, no effort. Major brands. Zero compromise.
+          <img src={recastIcon} alt="Recast" className="h-14 md:h-20 mx-auto" />
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h1
+          className="text-[clamp(36px,7vw,80px)] font-body font-bold tracking-[-2px] md:tracking-[-3px] leading-[1.05] mb-6 md:mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          Passive income for streamers.
+          <br />
+          <span className="text-gradient-blue">Major brands. No effort.</span>
+        </motion.h1>
+
+        {/* Sub */}
+        <motion.p
+          className="text-sm md:text-base font-mono tracking-wide text-muted-foreground mb-10 md:mb-14"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          A Recast Agency Briefing
         </motion.p>
 
-        {/* Buttons */}
+        {/* CTA */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-3 md:gap-4"
-          initial={{ x: -60, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
         >
           <a
             href="#contact"
-            className="gradient-blue text-primary-foreground font-bold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue text-center"
+            className="gradient-blue text-primary-foreground font-bold text-sm px-8 py-3.5 rounded-full hover:opacity-85 transition-opacity glow-blue"
           >
             Start earning
           </a>
           <a
-            href="#how"
-            className="border border-border text-foreground font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:border-primary/40 hover:bg-primary/5 transition-all text-center"
+            href="#mechanism"
+            className="border border-border text-foreground font-medium text-sm px-8 py-3.5 rounded-full hover:border-primary/40 hover:bg-primary/5 transition-all"
           >
-            How it works
+            See how it works
           </a>
+        </motion.div>
+
+        {/* HUD label */}
+        <motion.div
+          className="mt-16 md:mt-24 flex items-center justify-center gap-6 text-[10px] md:text-xs font-mono text-muted-foreground/40 tracking-widest uppercase"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+        >
+          <span>Interface v1.0</span>
+          <span className="w-8 h-px bg-primary/20" />
+          <span>Signal Strength: <span className="text-primary/60">MAX</span></span>
         </motion.div>
       </div>
     </section>
