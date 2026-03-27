@@ -7,6 +7,7 @@ import ellieVandeel from "@/assets/ellie-vandeel.png";
 import highsky from "@/assets/highsky.png";
 import kJaneCaron from "@/assets/k-jane-caron.png";
 import temperr from "@/assets/temperr.png";
+import khanada from "@/assets/khanada.png";
 
 const topRow: { name: string; img: string }[] = [
   { name: "Charlotte Parkes", img: charlotteParkes },
@@ -17,7 +18,9 @@ const topRow: { name: string; img: string }[] = [
   { name: "Temperr", img: temperr },
 ];
 
-const bottomRow: { name: string; img: string }[] = [];
+const bottomRow: { name: string; img: string }[] = [
+  { name: "Khanada", img: khanada },
+];
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
   <div className="flex-shrink-0 w-28 sm:w-36 md:w-52 group cursor-pointer">
