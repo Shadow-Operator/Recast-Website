@@ -33,7 +33,7 @@ const Index = () => {
       <Services />
       <HowItWorks />
       <TwoCol />
-      <Creators />
+      {/* Creators moved inside CTA */}
       <CTA />
       <Footer />
     </main>
