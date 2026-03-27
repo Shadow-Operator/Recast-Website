@@ -38,7 +38,7 @@ const Hero = () => {
 
       {/* Headline */}
       <div className="relative mb-6 md:mb-16 z-[2]">
-        <h1 className="text-[clamp(30px,7vw,110px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase">
+        <h1 className="text-[clamp(36px,7vw,110px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase">
           <motion.span
             className="block overflow-hidden"
             initial={{ opacity: 0 }}
