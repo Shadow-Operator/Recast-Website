@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["'Syne'", "sans-serif"],
+        display: ["'Unbounded'", "sans-serif"],
         body: ["'Inter'", "sans-serif"],
       },
       colors: {
