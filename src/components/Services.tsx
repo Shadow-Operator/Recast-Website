@@ -46,7 +46,10 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Everything a creator needs.
+          Everything a creator{" "}
+          <AnimatedUnderline delay={0.1}>
+            <span className="text-blue-accent">needs.</span>
+          </AnimatedUnderline>
           <br />
           Everything a brand{" "}
           <AnimatedUnderline delay={0.2}>
