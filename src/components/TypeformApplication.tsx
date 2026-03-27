@@ -14,17 +14,30 @@ interface TypeformApplicationProps {
   title: string;
   subtitle: string;
   questions: Question[];
+  roleSelection?: {
+    label: string;
+    options: { value: string; label: string; questions: Question[] }[];
+  };
 }
 
-const TypeformApplication = ({ title, subtitle, questions }: TypeformApplicationProps) => {
+const TypeformApplication = ({ title, subtitle, questions, roleSelection }: TypeformApplicationProps) => {
   const [currentStep, setCurrentStep] = useState(-1);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [selectedRole, setSelectedRole] = useState<string | null>(null);
 
-  const totalSteps = questions.length;
+  // If roleSelection is provided, step 0 is the role picker; otherwise use provided questions directly
+  const activeQuestions = roleSelection && selectedRole
+    ? roleSelection.options.find((o) => o.value === selectedRole)?.questions || questions
+    : questions;
+
+  const hasRoleStep = !!roleSelection;
   const isIntro = currentStep === -1;
+  const isRoleStep = hasRoleStep && currentStep === 0 && !selectedRole;
+  const questionIndex = hasRoleStep ? currentStep - 1 : currentStep;
+  const totalSteps = activeQuestions.length + (hasRoleStep ? 1 : 0);
+  const currentQuestion = !isIntro && !isRoleStep ? activeQuestions[questionIndex] : undefined;
   const isComplete = submitted;
-  const currentQuestion = questions[currentStep];
 
   const handleNext = () => {
     if (currentStep < totalSteps - 1) {
@@ -35,8 +48,14 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
   };
 
   const handleBack = () => {
-    if (currentStep > -1) {
+    if (hasRoleStep && currentStep === 1) {
+      // Going back to role selection
+      setSelectedRole(null);
+      setCurrentStep(0);
+    } else if (currentStep > (hasRoleStep ? 1 : 0)) {
       setCurrentStep(currentStep - 1);
+    } else if (currentStep === 0) {
+      setCurrentStep(-1);
     }
   };
 
@@ -48,7 +67,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
     }
   };
 
-  const progress = isIntro ? 0 : ((currentStep + 1) / totalSteps) * 100;
+  const progress = isIntro ? 0 : (currentStep / totalSteps) * 100;
 
   return (
     <section className="min-h-[80vh] md:min-h-screen flex flex-col justify-center items-center relative bg-background px-5 py-16 md:py-0">
@@ -91,8 +110,50 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
             </motion.div>
           )}
 
+          {/* Role selection step */}
+          {isRoleStep && !isComplete && roleSelection && (
+            <motion.div
+              key="role-select"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <p className="text-muted-foreground text-xs font-medium tracking-[0.15em] uppercase mb-4">
+                1 / {totalSteps}
+              </p>
+              <h3 className="text-xl md:text-4xl font-display font-bold tracking-[-0.02em] mb-6 md:mb-8">
+                {roleSelection.label}
+              </h3>
+              <div className="flex flex-col gap-3">
+                {roleSelection.options.map((option) => (
+                  <button
+                    key={option.value}
+                    className="text-left px-6 py-4 border transition-all text-base md:text-lg border-border text-muted-foreground hover:border-blue-accent/40 hover:text-foreground"
+                    onClick={() => {
+                      setSelectedRole(option.value);
+                      setAnswers({ ...answers, role: option.value });
+                      setTimeout(() => setCurrentStep(1), 300);
+                    }}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-4 mt-10">
+                <button
+                  onClick={() => setCurrentStep(-1)}
+                  className="border border-border text-muted-foreground font-medium text-sm px-6 py-3 hover:border-blue-accent/40 hover:text-foreground transition-all"
+                >
+                  ← Back
+                </button>
+              </div>
+            </motion.div>
+          )}
+
           {/* Question screens */}
-          {!isIntro && !isComplete && currentQuestion && (
+          {!isIntro && !isRoleStep && !isComplete && currentQuestion && (
             <motion.div
               key={currentQuestion.id}
               initial={{ opacity: 0, y: 40 }}
@@ -152,20 +213,18 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
               )}
 
               <div className="flex items-center gap-4 mt-10">
-                {currentStep > 0 && (
-                  <button
-                    onClick={handleBack}
-                    className="border border-border text-muted-foreground font-medium text-sm px-6 py-3 hover:border-blue-accent/40 hover:text-foreground transition-all"
-                  >
-                    ← Back
-                  </button>
-                )}
+                <button
+                  onClick={handleBack}
+                  className="border border-border text-muted-foreground font-medium text-sm px-6 py-3 hover:border-blue-accent/40 hover:text-foreground transition-all"
+                >
+                  ← Back
+                </button>
                 <button
                   onClick={handleNext}
                   disabled={currentQuestion.required && !answers[currentQuestion.id]?.trim()}
                   className="bg-blue-accent text-white font-semibold text-sm px-8 py-3 hover:bg-blue-glow transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                 >
-                  {currentStep === totalSteps - 1 ? "Submit" : "Next →"}
+                  {questionIndex === activeQuestions.length - 1 ? "Submit" : "Next →"}
                 </button>
                 <span className="text-muted-foreground/50 text-xs hidden md:inline">
                   press Enter ↵
