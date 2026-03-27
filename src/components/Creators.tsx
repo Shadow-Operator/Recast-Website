@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import AnimatedUnderline from "./AnimatedUnderline";
 
 import charlotteParkes from "@/assets/charlotte-parkes.png";
 import teeqo from "@/assets/teeqo.png";
@@ -49,37 +48,15 @@ const CreatorCard = ({ name, img }: { name: string; img: string }) => (
 
 const Creators = () => {
   return (
-    <section className="py-12 md:py-32 overflow-hidden bg-background">
-      <div className="container mx-auto px-4 md:px-6 mb-8 md:mb-14">
-        <motion.p
-          className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          Representing the best creators
-        </motion.p>
-        <motion.h2
-          className="text-3xl md:text-7xl font-display font-extrabold tracking-[-0.03em] text-center uppercase"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          Our{" "}
-          <AnimatedUnderline delay={0.2}>
-            <span className="text-blue-accent">creators</span>
-          </AnimatedUnderline>
-        </motion.h2>
-      </div>
-
+    <section className="py-4 md:py-6 overflow-hidden bg-background">
       <div className="relative overflow-hidden">
         <motion.div
-          className="flex gap-0"
-          animate={{ x: [0, -48, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="flex gap-0 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
         >
-          {creators.map((creator) => (
-            <CreatorCard key={creator.name} name={creator.name} img={creator.img} />
+          {[...creators, ...creators].map((creator, index) => (
+            <CreatorCard key={`${creator.name}-${index}`} name={creator.name} img={creator.img} />
           ))}
         </motion.div>
       </div>
@@ -88,3 +65,4 @@ const Creators = () => {
 };
 
 export default Creators;
+
