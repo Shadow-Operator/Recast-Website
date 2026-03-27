@@ -29,6 +29,31 @@ const CTA = () => {
     <section id="contact" className="relative overflow-hidden">
       {/* Visual header */}
       <div className="pt-2 pb-4 md:pt-4 md:pb-8 px-5 md:px-6 text-center relative overflow-hidden">
+        {/* Depth layer */}
+        <motion.div
+          className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-blue-accent/15 blur-3xl"
+          animate={{ x: [0, 40, 0], y: [0, 25, 0], scale: [1, 1.12, 1] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          aria-hidden="true"
+        />
+        <motion.div
+          className="pointer-events-none absolute -right-20 bottom-6 h-72 w-72 rounded-full bg-blue-accent/10 blur-3xl"
+          animate={{ x: [0, -36, 0], y: [0, -20, 0], scale: [1.05, 0.95, 1.05] }}
+          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+          aria-hidden="true"
+        />
+        <motion.div
+          className="pointer-events-none absolute inset-0 opacity-35"
+          animate={{ backgroundPositionX: ["0%", "100%"] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 35%, hsl(var(--primary) / 0.12) 0%, transparent 45%), radial-gradient(circle at 78% 72%, hsl(var(--primary) / 0.1) 0%, transparent 42%)",
+            backgroundSize: "140% 140%",
+          }}
+          aria-hidden="true"
+        />
+
         <FloatingSuits suits={[
           { suit: "♠", x: "5%", y: "20%", className: "text-blue-accent", rotate: -15, delay: 0 },
           { suit: "♥", x: "90%", y: "15%", className: "text-blue-accent", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
