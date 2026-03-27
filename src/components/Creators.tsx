@@ -11,6 +11,7 @@ import khanada from "@/assets/khanada.png";
 import allinabe from "@/assets/allinabe.png";
 import pGod from "@/assets/p-god.png";
 import samulx from "@/assets/samulx.png";
+import queasy from "@/assets/queasy.png";
 
 const topRow: { name: string; img: string }[] = [
   { name: "Charlotte Parkes", img: charlotteParkes },
@@ -26,6 +27,7 @@ const bottomRow: { name: string; img: string }[] = [
   { name: "AllInAbe", img: allinabe },
   { name: "P God", img: pGod },
   { name: "Samulx", img: samulx },
+  { name: "Queasy", img: queasy },
 ];
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
