@@ -10,6 +10,7 @@ const Footer = () => {
         <li><a href="/brands" className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase font-medium hover:text-foreground transition-colors">For Brands</a></li>
         <li><a href="/creators" className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase font-medium hover:text-foreground transition-colors">For Creators</a></li>
         <li><a href="/#how" className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase font-medium hover:text-foreground transition-colors">How It Works</a></li>
+        <li><a href="/blog" className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase font-medium hover:text-foreground transition-colors">Blog</a></li>
         <li><a href="mailto:harry@recast.gg" className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase font-medium hover:text-foreground transition-colors">Contact</a></li>
       </ul>
       <p className="text-[11px] text-muted-foreground">
