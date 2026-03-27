@@ -12,8 +12,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-3 md:py-5 px-4 md:px-12 bg-background border-b border-border/50" aria-label="Main navigation">
-      <a href="#" className="flex items-center">
+      <a href="#" className="flex items-center gap-2">
         <img src={recastIcon} alt="Recast" className="h-10 md:h-14" />
+        <span className="text-foreground font-display font-bold text-xl md:text-2xl tracking-wide uppercase">RECAST</span>
       </a>
 
       <ul className="hidden md:flex items-center gap-10">
