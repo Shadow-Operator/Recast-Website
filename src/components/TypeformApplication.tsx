@@ -70,7 +70,7 @@ const TypeformApplication = ({ title, subtitle, questions, roleSelection }: Type
   const progress = isIntro ? 0 : (currentStep / totalSteps) * 100;
 
   return (
-    <section className="min-h-[80vh] md:min-h-screen flex flex-col justify-center items-center relative bg-background px-5 py-16 md:py-0">
+    <section className="min-h-[50vh] md:min-h-[60vh] flex flex-col justify-center items-center relative bg-background px-5 py-8 md:py-0">
       {/* Progress bar */}
       {!isIntro && !isComplete && (
         <div className="absolute top-0 left-0 right-0 h-1 bg-muted">
