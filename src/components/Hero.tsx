@@ -80,7 +80,6 @@ const Hero = () => {
 
       {/* Wobbly lines background */}
       <WobblyLines />
-      </div>
 
       {/* Bottom two-col */}
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-end max-w-[1400px]">
