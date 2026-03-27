@@ -40,7 +40,7 @@ const Hero = () => {
       <div className="relative mb-6 md:mb-16 z-[2]">
         <h1 className="text-[clamp(36px,7vw,110px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase">
           <motion.span
-            className="block overflow-hidden"
+            className="block text-3xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
@@ -65,10 +65,10 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               <span className="hidden md:inline">CREATORS WHO{" "}</span>
-              <span className="md:hidden">CREATORS WHO</span>
+              <span className="md:hidden text-3xl">CREATORS WHO</span>
               <span className="block md:inline">
                 <AnimatedUnderline delay={0.6} color="blue">
-                  <span className="text-blue-accent">Move Culture.</span>
+                  <span className="text-blue-accent text-3xl">Move Culture.</span>
                 </AnimatedUnderline>
               </span>
             </motion.span>
