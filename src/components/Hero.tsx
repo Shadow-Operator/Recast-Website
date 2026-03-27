@@ -6,7 +6,7 @@ const cardSuits = ["♠", "♥", "♦", "♣"];
 
 const Hero = () => {
   return (
-    <section className="min-h-[85vh] md:min-h-screen flex flex-col justify-center px-5 md:px-12 pt-28 md:pt-44 pb-10 md:pb-20 relative overflow-hidden">
+    <section className="min-h-[85vh] md:min-h-screen flex flex-col justify-center px-5 md:px-12 pt-32 md:pt-48 pb-10 md:pb-20 relative overflow-x-hidden">
       {/* Wobbly lines background - behind everything */}
       <WobblyLines />
 
