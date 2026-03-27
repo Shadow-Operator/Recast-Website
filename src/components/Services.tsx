@@ -41,7 +41,7 @@ const Services = () => {
           What we do
         </motion.p>
         <motion.h2
-          className="font-display font-bold tracking-[-0.02em] leading-[1.05] max-w-[780px] text-5xl"
+          className="font-display font-bold tracking-[-0.02em] leading-[1.05] max-w-[780px] text-4xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
