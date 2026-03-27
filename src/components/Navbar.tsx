@@ -11,21 +11,21 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-3 md:py-5 px-4 md:px-12 bg-[hsl(0,0%,0%)] border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-3 md:py-5 px-4 md:px-12 bg-background border-b border-border/50">
       <a href="#" className="flex items-center">
-        <img src={recastIcon} alt="Recast" className="h-10 md:h-18" />
+        <img src={recastIcon} alt="Recast" className="h-10 md:h-14" />
       </a>
 
       <ul className="hidden md:flex items-center gap-10">
         {navLinks.map((link) => (
           <li key={link.href}>
-            <a href={link.href} className="text-muted-foreground text-sm font-medium tracking-wide hover:text-primary transition-colors">
+            <a href={link.href} className="text-muted-foreground text-[13px] font-medium tracking-[0.04em] uppercase hover:text-foreground transition-colors">
               {link.label}
             </a>
           </li>
         ))}
         <li>
-          <a href="#contact" className="gradient-blue text-primary-foreground font-semibold text-sm px-6 py-2.5 rounded-full hover:opacity-85 transition-opacity">
+          <a href="#contact" className="bg-primary text-primary-foreground font-semibold text-[13px] px-6 py-2.5 hover:opacity-85 transition-opacity">
             Get started
           </a>
         </li>
@@ -42,17 +42,17 @@ const Navbar = () => {
       </button>
 
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/50 md:hidden">
+        <div className="absolute top-full left-0 right-0 bg-background border-b border-border/50 md:hidden">
           <ul className="flex flex-col items-center gap-6 py-8">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground text-sm font-medium hover:text-primary transition-colors">
+                <a href={link.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground text-[13px] font-medium tracking-[0.04em] uppercase hover:text-foreground transition-colors">
                   {link.label}
                 </a>
               </li>
             ))}
             <li>
-              <a href="#contact" onClick={() => setMobileOpen(false)} className="gradient-blue text-primary-foreground font-semibold text-sm px-6 py-2.5 rounded-full">
+              <a href="#contact" onClick={() => setMobileOpen(false)} className="bg-primary text-primary-foreground font-semibold text-[13px] px-6 py-2.5">
                 Get started
               </a>
             </li>

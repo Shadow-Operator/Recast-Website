@@ -19,10 +19,10 @@ const Stats = () => {
           viewport={{ once: true }}
           transition={{ delay: i * 0.1 }}
         >
-          <p className="text-[clamp(32px,4vw,64px)] font-body font-black tracking-[-1px] md:tracking-[-2px] leading-none mb-1 md:mb-2">
+          <p className="text-[clamp(32px,4vw,48px)] font-display font-extrabold tracking-[-0.04em] leading-none mb-1 md:mb-2 text-primary">
             {stat.number}
           </p>
-          <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
+          <p className="text-[11px] md:text-xs text-muted-foreground font-medium tracking-[0.04em]">{stat.label}</p>
         </motion.div>
       ))}
     </section>
