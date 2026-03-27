@@ -45,7 +45,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              We Represent The People
+              We Represent The
             </motion.span>
           </motion.span>
           <motion.span
@@ -59,7 +59,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              Who Move Culture.
+              People Who Move Culture.
             </motion.span>
           </motion.span>
         </h1>
