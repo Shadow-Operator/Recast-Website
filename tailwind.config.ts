@@ -55,6 +55,9 @@ export default {
         stone: "hsl(var(--stone))",
         ash: "hsl(var(--ash))",
         fog: "hsl(var(--fog))",
+        "blue-accent": "hsl(var(--blue-accent))",
+        "blue-glow": "hsl(var(--blue-glow))",
+
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
