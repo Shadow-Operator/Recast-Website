@@ -5,12 +5,14 @@ import charlotteParkes from "@/assets/charlotte-parkes.png";
 import teeqo from "@/assets/teeqo.png";
 import ellieVandeel from "@/assets/ellie-vandeel.png";
 import highsky from "@/assets/highsky.png";
+import kJaneCaron from "@/assets/k-jane-caron.png";
 
 const topRow: { name: string; img: string }[] = [
   { name: "Charlotte Parkes", img: charlotteParkes },
   { name: "Teeqo", img: teeqo },
   { name: "Ellie Vandeel", img: ellieVandeel },
   { name: "HighSky", img: highsky },
+  { name: "K Jane Caron", img: kJaneCaron },
 ];
 
 const bottomRow: { name: string; img: string }[] = [];
