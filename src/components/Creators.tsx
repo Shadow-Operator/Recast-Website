@@ -12,6 +12,7 @@ import allinabe from "@/assets/allinabe.png";
 import pGod from "@/assets/p-god.png";
 import samulx from "@/assets/samulx.png";
 import queasy from "@/assets/queasy.png";
+import harrietParkes from "@/assets/harriet-parkes.png";
 
 const topRow: { name: string; img: string }[] = [
   { name: "Charlotte Parkes", img: charlotteParkes },
@@ -28,6 +29,7 @@ const bottomRow: { name: string; img: string }[] = [
   { name: "P God", img: pGod },
   { name: "Samulx", img: samulx },
   { name: "Queasy", img: queasy },
+  { name: "Harriet Parkes", img: harrietParkes },
 ];
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
