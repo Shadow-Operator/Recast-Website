@@ -64,8 +64,8 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="hidden md:inline">People Who{" "}</span>
-              <span className="md:hidden">People Who</span>
+              <span className="hidden md:inline">CREATORS WHO{" "}</span>
+              <span className="md:hidden">CREATORS WHO</span>
               <span className="block md:inline">
                 <AnimatedUnderline delay={0.6} color="blue">
                   <span className="text-blue-accent">Move Culture.</span>
