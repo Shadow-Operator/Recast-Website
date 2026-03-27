@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedUnderline from "./AnimatedUnderline";
 import RollingDice from "./RollingDice";
 import FloatingSuits from "./FloatingSuits";
 
@@ -6,10 +7,10 @@ const CTA = () => {
   return (
     <section id="contact" className="pt-4 pb-10 md:pt-8 md:pb-24 px-5 md:px-6 text-center relative overflow-hidden">
       <FloatingSuits suits={[
-        { suit: "♠", x: "5%", y: "20%", className: "text-primary", rotate: -15, delay: 0 },
-        { suit: "♥", x: "90%", y: "15%", className: "text-primary", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
-        { suit: "♦", x: "8%", y: "70%", className: "text-primary", size: "text-[90px] md:text-[120px]", rotate: 20, delay: 2 },
-        { suit: "♣", x: "85%", y: "65%", className: "text-primary", size: "text-[100px] md:text-[150px]", rotate: -8, delay: 0.5 },
+        { suit: "♠", x: "5%", y: "20%", className: "text-blue-accent", rotate: -15, delay: 0 },
+        { suit: "♥", x: "90%", y: "15%", className: "text-blue-accent", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
+        { suit: "♦", x: "8%", y: "70%", className: "text-blue-accent", size: "text-[90px] md:text-[120px]", rotate: 20, delay: 2 },
+        { suit: "♣", x: "85%", y: "65%", className: "text-blue-accent", size: "text-[100px] md:text-[150px]", rotate: -8, delay: 0.5 },
       ]} />
 
       {/* 3D Dice */}
@@ -31,7 +32,9 @@ const CTA = () => {
       >
         Ready to
         <br />
-        <span className="text-primary">roll the dice?</span>
+        <AnimatedUnderline delay={0.3}>
+          <span className="text-blue-accent">roll the dice?</span>
+        </AnimatedUnderline>
       </motion.h2>
 
       <motion.p
@@ -53,13 +56,13 @@ const CTA = () => {
       >
         <a
           href="mailto:harry@recast.gg"
-          className="bg-primary text-primary-foreground font-semibold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 hover:opacity-85 transition-opacity"
+          className="bg-blue-accent text-white font-semibold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-blue-glow transition-colors"
         >
           Get in touch
         </a>
         <a
           href="#about"
-          className="border border-primary text-primary font-semibold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-primary hover:text-primary-foreground transition-all"
+          className="border border-blue-accent text-blue-accent font-semibold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-blue-accent hover:text-white transition-all"
         >
           Learn more
         </a>

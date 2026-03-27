@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedUnderline from "./AnimatedUnderline";
 import FloatingSuits from "./FloatingSuits";
 
 const steps = [
@@ -28,8 +29,8 @@ const HowItWorks = () => {
   return (
     <section id="how" className="border-t border-border py-12 md:py-32 px-5 md:px-12 relative overflow-hidden">
       <FloatingSuits suits={[
-        { suit: "♥", x: "88%", y: "30%", className: "text-primary", rotate: 8, delay: 0.3, duration: 9 },
-        { suit: "♣", x: "2%", y: "65%", className: "text-primary", size: "text-[90px] md:text-[130px]", rotate: -12, delay: 1.8 },
+        { suit: "♥", x: "88%", y: "30%", className: "text-blue-accent", rotate: 8, delay: 0.3, duration: 9 },
+        { suit: "♣", x: "2%", y: "65%", className: "text-blue-accent", size: "text-[90px] md:text-[130px]", rotate: -12, delay: 1.8 },
       ]} />
       <div className="max-w-[1400px] mx-auto">
         <motion.p
@@ -38,7 +39,7 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <span className="w-6 h-[1px] bg-muted-foreground" />
+          <span className="w-6 h-[1px] bg-blue-accent" />
           How it works
         </motion.p>
         <motion.h2
@@ -49,7 +50,10 @@ const HowItWorks = () => {
         >
           Simple for creators.
           <br />
-          Powerful for brands.
+          <AnimatedUnderline delay={0.2}>
+            <span className="text-blue-accent">Powerful</span>
+          </AnimatedUnderline>{" "}
+          for brands.
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
@@ -62,10 +66,10 @@ const HowItWorks = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
             >
-              <p className="text-[10px] font-semibold text-primary tracking-[0.15em] mb-6 uppercase">
+              <p className="text-[10px] font-semibold text-blue-accent tracking-[0.15em] mb-6 uppercase">
                 {step.num}
               </p>
-              <h3 className="text-xl font-display font-bold tracking-[-0.01em] mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-display font-bold tracking-[-0.01em] mb-3 group-hover:text-blue-accent transition-colors">
                 {step.title}
               </h3>
               <p className="text-sm text-muted-foreground font-light leading-[1.7]">

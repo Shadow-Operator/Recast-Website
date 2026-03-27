@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedUnderline from "./AnimatedUnderline";
 import FloatingSuits from "./FloatingSuits";
 
 const capabilities = [
@@ -26,8 +27,8 @@ const Services = () => {
   return (
     <section id="brands" className="border-t border-border relative overflow-hidden">
       <FloatingSuits suits={[
-        { suit: "♠", x: "90%", y: "15%", className: "text-primary", rotate: -10, delay: 0.5, duration: 8 },
-        { suit: "♦", x: "5%", y: "55%", className: "text-primary", size: "text-[100px] md:text-[150px]", rotate: 12, delay: 2 },
+        { suit: "♠", x: "90%", y: "15%", className: "text-blue-accent", rotate: -10, delay: 0.5, duration: 8 },
+        { suit: "♦", x: "5%", y: "55%", className: "text-blue-accent", size: "text-[100px] md:text-[150px]", rotate: 12, delay: 2 },
       ]} />
       <div className="px-5 md:px-12 py-10 md:py-20 max-w-[1400px] mx-auto">
         <motion.p
@@ -36,7 +37,7 @@ const Services = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <span className="w-6 h-[1px] bg-muted-foreground" />
+          <span className="w-6 h-[1px] bg-blue-accent" />
           What we do
         </motion.p>
         <motion.h2
@@ -47,7 +48,10 @@ const Services = () => {
         >
           Everything a creator needs.
           <br />
-          Everything a brand wants.
+          Everything a brand{" "}
+          <AnimatedUnderline delay={0.2}>
+            <span className="text-blue-accent">wants.</span>
+          </AnimatedUnderline>
         </motion.h2>
       </div>
 
@@ -55,7 +59,7 @@ const Services = () => {
         {capabilities.map((cap, i) => (
           <motion.div
             key={cap.num}
-            className="px-4 md:px-12 py-10 md:py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card group transition-colors duration-300"
+            className="px-5 md:px-12 py-10 md:py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card group transition-colors duration-300"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -64,10 +68,10 @@ const Services = () => {
             <p className="text-[10px] font-semibold tracking-[0.15em] text-muted-foreground mb-6 md:mb-12 uppercase">
               {cap.num}
             </p>
-            <h3 className="text-[22px] md:text-[28px] font-display font-bold tracking-[-0.01em] mb-3 md:mb-4">
+            <h3 className="text-[22px] md:text-[28px] font-display font-bold tracking-[-0.01em] mb-3 md:mb-4 group-hover:text-blue-accent transition-colors">
               {cap.title}
             </h3>
-            <p className="text-[11px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
+            <p className="text-[11px] font-semibold text-blue-accent uppercase tracking-[0.15em] mb-5">
               {cap.sub}
             </p>
             <p className="text-[15px] text-muted-foreground font-light leading-[1.7]">
