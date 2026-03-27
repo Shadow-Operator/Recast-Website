@@ -8,6 +8,7 @@ import highsky from "@/assets/highsky.png";
 import kJaneCaron from "@/assets/k-jane-caron.png";
 import temperr from "@/assets/temperr.png";
 import khanada from "@/assets/khanada.png";
+import allinabe from "@/assets/allinabe.png";
 
 const topRow: { name: string; img: string }[] = [
   { name: "Charlotte Parkes", img: charlotteParkes },
@@ -20,6 +21,7 @@ const topRow: { name: string; img: string }[] = [
 
 const bottomRow: { name: string; img: string }[] = [
   { name: "Khanada", img: khanada },
+  { name: "AllInAbe", img: allinabe },
 ];
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
