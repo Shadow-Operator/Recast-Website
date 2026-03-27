@@ -26,7 +26,7 @@ const CTA = () => {
   return (
     <section id="contact" className="relative overflow-hidden">
       {/* Visual header */}
-      <div className="pt-4 pb-10 md:pt-8 md:pb-24 px-5 md:px-6 text-center relative overflow-hidden">
+      <div className="pt-2 pb-4 md:pt-4 md:pb-8 px-5 md:px-6 text-center relative overflow-hidden">
         <FloatingSuits suits={[
           { suit: "♠", x: "5%", y: "20%", className: "text-blue-accent", rotate: -15, delay: 0 },
           { suit: "♥", x: "90%", y: "15%", className: "text-blue-accent", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
