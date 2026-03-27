@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import recastIcon from "@/assets/recast-icon.png";
 
 const navLinks = [
@@ -9,9 +9,28 @@ const navLinks = [
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [opacity, setOpacity] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // Fade from 1 to 0.7 over 300px of scroll
+      const newOpacity = Math.max(0.7, 1 - scrollY / 1000);
+      setOpacity(newOpacity);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-3 md:py-5 px-4 md:px-12 bg-[hsl(0,0%,15%)] border-b border-border/50" aria-label="Main navigation">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-3 md:py-5 px-4 md:px-12 border-b border-border/30 backdrop-blur-sm transition-opacity duration-300"
+      style={{
+        backgroundColor: `hsla(0, 0%, 8%, ${opacity})`,
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,
+      }}
+      aria-label="Main navigation"
+    >
       <a href="#" className="flex items-center gap-2">
         <img src={recastIcon} alt="Recast" className="h-10 md:h-14" />
         <span className="text-foreground font-display font-bold text-xl md:text-2xl tracking-wide uppercase">RECAST</span>
@@ -43,7 +62,10 @@ const Navbar = () => {
       </button>
 
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 bg-background border-b border-border/50 md:hidden">
+        <div
+          className="absolute top-full left-0 right-0 border-b border-border/30 md:hidden backdrop-blur-sm"
+          style={{ backgroundColor: `hsla(0, 0%, 8%, ${opacity})` }}
+        >
           <ul className="flex flex-col items-center gap-6 py-8">
             {navLinks.map((link) => (
               <li key={link.href}>
