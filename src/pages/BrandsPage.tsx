@@ -74,7 +74,7 @@ const BrandsPage = () => {
             animate={{ opacity: 1 }}
           >
             <motion.span
-              className="block text-primary"
+              className="block text-blue-accent"
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -92,7 +92,7 @@ const BrandsPage = () => {
           We match brands with influential creators who deliver real, measurable results in the gaming and betting space.
         </motion.p>
         <motion.div
-          className="h-[2px] mt-8 bg-primary max-w-[120px]"
+          className="h-[2px] mt-8 bg-blue-accent max-w-[120px]"
           initial={{ scaleX: 0, originX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 1, ease: "easeOut" }}
@@ -111,7 +111,7 @@ const BrandsPage = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <p className="text-3xl md:text-6xl font-display font-extrabold text-primary tracking-tight">{stat.value}</p>
+              <p className="text-3xl md:text-6xl font-display font-extrabold text-blue-accent tracking-tight">{stat.value}</p>
               <p className="text-[10px] md:text-sm text-muted-foreground tracking-[0.1em] uppercase mt-1 md:mt-2 font-medium">{stat.label}</p>
             </motion.div>
           ))}
@@ -135,14 +135,14 @@ const BrandsPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Built For <span className="text-primary">Performance</span>
+            Built For <span className="text-blue-accent">Performance</span>
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {benefits.map((b, i) => (
               <motion.div
                 key={b.title}
-                className="border border-border p-8 md:p-10 hover:border-primary/30 transition-colors"
+                className="border border-border p-8 md:p-10 hover:border-blue-accent/30 transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
