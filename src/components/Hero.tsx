@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
 import WobblyLines from "./WobblyLines";
 import recastIcon from "@/assets/recast-icon.png";
-import WobblyLines from "./WobblyLines";
 
 const cardSuits = ["♠", "♥", "♦", "♣"];
 
