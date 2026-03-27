@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
 
-// Import creator images here as you add them
-// import creatorName from "@/assets/creator-name.jpg";
+import charlotteParkes from "@/assets/charlotte-parkes.png";
 
-const topRow: { name: string; img: string }[] = [];
+const topRow: { name: string; img: string }[] = [
+  { name: "Charlotte Parkes", img: charlotteParkes },
+];
 
 const bottomRow: { name: string; img: string }[] = [];
 
