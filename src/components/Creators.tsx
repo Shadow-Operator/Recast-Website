@@ -1,42 +1,12 @@
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
 
-import creator1 from "@/assets/creator-1.jpg";
-import creator2 from "@/assets/creator-2.jpg";
-import creator3 from "@/assets/creator-3.jpg";
-import creator4 from "@/assets/creator-4.jpg";
-import creator5 from "@/assets/creator-5.jpg";
-import creator6 from "@/assets/creator-6.jpg";
-import creator7 from "@/assets/creator-7.jpg";
-import creator8 from "@/assets/creator-8.jpg";
+// Import creator images here as you add them
+// import creatorName from "@/assets/creator-name.jpg";
 
-const topRow = [
-  { name: "Charlotte Parkes", img: creator1 },
-  { name: "Azra", img: creator2 },
-  { name: "Bella Rama", img: creator3 },
-  { name: "K Jane Caron", img: creator4 },
-  { name: "Ellie Vandeel", img: creator5 },
-  { name: "Teeqo", img: creator6 },
-  { name: "HighSky", img: creator7 },
-  { name: "Cam", img: creator8 },
-  { name: "Ariel", img: creator1 },
-  { name: "Amber Exclusive", img: creator2 },
-  { name: "Temper", img: creator3 },
-];
+const topRow: { name: string; img: string }[] = [];
 
-const bottomRow = [
-  { name: "Khanada", img: creator4 },
-  { name: "Allinabe", img: creator5 },
-  { name: "Samulx", img: creator6 },
-  { name: "Amber Jay", img: creator7 },
-  { name: "Adelia", img: creator8 },
-  { name: "Hailey", img: creator1 },
-  { name: "Harriet Parkes", img: creator2 },
-  { name: "Hannah Marbles", img: creator3 },
-  { name: "Keep Chambers", img: creator4 },
-  { name: "Nora", img: creator5 },
-  { name: "Aleksandra Mariana", img: creator6 },
-];
+const bottomRow: { name: string; img: string }[] = [];
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
   <div className="flex-shrink-0 w-28 sm:w-36 md:w-52 group cursor-pointer">
