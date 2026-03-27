@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -41,6 +42,11 @@ const brandQuestions = [
 const BrandsPage = () => {
   return (
     <main className="overflow-hidden bg-background text-foreground">
+      <Helmet>
+        <title>For Brands – Recast | Creator Partnerships for Gaming & Betting</title>
+        <meta name="description" content="Partner with top gaming and betting creators through Recast. Authentic audiences, performance-driven campaigns, and end-to-end management." />
+        <link rel="canonical" href="https://recastgg.lovable.app/brands" />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}
