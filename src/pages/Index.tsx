@@ -6,7 +6,7 @@ import Mission from "@/components/Mission";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import TwoCol from "@/components/TwoCol";
-import Creators from "@/components/Creators";
+
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
