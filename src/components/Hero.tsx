@@ -76,39 +76,37 @@ const Hero = () => {
         </h1>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-end max-w-[1400px] relative z-[2]">
-        <motion.p
-          className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-[520px]"
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.8 }}
+      <motion.div
+        className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center relative z-[2] mb-10 md:mb-16"
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.8 }}
+      >
+        <a
+          href="#contact"
+          className="bg-blue-accent text-white font-semibold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-none hover:bg-blue-glow transition-colors text-center"
         >
-          <strong className="text-foreground font-medium">
-            Recast is the talent agency connecting the world's top content creators with leading betting and gaming brands.
-          </strong>{" "}
-          We specialise in high-value partnerships that perform — built on real audiences, real influence, and real results.
-        </motion.p>
+          Get started
+        </a>
+        <a
+          href="#how"
+          className="border border-border text-foreground font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-none hover:border-blue-accent/40 hover:text-blue-accent transition-all text-center"
+        >
+          How it works
+        </a>
+      </motion.div>
 
-        <motion.div
-          className="flex flex-col sm:flex-row gap-3 md:gap-4 md:justify-end"
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.95 }}
-        >
-          <a
-            href="#contact"
-            className="bg-blue-accent text-white font-semibold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-none hover:bg-blue-glow transition-colors text-center"
-          >
-            Get started
-          </a>
-          <a
-            href="#how"
-            className="border border-border text-foreground font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-none hover:border-blue-accent/40 hover:text-blue-accent transition-all text-center"
-          >
-            How it works
-          </a>
-        </motion.div>
-      </div>
+      <motion.p
+        className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-[520px] relative z-[2]"
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.95 }}
+      >
+        <strong className="text-foreground font-medium">
+          Recast is the talent agency connecting the world's top content creators with leading betting and gaming brands.
+        </strong>{" "}
+        We specialise in high-value partnerships that perform — built on real audiences, real influence, and real results.
+      </motion.p>
     </section>
   );
 };
