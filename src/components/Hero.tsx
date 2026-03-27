@@ -1,12 +1,39 @@
 import { motion } from "framer-motion";
-import ConnectionAnimation from "./ConnectionAnimation";
+
+const cardSuits = ["♠", "♥", "♦", "♣"];
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center px-4 md:px-12 pt-24 md:pt-32 pb-12 md:pb-20 relative overflow-hidden">
+      {/* Animated card suits that fan out */}
+      <div className="absolute -right-4 md:right-20 top-1/2 -translate-y-1/2 hidden sm:flex items-center">
+        {cardSuits.map((suit, i) => (
+          <motion.span
+            key={i}
+            className="absolute text-5xl md:text-7xl select-none pointer-events-none text-primary"
+            style={{ opacity: 0.08 }}
+            initial={{ rotate: 0, x: 0, y: 0, scale: 0 }}
+            animate={{
+              rotate: -20 + i * 15,
+              x: (i - 1.5) * 45,
+              y: Math.sin(i * 1.2) * 20,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: 1.2 + i * 0.15,
+              type: "spring",
+              stiffness: 120,
+            }}
+          >
+            {suit}
+          </motion.span>
+        ))}
+      </div>
+
       {/* Headline */}
-      <div className="relative mb-6 md:mb-10">
-        <h1 className="text-[clamp(28px,5vw,64px)] font-display font-extrabold tracking-[-0.02em] leading-[1.1] uppercase max-w-[900px]">
+      <div className="relative mb-8 md:mb-16">
+        <h1 className="text-[clamp(40px,9vw,120px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase">
           <motion.span
             className="block overflow-hidden"
             initial={{ opacity: 0 }}
@@ -18,7 +45,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              We Exist To Close The Gap
+              Where Gaming
             </motion.span>
           </motion.span>
           <motion.span
@@ -30,23 +57,9 @@ const Hero = () => {
               className="block text-primary"
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              Between The World's Biggest
-            </motion.span>
-          </motion.span>
-          <motion.span
-            className="block overflow-hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            <motion.span
-              className="block text-primary"
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            >
-              Creators And Brands.
+              Meets Gambling
             </motion.span>
           </motion.span>
         </h1>
@@ -60,23 +73,13 @@ const Hero = () => {
         />
       </div>
 
-      {/* Connection Animation — 16:9 */}
-      <motion.div
-        className="w-full max-w-[1200px] mb-8 md:mb-12"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-      >
-        <ConnectionAnimation />
-      </motion.div>
-
       {/* Bottom two-col */}
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-end max-w-[1400px]">
         <motion.p
           className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-[520px]"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.0 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
         >
           <strong className="text-foreground font-medium">
             Recast is the talent agency connecting the world's top content creators with leading betting and gaming brands.
@@ -88,7 +91,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-3 md:gap-4 md:justify-end"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.15 }}
+          transition={{ duration: 0.7, delay: 0.95 }}
         >
           <a
             href="#contact"
