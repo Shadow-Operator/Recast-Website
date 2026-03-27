@@ -47,7 +47,7 @@ const Navbar = () => {
           <ul className="flex flex-col items-center gap-6 py-8">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground text-[13px] font-medium tracking-[0.04em] uppercase hover:text-foreground transition-colors">
+                <a href={link.href} onClick={() => setMobileOpen(false)} className="text-foreground text-[13px] font-bold tracking-[0.04em] uppercase hover:text-foreground/80 transition-colors">
                   {link.label}
                 </a>
               </li>
