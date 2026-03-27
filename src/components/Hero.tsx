@@ -119,11 +119,23 @@ const Hero = () => {
         </h1>
       </div>
 
+      <motion.p
+        className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-[580px] relative z-[2] mb-6 md:mb-10"
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.8 }}
+      >
+        <strong className="text-foreground font-medium">
+          Recast is the talent agency connecting the world's top content creators with leading betting and gaming brands.
+        </strong>{" "}
+        We specialise in high-value partnerships that perform — built on real audiences, real influence, and real results.
+      </motion.p>
+
       <motion.div
         className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center relative z-[2] mb-6 md:mb-10"
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.8 }}
+        transition={{ duration: 0.7, delay: 0.95 }}
       >
         <a
           href="#contact"
@@ -138,18 +150,6 @@ const Hero = () => {
           How it works
         </a>
       </motion.div>
-
-      <motion.p
-        className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-[580px] relative z-[2]"
-        initial={{ opacity: 0, y: 32 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.95 }}
-      >
-        <strong className="text-foreground font-medium">
-          Recast is the talent agency connecting the world's top content creators with leading betting and gaming brands.
-        </strong>{" "}
-        We specialise in high-value partnerships that perform — built on real audiences, real influence, and real results.
-      </motion.p>
     </section>
   );
 };
