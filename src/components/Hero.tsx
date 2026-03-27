@@ -77,7 +77,7 @@ const Hero = () => {
       </div>
 
       <motion.div
-        className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center relative z-[2] mb-10 md:mb-16"
+        className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center relative z-[2] mb-6 md:mb-10"
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.8 }}
@@ -97,7 +97,7 @@ const Hero = () => {
       </motion.div>
 
       <motion.p
-        className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-[520px] relative z-[2]"
+        className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-[580px] relative z-[2]"
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.95 }}
