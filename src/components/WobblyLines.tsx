@@ -34,8 +34,8 @@ const WobblyLines = () => {
     const phaseOffset = i * 0.7;
     return {
       path: generatePath(1400, yBase, amplitude, frequency, phase + phaseOffset),
-      opacity: 0.03 + (i % 4) * 0.012,
-      strokeWidth: 0.8 + (i % 3) * 0.3,
+      opacity: 0.07 + (i % 4) * 0.025,
+      strokeWidth: 1 + (i % 3) * 0.4,
     };
   });
 
