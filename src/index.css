@@ -42,6 +42,8 @@ html { scroll-behavior: smooth; }
     --stone: 40 6% 49%;
     --ash: 0 0% 7%;
     --fog: 34 20% 94%;
+    --blue-accent: 215 85% 55%;
+    --blue-glow: 215 90% 65%;
 
     --sidebar-background: 0 0% 0%;
     --sidebar-foreground: 40 6% 49%;
@@ -87,6 +89,27 @@ html { scroll-behavior: smooth; }
   .marquee-track {
     display: flex;
     width: max-content;
+  }
+
+  /* Animated underline */
+  .underline-animate {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-animate::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: hsl(var(--blue-accent));
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .underline-animate.in-view::after {
+    width: 100%;
   }
 
   /* Gaming dice spin */

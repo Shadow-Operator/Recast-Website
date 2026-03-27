@@ -25,7 +25,7 @@ const Navbar = () => {
           </li>
         ))}
         <li>
-          <a href="#contact" className="bg-primary text-primary-foreground font-semibold text-[13px] px-6 py-2.5 hover:opacity-85 transition-opacity">
+          <a href="#contact" className="bg-blue-accent text-white font-semibold text-[13px] px-6 py-2.5 hover:bg-blue-glow transition-colors">
             Get started
           </a>
         </li>
@@ -52,7 +52,7 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <a href="#contact" onClick={() => setMobileOpen(false)} className="bg-primary text-primary-foreground font-semibold text-[13px] px-6 py-2.5">
+              <a href="#contact" onClick={() => setMobileOpen(false)} className="bg-blue-accent text-white font-semibold text-[13px] px-6 py-2.5 hover:bg-blue-glow transition-colors">
                 Get started
               </a>
             </li>

@@ -67,7 +67,7 @@ const CreatorsPage = () => {
             animate={{ opacity: 1 }}
           >
             <motion.span
-              className="block text-primary"
+              className="block text-blue-accent"
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -85,7 +85,7 @@ const CreatorsPage = () => {
           Join Recast's roster and unlock premium brand deals with the biggest names in gaming and betting.
         </motion.p>
         <motion.div
-          className="h-[2px] mt-8 bg-primary max-w-[120px]"
+          className="h-[2px] mt-8 bg-blue-accent max-w-[120px]"
           initial={{ scaleX: 0, originX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 1, ease: "easeOut" }}
@@ -109,14 +109,14 @@ const CreatorsPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Why Creators <span className="text-primary">Choose Us</span>
+            Why Creators <span className="text-blue-accent">Choose Us</span>
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {perks.map((p, i) => (
               <motion.div
                 key={p.title}
-                className="border border-border p-8 md:p-10 hover:border-primary/30 transition-colors"
+                className="border border-border p-8 md:p-10 hover:border-blue-accent/30 transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

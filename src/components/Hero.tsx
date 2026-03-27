@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedUnderline from "./AnimatedUnderline";
 
 const cardSuits = ["♠", "♥", "♦", "♣"];
 
@@ -10,7 +11,7 @@ const Hero = () => {
         {cardSuits.map((suit, i) => (
           <motion.span
             key={i}
-            className="absolute text-5xl md:text-7xl select-none pointer-events-none text-primary"
+            className="absolute text-5xl md:text-7xl select-none pointer-events-none text-blue-accent"
             style={{ opacity: 0.08 }}
             initial={{ rotate: 0, x: 0, y: 0, scale: 0 }}
             animate={{
@@ -54,19 +55,22 @@ const Hero = () => {
             animate={{ opacity: 1 }}
           >
             <motion.span
-              className="block text-primary"
+              className="block"
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              People Who Move Culture.
+              People Who{" "}
+              <AnimatedUnderline delay={0.6} color="blue">
+                <span className="text-blue-accent">Move Culture.</span>
+              </AnimatedUnderline>
             </motion.span>
           </motion.span>
         </h1>
 
-        {/* Accent rule */}
+        {/* Accent rule - now blue */}
         <motion.div
-          className="h-[2px] mt-6 bg-primary max-w-[120px]"
+          className="h-[2px] mt-6 bg-blue-accent max-w-[120px]"
           initial={{ scaleX: 0, originX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 1, ease: "easeOut" }}
@@ -95,13 +99,13 @@ const Hero = () => {
         >
           <a
             href="#contact"
-            className="bg-primary text-primary-foreground font-semibold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-none hover:opacity-85 transition-opacity text-center"
+            className="bg-blue-accent text-white font-semibold text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-none hover:bg-blue-glow transition-colors text-center"
           >
             Get started
           </a>
           <a
             href="#how"
-            className="border border-border text-foreground font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-none hover:border-primary/40 hover:text-primary transition-all text-center"
+            className="border border-border text-foreground font-medium text-sm md:text-[15px] px-6 md:px-8 py-3 md:py-3.5 rounded-none hover:border-blue-accent/40 hover:text-blue-accent transition-all text-center"
           >
             How it works
           </a>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedUnderline from "./AnimatedUnderline";
 
 import creator1 from "@/assets/creator-1.jpg";
 import creator2 from "@/assets/creator-2.jpg";
@@ -39,7 +40,7 @@ const bottomRow = [
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
   <div className="flex-shrink-0 w-28 sm:w-36 md:w-52 group cursor-pointer">
-    <div className="relative overflow-hidden rounded-sm border border-border group-hover:border-primary/40 transition-all duration-500">
+    <div className="relative overflow-hidden rounded-sm border border-border group-hover:border-blue-accent/40 transition-all duration-500">
       <img
         src={img}
         alt={name}
@@ -71,7 +72,10 @@ const Creators = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Our <span className="text-primary">creators</span>
+          Our{" "}
+          <AnimatedUnderline delay={0.2}>
+            <span className="text-blue-accent">creators</span>
+          </AnimatedUnderline>
         </motion.h2>
       </div>
 

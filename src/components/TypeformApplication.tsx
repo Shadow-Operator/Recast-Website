@@ -17,7 +17,7 @@ interface TypeformApplicationProps {
 }
 
 const TypeformApplication = ({ title, subtitle, questions }: TypeformApplicationProps) => {
-  const [currentStep, setCurrentStep] = useState(-1); // -1 = intro
+  const [currentStep, setCurrentStep] = useState(-1);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -56,7 +56,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
       {!isIntro && !isComplete && (
         <div className="absolute top-0 left-0 right-0 h-1 bg-muted">
           <motion.div
-            className="h-full bg-primary"
+            className="h-full bg-blue-accent"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.4, ease: "easeOut" }}
@@ -84,7 +84,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
               </p>
               <button
                 onClick={() => setCurrentStep(0)}
-                className="bg-primary text-primary-foreground font-semibold text-sm md:text-[15px] px-10 py-4 hover:opacity-85 transition-opacity"
+                className="bg-blue-accent text-white font-semibold text-sm md:text-[15px] px-10 py-4 hover:bg-blue-glow transition-colors"
               >
                 Start Application →
               </button>
@@ -109,7 +109,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
 
               {currentQuestion.type === "textarea" ? (
                 <textarea
-                  className="w-full bg-transparent border-b-2 border-border focus:border-primary outline-none text-lg md:text-xl text-foreground py-4 resize-none min-h-[120px] placeholder:text-muted-foreground/50 transition-colors"
+                  className="w-full bg-transparent border-b-2 border-border focus:border-blue-accent outline-none text-lg md:text-xl text-foreground py-4 resize-none min-h-[120px] placeholder:text-muted-foreground/50 transition-colors"
                   placeholder={currentQuestion.placeholder}
                   value={answers[currentQuestion.id] || ""}
                   onChange={(e) =>
@@ -125,8 +125,8 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
                       key={option}
                       className={`text-left px-6 py-4 border transition-all text-base md:text-lg ${
                         answers[currentQuestion.id] === option
-                          ? "border-primary bg-primary/10 text-foreground"
-                          : "border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                          ? "border-blue-accent bg-blue-accent/10 text-foreground"
+                          : "border-border text-muted-foreground hover:border-blue-accent/40 hover:text-foreground"
                       }`}
                       onClick={() => {
                         setAnswers({ ...answers, [currentQuestion.id]: option });
@@ -140,7 +140,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
               ) : (
                 <input
                   type={currentQuestion.type}
-                  className="w-full bg-transparent border-b-2 border-border focus:border-primary outline-none text-lg md:text-xl text-foreground py-4 placeholder:text-muted-foreground/50 transition-colors"
+                  className="w-full bg-transparent border-b-2 border-border focus:border-blue-accent outline-none text-lg md:text-xl text-foreground py-4 placeholder:text-muted-foreground/50 transition-colors"
                   placeholder={currentQuestion.placeholder}
                   value={answers[currentQuestion.id] || ""}
                   onChange={(e) =>
@@ -155,7 +155,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
                 {currentStep > 0 && (
                   <button
                     onClick={handleBack}
-                    className="border border-border text-muted-foreground font-medium text-sm px-6 py-3 hover:border-primary/40 hover:text-foreground transition-all"
+                    className="border border-border text-muted-foreground font-medium text-sm px-6 py-3 hover:border-blue-accent/40 hover:text-foreground transition-all"
                   >
                     ← Back
                   </button>
@@ -163,7 +163,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
                 <button
                   onClick={handleNext}
                   disabled={currentQuestion.required && !answers[currentQuestion.id]?.trim()}
-                  className="bg-primary text-primary-foreground font-semibold text-sm px-8 py-3 hover:opacity-85 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="bg-blue-accent text-white font-semibold text-sm px-8 py-3 hover:bg-blue-glow transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   {currentStep === totalSteps - 1 ? "Submit" : "Next →"}
                 </button>
@@ -184,7 +184,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
               className="text-center"
             >
               <motion.span
-                className="text-6xl md:text-8xl block mb-8"
+                className="text-6xl md:text-8xl block mb-8 text-blue-accent"
                 initial={{ rotate: -20, scale: 0 }}
                 animate={{ rotate: 0, scale: 1 }}
                 transition={{ type: "spring", stiffness: 200, delay: 0.2 }}

@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
+import AnimatedUnderline from "./AnimatedUnderline";
 import FloatingSuits from "./FloatingSuits";
 
 const Mission = () => {
   return (
     <section id="about" className="py-12 md:py-32 px-5 md:px-12 max-w-[1400px] mx-auto relative">
       <FloatingSuits suits={[
-        { suit: "♣", x: "85%", y: "10%", className: "text-primary", rotate: -15, delay: 0 },
-        { suit: "♥", x: "75%", y: "60%", className: "text-primary", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1.5 },
+        { suit: "♣", x: "85%", y: "10%", className: "text-blue-accent", rotate: -15, delay: 0 },
+        { suit: "♥", x: "75%", y: "60%", className: "text-blue-accent", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1.5 },
       ]} />
 
       <motion.p
@@ -15,7 +16,7 @@ const Mission = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="w-6 h-[1px] bg-muted-foreground" />
+        <span className="w-6 h-[1px] bg-blue-accent" />
         Who we are
       </motion.p>
       <motion.h2
@@ -25,7 +26,11 @@ const Mission = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
       >
-        The bridge between the world's biggest <span className="text-primary">creators</span> and the world's biggest brands.
+        The bridge between the world's biggest{" "}
+        <AnimatedUnderline delay={0.2}>
+          <span className="text-blue-accent">creators</span>
+        </AnimatedUnderline>{" "}
+        and the world's biggest brands.
       </motion.h2>
       <motion.p
         className="text-base md:text-lg text-muted-foreground font-light leading-[1.7] max-w-[580px]"

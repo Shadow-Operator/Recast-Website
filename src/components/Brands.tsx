@@ -20,12 +20,12 @@ const Brands = () => {
           {[...brandNames, ...brandNames].map((name, i) => (
             <span key={i} className="flex items-center gap-16 md:gap-20 px-8 md:px-10">
               <motion.span
-                className="text-xl md:text-[22px] font-display font-bold tracking-[-0.5px] text-foreground/15 hover:text-primary/60 transition-colors whitespace-nowrap cursor-default uppercase"
+                className="text-xl md:text-[22px] font-display font-bold tracking-[-0.5px] text-foreground/15 hover:text-blue-accent/60 transition-colors whitespace-nowrap cursor-default uppercase"
                 whileHover={{ scale: 1.05 }}
               >
                 {name}
               </motion.span>
-              <span className="text-primary/20">♠</span>
+              <span className="text-blue-accent/20">♠</span>
             </span>
           ))}
         </div>

@@ -17,8 +17,8 @@ const TwoCol = () => {
           Stop leaving money on the table. Recast turns your existing stream into a passive revenue engine — with no extra work, no brand scripts, and no compromise on your content.
         </p>
         <a
-          href="#contact"
-          className="inline-block border border-primary text-primary font-semibold text-[13px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-primary hover:text-primary-foreground transition-all"
+          href="/creators"
+          className="inline-block border border-blue-accent text-blue-accent font-semibold text-[13px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-blue-accent hover:text-white transition-all"
         >
           Join as a creator
         </a>
@@ -37,8 +37,8 @@ const TwoCol = () => {
           Reach highly engaged betting and gaming audiences through creators they already trust. We handle the entire partnership lifecycle — from creator selection to live campaign management and performance reporting.
         </p>
         <a
-          href="#contact"
-          className="inline-block border border-primary text-primary font-semibold text-[13px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-primary hover:text-primary-foreground transition-all"
+          href="/brands"
+          className="inline-block border border-blue-accent text-blue-accent font-semibold text-[13px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-blue-accent hover:text-white transition-all"
         >
           Partner with us
         </a>
