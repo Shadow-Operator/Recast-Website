@@ -2,9 +2,9 @@ import { useState } from "react";
 import recastIcon from "@/assets/recast-icon.png";
 
 const navLinks = [
-  { href: "#brands", label: "For Brands" },
-  { href: "#creators", label: "For Creators" },
-  { href: "#how", label: "How It Works" },
+  { href: "/brands", label: "For Brands" },
+  { href: "/creators", label: "For Creators" },
+  { href: "/#how", label: "How It Works" },
 ];
 
 const Navbar = () => {
