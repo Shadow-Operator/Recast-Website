@@ -39,15 +39,15 @@ const bottomRow = [
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
   <div className="flex-shrink-0 w-36 md:w-52 group cursor-pointer">
-    <div className="relative overflow-hidden rounded-2xl border border-border group-hover:border-primary/40 transition-all duration-500">
+    <div className="relative overflow-hidden rounded-sm border border-border group-hover:border-primary/40 transition-all duration-500">
       <img
         src={img}
         alt={name}
         className="w-36 h-48 md:w-52 md:h-68 object-cover group-hover:scale-105 transition-transform duration-500"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <p className="absolute bottom-3 left-3 right-3 font-display text-lg tracking-wide text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        {name.toUpperCase()}
+      <p className="absolute bottom-3 left-3 right-3 font-display text-sm font-bold tracking-[0.04em] uppercase text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {name}
       </p>
     </div>
   </div>
@@ -58,7 +58,7 @@ const Creators = () => {
     <section className="py-16 md:py-32 overflow-hidden bg-background">
       <div className="container mx-auto px-4 md:px-6 mb-10 md:mb-14">
         <motion.p
-          className="text-sm font-mono tracking-[0.3em] uppercase text-primary mb-4 text-center"
+          className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -66,12 +66,12 @@ const Creators = () => {
           Representing the best creators
         </motion.p>
         <motion.h2
-          className="text-4xl md:text-7xl font-display tracking-wider text-center"
+          className="text-4xl md:text-7xl font-display font-extrabold tracking-[-0.03em] text-center uppercase"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          OUR <span className="text-gradient-blue">CREATORS</span>
+          Our <span className="text-primary">creators</span>
         </motion.h2>
       </div>
 

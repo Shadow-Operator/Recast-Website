@@ -6,7 +6,7 @@ import * as THREE from "three";
 const DiceDot = ({ position }: { position: [number, number, number] }) => (
   <mesh position={position}>
     <sphereGeometry args={[0.08, 16, 16]} />
-    <meshStandardMaterial color="#1a1a2e" />
+    <meshStandardMaterial color="#000000" />
   </mesh>
 );
 
@@ -55,7 +55,7 @@ const Dice = () => {
   return (
     <group ref={meshRef}>
       <RoundedBox args={[1, 1, 1]} radius={0.1} smoothness={4}>
-        <meshStandardMaterial color="hsl(199, 89%, 58%)" />
+        <meshStandardMaterial color="#EDE8D0" />
       </RoundedBox>
       <DiceFace face={1} offset={[0, 0, 0.51]} />
       <DiceFace face={6} offset={[0, 0, -0.51]} />
@@ -71,9 +71,9 @@ const RollingDice = () => {
   return (
     <div className="w-40 h-40 md:w-56 md:h-56 mx-auto">
       <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
-        <ambientLight intensity={0.6} />
+        <ambientLight intensity={0.8} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
-        <pointLight position={[-3, -3, 2]} intensity={0.5} color="hsl(199, 89%, 58%)" />
+        <pointLight position={[-3, -3, 2]} intensity={0.3} color="#EDE8D0" />
         <Dice />
       </Canvas>
     </div>

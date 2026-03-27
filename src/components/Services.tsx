@@ -1,25 +1,23 @@
 import { motion } from "framer-motion";
 import FloatingSuits from "./FloatingSuits";
+
 const capabilities = [
   {
     num: "01",
-    title: "Creator Monetisation",
+    title: "Creator monetisation",
     sub: "For Creators",
-    icon: "🎰",
-    body: "We connect Twitch and YouTube creators with diverse revenue streams — from brand deals and sponsorships to ad overlays, affiliate partnerships, and integrated content campaigns. Multiple income channels, zero extra effort.",
+    body: "We connect Twitch and YouTube creators with diverse revenue streams — from brand deals and sponsorships to ad overlays, affiliate partnerships, and integrated content campaigns.",
   },
   {
     num: "02",
-    title: "Brand Partnerships",
+    title: "Brand partnerships",
     sub: "For Brands",
-    icon: "🃏",
-    body: "Access a curated network of gaming and betting-aligned creators with real, engaged audiences. We manage the full campaign lifecycle — creator selection, deal negotiation, content integration, ad placement, and performance reporting.",
+    body: "Access a curated network of gaming and betting-aligned creators with real, engaged audiences. We manage the full campaign lifecycle — creator selection, deal negotiation, content integration, and performance reporting.",
   },
   {
     num: "03",
-    title: "Betting & Gaming Specialists",
+    title: "Betting & gaming specialists",
     sub: "Our Speciality",
-    icon: "🎲",
     body: "From securing sponsorship deals and managing ad overlays to coordinating content integrations and tracking affiliate performance — we are the only agency built end-to-end for the betting and gaming creator space.",
   },
 ];
@@ -28,20 +26,21 @@ const Services = () => {
   return (
     <section id="brands" className="border-t border-border relative overflow-hidden">
       <FloatingSuits suits={[
-        { suit: "♠", x: "90%", y: "15%", className: "text-foreground", rotate: -10, delay: 0.5, duration: 8 },
+        { suit: "♠", x: "90%", y: "15%", className: "text-primary", rotate: -10, delay: 0.5, duration: 8 },
         { suit: "♦", x: "5%", y: "55%", className: "text-primary", size: "text-[100px] md:text-[150px]", rotate: 12, delay: 2 },
       ]} />
       <div className="px-4 md:px-12 py-12 md:py-20 max-w-[1400px] mx-auto">
         <motion.p
-          className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-8"
+          className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-8 flex items-center gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
+          <span className="w-6 h-[1px] bg-muted-foreground" />
           What we do
         </motion.p>
         <motion.h2
-          className="text-[clamp(36px,4vw,60px)] font-body font-extrabold tracking-[-2px] leading-[1.1] max-w-[780px]"
+          className="text-[clamp(32px,4vw,56px)] font-display font-bold tracking-[-0.02em] leading-[1.05] max-w-[780px]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -56,26 +55,22 @@ const Services = () => {
         {capabilities.map((cap, i) => (
           <motion.div
             key={cap.num}
-            className="px-4 md:px-12 py-10 md:py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card group transition-colors duration-300 relative overflow-hidden"
+            className="px-4 md:px-12 py-10 md:py-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 last:border-b-0 hover:bg-card group transition-colors duration-300"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
           >
-            {/* Hover glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_hsla(199,89%,58%,0.06)_0%,_transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            <p className="text-2xl md:text-3xl mb-4 md:mb-6">{cap.icon}</p>
-            <p className="text-[11px] font-semibold tracking-[0.1em] text-primary mb-6 md:mb-12 relative z-10">
+            <p className="text-[10px] font-semibold tracking-[0.15em] text-muted-foreground mb-6 md:mb-12 uppercase">
               {cap.num}
             </p>
-            <h3 className="text-[22px] md:text-[28px] font-body font-extrabold tracking-[-0.5px] mb-3 md:mb-4 relative z-10">
+            <h3 className="text-[22px] md:text-[28px] font-display font-bold tracking-[-0.01em] mb-3 md:mb-4">
               {cap.title}
             </h3>
-            <p className="text-[13px] font-semibold text-muted-foreground uppercase tracking-[0.1em] mb-5 relative z-10">
+            <p className="text-[11px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
               {cap.sub}
             </p>
-            <p className="text-[15px] text-muted-foreground leading-relaxed relative z-10">
+            <p className="text-[15px] text-muted-foreground font-light leading-[1.7]">
               {cap.body}
             </p>
           </motion.div>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import FloatingSuits from "./FloatingSuits";
+
 const steps = [
   {
     num: "Step 01",
@@ -8,17 +9,17 @@ const steps = [
   },
   {
     num: "Step 02",
-    title: "Campaign Match",
+    title: "Campaign match",
     body: "We match creators with brands that fit their audience, content style, and platform. No misaligned deals — every partnership is curated for performance.",
   },
   {
     num: "Step 03",
-    title: "Go Live",
-    body: "Brand deals, ad overlays, and content integrations go live across your channels. Fully passive — creators stream as normal while revenue builds in real time through their Recast dashboard.",
+    title: "Go live",
+    body: "Brand deals, ad overlays, and content integrations go live across your channels. Fully passive — creators stream as normal while revenue builds in real time.",
   },
   {
     num: "Step 04",
-    title: "Get Paid",
+    title: "Get paid",
     body: "Revenue is calculated on average concurrent viewership with no caps and no ceiling. Payments come directly to creators, transparently, every month.",
   },
 ];
@@ -27,21 +28,21 @@ const HowItWorks = () => {
   return (
     <section id="how" className="border-t border-border py-16 md:py-32 px-4 md:px-12 relative overflow-hidden">
       <FloatingSuits suits={[
-        { suit: "♥", x: "88%", y: "30%", className: "text-red-500", rotate: 8, delay: 0.3, duration: 9 },
-        { suit: "♣", x: "2%", y: "65%", className: "text-foreground", size: "text-[90px] md:text-[130px]", rotate: -12, delay: 1.8 },
-        { suit: "♠", x: "70%", y: "75%", className: "text-foreground", size: "text-[80px] md:text-[110px]", rotate: 20, delay: 3 },
+        { suit: "♥", x: "88%", y: "30%", className: "text-primary", rotate: 8, delay: 0.3, duration: 9 },
+        { suit: "♣", x: "2%", y: "65%", className: "text-primary", size: "text-[90px] md:text-[130px]", rotate: -12, delay: 1.8 },
       ]} />
       <div className="max-w-[1400px] mx-auto">
         <motion.p
-          className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-8"
+          className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-8 flex items-center gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
+          <span className="w-6 h-[1px] bg-muted-foreground" />
           How it works
         </motion.p>
         <motion.h2
-          className="text-[clamp(28px,4vw,60px)] font-body font-extrabold tracking-[-1px] md:tracking-[-2px] leading-[1.1] max-w-[780px] mb-12 md:mb-20"
+          className="text-[clamp(28px,4vw,56px)] font-display font-bold tracking-[-0.02em] leading-[1.05] max-w-[780px] mb-12 md:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -55,24 +56,19 @@ const HowItWorks = () => {
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
-              className="border-t border-primary/30 pt-8 group"
+              className="border-t border-border pt-8 group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
             >
-              <motion.p
-                className="text-[11px] font-semibold text-primary tracking-[0.1em] mb-6"
-                whileInView={{ opacity: [0, 1] }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12 + 0.3 }}
-              >
+              <p className="text-[10px] font-semibold text-primary tracking-[0.15em] mb-6 uppercase">
                 {step.num}
-              </motion.p>
-              <h3 className="text-xl font-body font-bold tracking-[-0.3px] mb-3 group-hover:text-primary transition-colors">
+              </p>
+              <h3 className="text-xl font-display font-bold tracking-[-0.01em] mb-3 group-hover:text-primary transition-colors">
                 {step.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground font-light leading-[1.7]">
                 {step.body}
               </p>
             </motion.div>
