@@ -40,12 +40,12 @@ const Hero = () => {
       <div className="relative mb-6 md:mb-16 z-[2]">
         <h1 className="text-[clamp(36px,7vw,110px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase">
           <motion.span
-            className="block text-3xl"
+            className="block overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
             <motion.span
-              className="block"
+              className="block text-3xl"
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
