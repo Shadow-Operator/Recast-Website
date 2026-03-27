@@ -50,7 +50,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              We Represent The
+              We Represent
             </motion.span>
           </motion.span>
           <motion.span
