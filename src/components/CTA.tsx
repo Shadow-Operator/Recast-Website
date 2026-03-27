@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
 import FloatingSuits from "./FloatingSuits";
 import TypeformApplication from "./TypeformApplication";
-import Creators from "./Creators";
 
 const RollingDice = lazy(() => import("./RollingDice"));
 
@@ -74,9 +73,6 @@ const CTA = () => {
           looking to reach the right audience — let's talk.
         </motion.p>
       </div>
-
-      {/* Creators section between header and form */}
-      <Creators />
 
       {/* Typeform with role selection */}
       <TypeformApplication
