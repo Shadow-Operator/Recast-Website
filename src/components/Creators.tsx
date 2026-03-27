@@ -6,6 +6,7 @@ import teeqo from "@/assets/teeqo.png";
 import ellieVandeel from "@/assets/ellie-vandeel.png";
 import highsky from "@/assets/highsky.png";
 import kJaneCaron from "@/assets/k-jane-caron.png";
+import temperr from "@/assets/temperr.png";
 
 const topRow: { name: string; img: string }[] = [
   { name: "Charlotte Parkes", img: charlotteParkes },
@@ -13,6 +14,7 @@ const topRow: { name: string; img: string }[] = [
   { name: "Ellie Vandeel", img: ellieVandeel },
   { name: "HighSky", img: highsky },
   { name: "K Jane Caron", img: kJaneCaron },
+  { name: "Temperr", img: temperr },
 ];
 
 const bottomRow: { name: string; img: string }[] = [];
