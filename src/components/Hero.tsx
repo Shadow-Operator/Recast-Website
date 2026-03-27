@@ -46,7 +46,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
           >
             <motion.span
-              className="block text-3xl"
+              className="block text-9xl"
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
