@@ -71,14 +71,6 @@ const Hero = () => {
             </motion.span>
           </motion.span>
         </h1>
-
-        {/* Accent rule - now blue */}
-        <motion.div
-          className="h-[2px] mt-6 bg-blue-accent max-w-[120px]"
-          initial={{ scaleX: 0, originX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1, delay: 1, ease: "easeOut" }}
-        />
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-end max-w-[1400px] relative z-[2]">
