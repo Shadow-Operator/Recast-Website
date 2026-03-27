@@ -4,7 +4,7 @@ import FloatingSuits from "./FloatingSuits";
 
 const Mission = () => {
   return (
-    <section id="about" className="py-12 md:py-32 px-5 md:px-12 max-w-[1400px] mx-auto relative">
+    <section id="about" className="py-12 md:py-32 px-6 md:px-16 max-w-[1680px] mx-auto relative">
       <FloatingSuits suits={[
         { suit: "♣", x: "85%", y: "10%", className: "text-blue-accent", rotate: -15, delay: 0 },
         { suit: "♥", x: "75%", y: "60%", className: "text-blue-accent", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1.5 },
@@ -20,7 +20,7 @@ const Mission = () => {
         Who we are
       </motion.p>
       <motion.h2
-        className="text-[clamp(32px,4vw,56px)] font-display font-bold tracking-[-0.02em] leading-[1.05] max-w-[780px] mb-8"
+        className="text-[clamp(32px,4vw,56px)] font-display font-bold tracking-[-0.02em] leading-[1.05] max-w-[980px] mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -33,7 +33,7 @@ const Mission = () => {
         and the world's biggest brands.
       </motion.h2>
       <motion.p
-        className="text-base md:text-lg text-muted-foreground font-light leading-[1.7] max-w-[580px]"
+        className="text-base md:text-lg text-muted-foreground font-light leading-[1.7] max-w-[760px]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
