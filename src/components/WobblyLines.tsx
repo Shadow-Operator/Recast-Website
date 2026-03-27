@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const LINE_COUNT = 12;
+// Lines clustered at top and bottom, clearing the middle for text
+const TOP_LINES = [30, 60, 90, 115];
+const BOTTOM_LINES = [370, 400, 430, 455];
 
 const generatePath = (width: number, yBase: number, amplitude: number, frequency: number, phase: number) => {
   const points: string[] = [];
@@ -27,14 +29,14 @@ const WobblyLines = () => {
     return () => cancelAnimationFrame(frame);
   }, []);
 
-  const lines = Array.from({ length: LINE_COUNT }, (_, i) => {
-    const yBase = 20 + i * 38;
-    const amplitude = 6 + (i % 4) * 3;
-    const frequency = 1.5 + (i % 5) * 0.4;
+  const yPositions = [...TOP_LINES, ...BOTTOM_LINES];
+  const lines = yPositions.map((yBase, i) => {
+    const amplitude = 6 + (i % 3) * 3;
+    const frequency = 1.5 + (i % 4) * 0.4;
     const phaseOffset = i * 0.7;
     return {
       path: generatePath(1400, yBase, amplitude, frequency, phase + phaseOffset),
-      opacity: 0.07 + (i % 4) * 0.025,
+      opacity: 0.07 + (i % 3) * 0.025,
       strokeWidth: 1 + (i % 3) * 0.4,
     };
   });
