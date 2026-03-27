@@ -36,12 +36,12 @@ const creators: { name: string; img: string }[] = [
 ];
 
 const CreatorCard = ({ name, img }: { name: string; img: string }) => (
-  <div className="flex-shrink-0 w-36 sm:w-48 md:w-64 group cursor-pointer">
+  <div className="flex-shrink-0 w-44 sm:w-56 md:w-72 group cursor-pointer">
     <div className="relative overflow-hidden rounded-sm border border-border group-hover:border-blue-accent/40 transition-all duration-500">
       <img
         src={img}
         alt={name}
-        className="w-36 h-48 sm:w-48 sm:h-64 md:w-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+        className="w-44 h-56 sm:w-56 sm:h-72 md:w-72 md:h-[28rem] object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
   </div>
@@ -72,12 +72,16 @@ const Creators = () => {
         </motion.h2>
       </div>
 
-      <div className="relative">
-        <div className="flex gap-3 sm:gap-4 md:gap-6 animate-scroll-left">
+      <div className="relative overflow-hidden">
+        <motion.div
+          className="flex gap-0"
+          animate={{ x: [0, -48, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        >
           {creators.map((creator) => (
             <CreatorCard key={creator.name} name={creator.name} img={creator.img} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
