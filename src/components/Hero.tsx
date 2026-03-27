@@ -45,7 +45,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
           >
             <motion.span
-              className="block text-3xl"
+              className="block text-3xl md:text-[clamp(36px,7vw,110px)]"
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -68,7 +68,7 @@ const Hero = () => {
               <span className="md:hidden text-3xl">CREATORS WHO</span>
               <span className="block md:inline">
                 <AnimatedUnderline delay={0.6} color="blue">
-                  <span className="text-blue-accent text-3xl">Move Culture.</span>
+                  <span className="text-blue-accent text-3xl md:text-[clamp(36px,7vw,110px)]">Move Culture.</span>
                 </AnimatedUnderline>
               </span>
             </motion.span>
