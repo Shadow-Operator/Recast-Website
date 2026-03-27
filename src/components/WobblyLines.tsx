@@ -41,7 +41,8 @@ const WobblyLines = () => {
 
   return (
     <motion.div
-      className="absolute inset-0 pointer-events-none select-none"
+      className="absolute inset-0 pointer-events-none select-none z-0 blur-[0.5px]"
+      style={{ filter: "blur(0.5px)" }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5, delay: 1.2 }}

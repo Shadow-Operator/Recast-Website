@@ -7,8 +7,11 @@ const cardSuits = ["♠", "♥", "♦", "♣"];
 const Hero = () => {
   return (
     <section className="min-h-[85vh] md:min-h-screen flex flex-col justify-center px-5 md:px-12 pt-20 md:pt-32 pb-10 md:pb-20 relative overflow-hidden">
+      {/* Wobbly lines background - behind everything */}
+      <WobblyLines />
+
       {/* Animated card suits that fan out */}
-      <div className="absolute -right-4 md:right-20 top-1/2 -translate-y-1/2 hidden sm:flex items-center">
+      <div className="absolute -right-4 md:right-20 top-1/2 -translate-y-1/2 hidden sm:flex items-center z-[1]">
         {cardSuits.map((suit, i) => (
           <motion.span
             key={i}
@@ -34,7 +37,7 @@ const Hero = () => {
       </div>
 
       {/* Headline */}
-      <div className="relative mb-6 md:mb-16">
+      <div className="relative mb-6 md:mb-16 z-[2]">
         <h1 className="text-[clamp(32px,8vw,120px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase">
           <motion.span
             className="block overflow-hidden"
@@ -78,11 +81,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Wobbly lines background */}
-      <WobblyLines />
-
-      {/* Bottom two-col */}
-      <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-end max-w-[1400px]">
+      <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-end max-w-[1400px] relative z-[2]">
         <motion.p
           className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-[520px]"
           initial={{ opacity: 0, y: 32 }}
