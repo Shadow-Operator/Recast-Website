@@ -66,7 +66,7 @@ const Creators = () => {
           Representing the best creators
         </motion.p>
         <motion.h2
-          className="text-4xl md:text-7xl font-display font-extrabold tracking-[-0.03em] text-center uppercase"
+          className="text-3xl md:text-7xl font-display font-extrabold tracking-[-0.03em] text-center uppercase"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

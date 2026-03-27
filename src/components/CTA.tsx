@@ -4,7 +4,7 @@ import FloatingSuits from "./FloatingSuits";
 
 const CTA = () => {
   return (
-    <section id="contact" className="pt-4 pb-12 md:pt-8 md:pb-24 px-4 md:px-6 text-center relative overflow-hidden">
+    <section id="contact" className="pt-4 pb-10 md:pt-8 md:pb-24 px-5 md:px-6 text-center relative overflow-hidden">
       <FloatingSuits suits={[
         { suit: "♠", x: "5%", y: "20%", className: "text-primary", rotate: -15, delay: 0 },
         { suit: "♥", x: "90%", y: "15%", className: "text-primary", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
@@ -24,7 +24,7 @@ const CTA = () => {
       </motion.div>
 
       <motion.h2
-        className="text-[clamp(36px,7vw,96px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] mb-6 md:mb-8 max-w-[900px] mx-auto relative z-10 uppercase"
+        className="text-[clamp(30px,7vw,96px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] mb-5 md:mb-8 max-w-[900px] mx-auto relative z-10 uppercase"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

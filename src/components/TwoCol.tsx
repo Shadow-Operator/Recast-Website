@@ -4,7 +4,7 @@ const TwoCol = () => {
   return (
     <section id="creators" className="grid md:grid-cols-2 border-y border-border">
       <motion.div
-        className="px-4 md:px-12 py-12 md:py-20 border-b md:border-b-0 md:border-r border-border group"
+        className="px-5 md:px-12 py-10 md:py-20 border-b md:border-b-0 md:border-r border-border group"
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -24,7 +24,7 @@ const TwoCol = () => {
         </a>
       </motion.div>
       <motion.div
-        className="px-4 md:px-12 py-12 md:py-20 group"
+        className="px-5 md:px-12 py-10 md:py-20 group"
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
