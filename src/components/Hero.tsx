@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
 import WobblyLines from "./WobblyLines";
+import recastIcon from "@/assets/recast-icon.png";
 
 const cardSuits = ["♠", "♥", "♦", "♣"];
 
@@ -50,7 +51,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              We Represent The
+              We <img src={recastIcon} alt="R" className="inline-block h-[0.85em] -mt-[0.05em] mx-[-0.02em]" />epresent The
             </motion.span>
           </motion.span>
           <motion.span
