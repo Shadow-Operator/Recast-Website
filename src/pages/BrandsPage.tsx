@@ -44,7 +44,7 @@ const BrandsPage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="min-h-[80vh] flex flex-col justify-center px-4 md:px-12 pt-24 md:pt-32 pb-16 md:pb-24">
+      <section className="min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center px-5 md:px-12 pt-20 md:pt-32 pb-12 md:pb-24">
         <motion.p
           className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6"
           initial={{ opacity: 0 }}
@@ -53,7 +53,7 @@ const BrandsPage = () => {
         >
           — For Brands
         </motion.p>
-        <h1 className="text-[clamp(36px,8vw,100px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase mb-8">
+        <h1 className="text-[clamp(30px,7vw,100px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase mb-6 md:mb-8">
           <motion.span
             className="block overflow-hidden"
             initial={{ opacity: 0 }}
@@ -119,7 +119,7 @@ const BrandsPage = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 md:py-32 px-4 md:px-12">
+      <section className="py-16 md:py-32 px-5 md:px-12">
         <div className="max-w-[1400px] mx-auto">
           <motion.p
             className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6"

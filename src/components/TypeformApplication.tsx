@@ -51,7 +51,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
   const progress = isIntro ? 0 : ((currentStep + 1) / totalSteps) * 100;
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative bg-background px-4">
+    <section className="min-h-[80vh] md:min-h-screen flex flex-col justify-center items-center relative bg-background px-5 py-16 md:py-0">
       {/* Progress bar */}
       {!isIntro && !isComplete && (
         <div className="absolute top-0 left-0 right-0 h-1 bg-muted">
@@ -76,7 +76,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="text-center"
             >
-              <h2 className="text-4xl md:text-6xl font-display font-extrabold tracking-[-0.03em] uppercase mb-6">
+              <h2 className="text-3xl md:text-6xl font-display font-extrabold tracking-[-0.03em] uppercase mb-4 md:mb-6">
                 {title}
               </h2>
               <p className="text-muted-foreground text-base md:text-lg font-light max-w-lg mx-auto mb-12">
@@ -103,7 +103,7 @@ const TypeformApplication = ({ title, subtitle, questions }: TypeformApplication
               <p className="text-muted-foreground text-xs font-medium tracking-[0.15em] uppercase mb-4">
                 {currentStep + 1} / {totalSteps}
               </p>
-              <h3 className="text-2xl md:text-4xl font-display font-bold tracking-[-0.02em] mb-8">
+              <h3 className="text-xl md:text-4xl font-display font-bold tracking-[-0.02em] mb-6 md:mb-8">
                 {currentQuestion.label}
               </h3>
 
