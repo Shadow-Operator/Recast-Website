@@ -45,7 +45,9 @@ const CTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <RollingDice />
+          <Suspense fallback={<div className="w-28 h-28 sm:w-40 sm:h-40 md:w-56 md:h-56 mx-auto" />}>
+            <RollingDice />
+          </Suspense>
         </motion.div>
 
         <motion.h2
