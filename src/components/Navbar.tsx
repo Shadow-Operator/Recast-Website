@@ -31,7 +31,7 @@ const Navbar = () => {
       }}
       aria-label="Main navigation"
     >
-      <a href="#" className="flex items-center gap-2">
+      <a href="/" className="flex items-center gap-2">
         <img src={recastIcon} alt="Recast" className="h-10 md:h-12 lg:h-14" />
         <span className="text-foreground font-display font-bold text-xl md:text-2xl tracking-wide uppercase">RECAST</span>
       </a>
