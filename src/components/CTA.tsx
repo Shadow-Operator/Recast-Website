@@ -1,9 +1,11 @@
+import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
-import Creators from "./Creators";
-import RollingDice from "./RollingDice";
 import FloatingSuits from "./FloatingSuits";
 import TypeformApplication from "./TypeformApplication";
+import Creators from "./Creators";
+
+const RollingDice = lazy(() => import("./RollingDice"));
 
 const brandQuestions = [
   { id: "company", label: "What's the name of your company?", type: "text" as const, placeholder: "e.g. Betway, DraftKings...", required: true },
@@ -43,7 +45,9 @@ const CTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <RollingDice />
+          <Suspense fallback={<div className="w-28 h-28 sm:w-40 sm:h-40 md:w-56 md:h-56 mx-auto" />}>
+            <RollingDice />
+          </Suspense>
         </motion.div>
 
         <motion.h2
