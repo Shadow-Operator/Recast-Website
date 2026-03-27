@@ -4,7 +4,7 @@ const cardSuits = ["♠", "♥", "♦", "♣"];
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-4 md:px-12 pt-24 md:pt-32 pb-12 md:pb-20 relative overflow-hidden">
+    <section className="min-h-[85vh] md:min-h-screen flex flex-col justify-center px-5 md:px-12 pt-20 md:pt-32 pb-10 md:pb-20 relative overflow-hidden">
       {/* Animated card suits that fan out */}
       <div className="absolute -right-4 md:right-20 top-1/2 -translate-y-1/2 hidden sm:flex items-center">
         {cardSuits.map((suit, i) => (
@@ -32,8 +32,8 @@ const Hero = () => {
       </div>
 
       {/* Headline */}
-      <div className="relative mb-8 md:mb-16">
-        <h1 className="text-[clamp(40px,9vw,120px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase">
+      <div className="relative mb-6 md:mb-16">
+        <h1 className="text-[clamp(32px,8vw,120px)] font-display font-extrabold tracking-[-0.03em] leading-[0.9] uppercase">
           <motion.span
             className="block overflow-hidden"
             initial={{ opacity: 0 }}

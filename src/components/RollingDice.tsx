@@ -69,7 +69,7 @@ const Dice = () => {
 
 const RollingDice = () => {
   return (
-    <div className="w-40 h-40 md:w-56 md:h-56 mx-auto">
+    <div className="w-28 h-28 sm:w-40 sm:h-40 md:w-56 md:h-56 mx-auto">
       <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
         <ambientLight intensity={0.8} />
         <directionalLight position={[5, 5, 5]} intensity={1} />

@@ -26,7 +26,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how" className="border-t border-border py-16 md:py-32 px-4 md:px-12 relative overflow-hidden">
+    <section id="how" className="border-t border-border py-12 md:py-32 px-5 md:px-12 relative overflow-hidden">
       <FloatingSuits suits={[
         { suit: "♥", x: "88%", y: "30%", className: "text-primary", rotate: 8, delay: 0.3, duration: 9 },
         { suit: "♣", x: "2%", y: "65%", className: "text-primary", size: "text-[90px] md:text-[130px]", rotate: -12, delay: 1.8 },
@@ -52,7 +52,7 @@ const HowItWorks = () => {
           Powerful for brands.
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
