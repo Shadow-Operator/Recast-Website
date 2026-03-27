@@ -4,11 +4,13 @@ import AnimatedUnderline from "./AnimatedUnderline";
 import charlotteParkes from "@/assets/charlotte-parkes.png";
 import teeqo from "@/assets/teeqo.png";
 import ellieVandeel from "@/assets/ellie-vandeel.png";
+import highsky from "@/assets/highsky.png";
 
 const topRow: { name: string; img: string }[] = [
   { name: "Charlotte Parkes", img: charlotteParkes },
   { name: "Teeqo", img: teeqo },
   { name: "Ellie Vandeel", img: ellieVandeel },
+  { name: "HighSky", img: highsky },
 ];
 
 const bottomRow: { name: string; img: string }[] = [];
