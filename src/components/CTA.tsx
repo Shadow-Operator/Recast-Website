@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
+import Creators from "./Creators";
 import RollingDice from "./RollingDice";
 import FloatingSuits from "./FloatingSuits";
 import TypeformApplication from "./TypeformApplication";
@@ -69,6 +70,9 @@ const CTA = () => {
           looking to reach the right audience — let's talk.
         </motion.p>
       </div>
+
+      {/* Creators section between header and form */}
+      <Creators />
 
       {/* Typeform with role selection */}
       <TypeformApplication
