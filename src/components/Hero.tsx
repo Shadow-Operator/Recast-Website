@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
+import WobblyLines from "./WobblyLines";
 
 const cardSuits = ["♠", "♥", "♦", "♣"];
 
@@ -76,6 +77,9 @@ const Hero = () => {
           transition={{ duration: 1, delay: 1, ease: "easeOut" }}
         />
       </div>
+
+      {/* Wobbly lines background */}
+      <WobblyLines />
 
       {/* Bottom two-col */}
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-end max-w-[1400px]">
