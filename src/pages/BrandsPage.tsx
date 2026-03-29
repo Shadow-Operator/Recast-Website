@@ -10,8 +10,7 @@ import LoopingVideo from "@/components/LoopingVideo";
 const stats = [
   { value: "697M+", label: "Combined Reach" },
   { value: "Billions", label: "Views Generated" },
-  { value: "100%", label: "Creator Focused" },
-  { value: "24/7", label: "Creator Support" },
+  { value: "20+", label: "Brand Partners" },
 ];
 
 const benefits = [
@@ -164,7 +163,7 @@ const BrandsPage = () => {
       </section>
 
       <section className="border-y border-border py-12 md:py-24 px-5 md:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-3 gap-6 md:gap-12 max-w-[1400px] mx-auto">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}

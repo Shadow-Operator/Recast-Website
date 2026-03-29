@@ -79,7 +79,7 @@ const faqs = [
   },
   {
     q: "What type of content do you work with?",
-    a: "We work across gaming, entertainment, lifestyle, sports, and more. Our roster covers a wide range of verticals. What matters most is authentic audiences and strong engagement.",
+    a: "We work with creators across every niche, from gaming and entertainment to lifestyle, sports, fashion, and beyond. No matter what your content looks like, if you've got an engaged audience, there's a place for you at Recast.",
   },
 ];
 
