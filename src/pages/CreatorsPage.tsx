@@ -59,11 +59,7 @@ const stats = [
 const faqs = [
   {
     q: "Do I have to be exclusive to Recast?",
-    a: "No. We don't require exclusivity. You can continue working with other agencies or brands, we just ask that campaigns we source are managed through us.",
-  },
-  {
-    q: "What percentage does Recast take?",
-    a: "We operate on a commission basis. Exact rates are discussed during onboarding and are competitive with industry standards. There are no upfront fees.",
+    a: "We don't require exclusivity. We just ask that campaigns we source are managed through us.",
   },
   {
     q: "How long before I get my first deal?",
@@ -79,7 +75,7 @@ const faqs = [
   },
   {
     q: "What regions do you operate in?",
-    a: "We operate globally, with a strong focus on the UK, Europe, North America, and Australia. All deals comply with local advertising regulations.",
+    a: "We have a global network with connections across every major region, not just tier one markets. Wherever your audience is, we can reach them. All deals comply with local advertising regulations.",
   },
   {
     q: "What type of content do you work with?",
@@ -122,7 +118,7 @@ const CreatorsPage = () => {
         <WobblyLines />
         <div className="relative z-10">
           <motion.p
-            className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6"
+            className="text-sm md:text-base font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -246,7 +242,7 @@ const CreatorsPage = () => {
             . How It Works
           </motion.p>
           <motion.h2
-            className="text-3xl md:text-6xl font-display font-extrabold tracking-[-0.03em] uppercase mb-16"
+            className="text-3xl md:text-6xl font-display font-extrabold tracking-[-0.03em] uppercase mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

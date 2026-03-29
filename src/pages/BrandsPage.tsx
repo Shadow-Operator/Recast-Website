@@ -8,8 +8,8 @@ import WobblyLines from "@/components/WobblyLines";
 import LoopingVideo from "@/components/LoopingVideo";
 
 const stats = [
-  { value: "TBC", label: "Creator Partners" },
-  { value: "TBC", label: "Brand Partners" },
+  { value: "697M+", label: "Combined Reach" },
+  { value: "Billions", label: "Views Generated" },
   { value: "100%", label: "Creator Focused" },
   { value: "24/7", label: "Creator Support" },
 ];
@@ -53,8 +53,8 @@ const steps = [
 
 const faqs = [
   {
-    q: "What's the minimum campaign budget?",
-    a: "We work with campaigns from £10k upwards. Smaller budgets can sometimes be accommodated for the right fit. Reach out and we'll be honest about what's achievable.",
+    q: "Do you have a minimum campaign budget?",
+    a: "We work with brands of all sizes and budgets. Whether you're testing the waters or scaling a global campaign, we'll find the right approach for you. Get in touch and we'll be upfront about what's achievable.",
   },
   {
     q: "How do you ensure compliance?",
@@ -66,15 +66,11 @@ const faqs = [
   },
   {
     q: "What regions do you operate in?",
-    a: "Primarily UK, Europe, North America, and Australia. We can support campaigns in other regions. Ask us about specific markets.",
-  },
-  {
-    q: "How is performance reported?",
-    a: "You receive a post-campaign report covering reach, impressions, engagement, and agreed KPIs. For longer partnerships, we provide monthly updates.",
+    a: "We have a global network with creators and brand connections across every major region, not just tier one markets. Wherever your audience is, we can reach them.",
   },
   {
     q: "Can we run ongoing partnerships rather than one-off campaigns?",
-    a: "Yes, and we'd encourage it. Long-term partnerships consistently outperform one-off activations. We structure retainer agreements for brands looking to build sustained creator presence.",
+    a: "Absolutely, and we'd encourage it. Long-term partnerships consistently outperform one-off activations. We structure retainer agreements and ongoing creator relationships for brands looking to build sustained presence.",
   },
 ];
 
@@ -113,7 +109,7 @@ const BrandsPage = () => {
         <WobblyLines />
         <div className="relative z-10">
           <motion.p
-            className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6"
+            className="text-sm md:text-base font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -167,7 +163,6 @@ const BrandsPage = () => {
         </div>
       </section>
 
-      {/* Stats - hidden until real data is confirmed
       <section className="border-y border-border py-12 md:py-24 px-5 md:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 max-w-[1400px] mx-auto">
           {stats.map((stat, i) => (
@@ -185,7 +180,6 @@ const BrandsPage = () => {
           ))}
         </div>
       </section>
-      */}
 
       {/* Benefits */}
       <section className="py-16 md:py-32 px-5 md:px-12 border-b border-border">
