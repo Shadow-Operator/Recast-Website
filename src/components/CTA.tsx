@@ -27,7 +27,7 @@ const creatorQuestions = [
 
 const CTA = () => {
   return (
-    <section id="contact" className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Visual header */}
       <div className="pt-2 pb-4 md:pt-4 md:pb-8 px-5 md:px-6 text-center relative overflow-hidden">
         {/* Static depth layer */}
@@ -91,6 +91,7 @@ const CTA = () => {
       </div>
 
       {/* Typeform with role selection */}
+      <div id="contact" className="scroll-mt-20" />
       <TypeformApplication
         title="Get In Touch"
         subtitle="Tell us who you are and we'll take it from there."
