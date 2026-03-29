@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const TwoCol = () => {
   return (
@@ -16,12 +17,12 @@ const TwoCol = () => {
         <p className="text-sm md:text-[15px] text-muted-foreground font-light leading-[1.7] mb-6 md:mb-8">
           We handle the brand deals, negotiations, and campaign management so you can focus on creating the content your audience loves.
         </p>
-        <a
-          href="/creators"
+        <Link
+          to="/creators"
           className="inline-block border border-blue-accent text-blue-accent font-semibold text-[13px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-blue-accent hover:text-white transition-all"
         >
           Join as a creator
-        </a>
+        </Link>
       </motion.div>
       <motion.div
         className="px-5 md:px-12 py-10 md:py-20 group"
@@ -36,12 +37,12 @@ const TwoCol = () => {
         <p className="text-sm md:text-[15px] text-muted-foreground font-light leading-[1.7] mb-6 md:mb-8">
           Reach engaged audiences through creators they already trust. We handle everything from creator selection to campaign management and performance reporting.
         </p>
-        <a
-          href="/brands"
+        <Link
+          to="/brands"
           className="inline-block border border-blue-accent text-blue-accent font-semibold text-[13px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-blue-accent hover:text-white transition-all"
         >
           Partner with us
-        </a>
+        </Link>
       </motion.div>
     </section>
   );
