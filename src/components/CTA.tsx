@@ -10,7 +10,7 @@ const brandQuestions = [
     { id: "email", label: "Work email", type: "email" as const, placeholder: "you@company.com", required: true },
   ]},
   { id: "budget", label: "What's your estimated campaign budget?", type: "select" as const, placeholder: "", options: ["Under £10k", "£10k - £50k", "£50k - £150k", "£150k+", "I'm not sure / Prefer not to say"], required: true },
-  { id: "timeline", label: "When are you looking to launch?", type: "text" as const, placeholder: "e.g. ASAP, next month, Q2 2025...", required: false },
+  { id: "timeline", label: "When are you looking to launch?", type: "select" as const, placeholder: "", options: ["Under a month", "1-3 months", "3+ months", "Specific date or timeframe"], required: true },
   { id: "goals", label: "Tell us about your campaign", type: "textarea" as const, placeholder: "What are you looking to achieve? Any specific goals or ideas? (optional)", required: false },
 ];
 
