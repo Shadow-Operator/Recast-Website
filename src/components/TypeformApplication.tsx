@@ -7,7 +7,7 @@ import LoopingVideo from "./LoopingVideo";
 interface Question {
   id: string;
   label: string;
-  type: "text" | "email" | "textarea" | "select" | "group";
+  type: "text" | "email" | "textarea" | "select" | "multi-select" | "group";
   placeholder: string;
   options?: string[];
   required?: boolean;
@@ -66,6 +66,11 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
         return true;
       });
     }
+    if (currentQuestion.type === "multi-select" && currentQuestion.options) {
+      const selected = currentQuestion.options.filter((opt) => answers[`platform-${opt}`] === "true");
+      if (currentQuestion.required && selected.length === 0) return false;
+      return selected.every((opt) => (answers[`handle-${opt}`]?.trim() || "").length > 0);
+    }
     if (!currentQuestion.required) return true;
     const val = answers[currentQuestion.id]?.trim();
     if (!val) return false;
@@ -77,6 +82,10 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
     setSubmitting(true);
     setSubmitError(null);
     try {
+      const platforms = ["TikTok", "Instagram", "X", "YouTube", "Twitch", "Kick"];
+      const selectedPlatforms = platforms.filter((p) => formAnswers[`platform-${p}`] === "true");
+      const platformHandles = selectedPlatforms.map((p) => `${p}: ${formAnswers[`handle-${p}`] || ""}`).join(", ");
+
       const brandMessage = [
         formAnswers.company ? `Company: ${formAnswers.company}` : null,
         formAnswers.budget ? `Budget: ${formAnswers.budget}` : null,
@@ -88,8 +97,8 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
         type: formAnswers.role || defaultType || null,
         name: formAnswers.name || null,
         email: formAnswers.email || null,
-        platform: formAnswers.platform || null,
-        handle: formAnswers.handle || null,
+        platform: selectedPlatforms.length > 0 ? selectedPlatforms.join(", ") : formAnswers.platform || null,
+        handle: platformHandles || formAnswers.handle || null,
         audience_size: formAnswers.audience || null,
         content_niche: formAnswers.about || null,
         message: brandMessage,
@@ -221,6 +230,58 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
               {option}
             </button>
           ))}
+        </div>
+      );
+    }
+
+    if (field.type === "multi-select") {
+      return (
+        <div className="flex flex-col gap-3">
+          {field.options?.map((option, i) => {
+            const isSelected = answers[`platform-${option}`] === "true";
+            return (
+              <div key={option}>
+                <button
+                  className={`w-full text-left px-5 py-4 border transition-all text-base flex items-center gap-4 group ${
+                    isSelected
+                      ? "border-blue-accent bg-blue-accent/10 text-foreground"
+                      : "border-border text-muted-foreground hover:border-blue-accent/50 hover:text-foreground"
+                  }`}
+                  onClick={() => {
+                    setAnswers((prev) => ({
+                      ...prev,
+                      [`platform-${option}`]: isSelected ? "" : "true",
+                      ...(isSelected ? { [`handle-${option}`]: "" } : {}),
+                    }));
+                  }}
+                >
+                  <span className={`shrink-0 w-7 h-7 flex items-center justify-center text-[11px] font-bold tracking-wider border transition-colors ${
+                    isSelected ? "border-blue-accent text-blue-accent" : "border-border/60 text-muted-foreground/60 group-hover:border-blue-accent/40 group-hover:text-blue-accent/60"
+                  }`}>
+                    {LETTER_KEYS[i]}
+                  </span>
+                  {option}
+                </button>
+                {isSelected && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                    className="overflow-hidden"
+                  >
+                    <input
+                      type="text"
+                      placeholder={`Your ${option} handle`}
+                      className="w-full bg-transparent border-b-2 border-border focus:border-blue-accent outline-none text-base text-foreground py-3 px-5 placeholder:text-muted-foreground/50 transition-colors"
+                      value={answers[`handle-${option}`] || ""}
+                      onChange={(e) => setAnswers((prev) => ({ ...prev, [`handle-${option}`]: e.target.value }))}
+                      autoFocus
+                    />
+                  </motion.div>
+                )}
+              </div>
+            );
+          })}
         </div>
       );
     }

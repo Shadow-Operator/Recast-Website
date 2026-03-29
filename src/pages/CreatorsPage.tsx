@@ -89,8 +89,7 @@ const creatorQuestions = [
     { id: "email", label: "Email", type: "email" as const, placeholder: "you@email.com", required: true },
     { id: "phone", label: "Phone number", type: "text" as const, placeholder: "Your phone number", required: false },
   ]},
-  { id: "platform", label: "What's your primary platform?", type: "select" as const, placeholder: "", options: ["TikTok", "Instagram", "X", "YouTube", "Twitch", "Kick"], required: true },
-  { id: "handle", label: "What's your handle on that platform?", type: "text" as const, placeholder: "@yourhandle", required: true },
+  { id: "platforms", label: "What platforms do you use?", type: "multi-select" as const, placeholder: "", options: ["TikTok", "Instagram", "X", "YouTube", "Twitch", "Kick"], required: true },
   { id: "about", label: "Tell us about yourself and your content", type: "textarea" as const, placeholder: "What kind of content do you create? What makes your audience unique? (optional)", required: false },
 ];
 
