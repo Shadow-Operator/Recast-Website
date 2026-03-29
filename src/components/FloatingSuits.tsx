@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 interface SuitConfig {
   suit: string;
   className: string;
@@ -15,26 +13,21 @@ const FloatingSuits = ({ suits }: { suits: SuitConfig[] }) => {
   return (
     <>
       {suits.map((s, i) => (
-        <motion.span
+        <span
           key={i}
-          className={`absolute pointer-events-none select-none hidden sm:block ${s.size || "text-[120px] md:text-[180px]"} ${s.className || "text-primary"} opacity-[0.03]`}
-          style={{ left: s.x, top: s.y }}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 0.03, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{
-            y: [0, -12, 0, 12, 0],
-            rotate: [s.rotate || 0, (s.rotate || 0) + 6, s.rotate || 0, (s.rotate || 0) - 6, s.rotate || 0],
-          }}
-          transition={{
-            y: { duration: s.duration || 7, repeat: Infinity, ease: "easeInOut", delay: s.delay || 0 },
-            rotate: { duration: (s.duration || 7) + 2, repeat: Infinity, ease: "easeInOut", delay: s.delay || 0 },
-            opacity: { duration: 1 },
-            scale: { duration: 1 },
+          aria-hidden="true"
+          className={`absolute pointer-events-none select-none hidden sm:block ${s.size || "text-[120px] md:text-[180px]"} ${s.className || "text-primary"} opacity-[0.03] animate-float-suit`}
+          style={{
+            left: s.x,
+            top: s.y,
+            transform: `rotate(${s.rotate || 0}deg)`,
+            animationDelay: `${s.delay || 0}s`,
+            animationDuration: `${s.duration || 7}s`,
+            willChange: "transform",
           }}
         >
           {s.suit}
-        </motion.span>
+        </span>
       ))}
     </>
   );

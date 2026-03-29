@@ -1,40 +1,22 @@
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
 import WobblyLines from "./WobblyLines";
-
-const cardSuits = ["♠", "♥", "♦", "♣"];
+import LoopingVideo from "./LoopingVideo";
 
 const Hero = () => {
   return (
     <section className="min-h-[85vh] md:min-h-screen flex flex-col justify-center px-5 md:px-12 pt-32 md:pt-48 pb-10 md:pb-20 relative overflow-x-hidden">
+      {/* Video background */}
+      <LoopingVideo
+        src="/hero-bg.mp4"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        poster="/og-image.jpg"
+      />
+      <div className="absolute inset-0 bg-background/70 z-0" aria-hidden="true" />
+
       {/* Wobbly lines background - behind everything */}
       <WobblyLines />
 
-      {/* Animated card suits that fan out */}
-      <div className="absolute -right-4 md:right-20 top-1/2 -translate-y-1/2 hidden sm:flex items-center z-[1]">
-        {cardSuits.map((suit, i) => (
-          <motion.span
-            key={i}
-            className="absolute text-5xl md:text-7xl select-none pointer-events-none text-blue-accent"
-            style={{ opacity: 0.08 }}
-            initial={{ rotate: 0, x: 0, y: 0, scale: 0 }}
-            animate={{
-              rotate: -20 + i * 15,
-              x: (i - 1.5) * 45,
-              y: Math.sin(i * 1.2) * 20,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 1.2 + i * 0.15,
-              type: "spring",
-              stiffness: 120,
-            }}
-          >
-            {suit}
-          </motion.span>
-        ))}
-      </div>
 
       {/* Headline */}
       <div className="relative mb-6 md:mb-16 z-[2]">
@@ -51,7 +33,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              WE REPRESENT
+              THE AGENCY
             </motion.span>
           </motion.span>
           <motion.span
@@ -65,7 +47,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              CREATORS WHO
+              BEHIND THE
             </motion.span>
           </motion.span>
           <motion.span
@@ -80,7 +62,7 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               <AnimatedUnderline delay={0.6} color="blue">
-                <span className="text-blue-accent">Move Culture.</span>
+                <span className="text-blue-accent">Biggest Bets.</span>
               </AnimatedUnderline>
             </motion.span>
           </motion.span>
@@ -97,9 +79,9 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              WE REPRESENT
+              THE AGENCY
               <br />
-              CREATORS WHO
+              BEHIND THE
             </motion.span>
           </motion.span>
           <motion.span
@@ -114,7 +96,7 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               <AnimatedUnderline delay={0.6} color="blue">
-                <span className="text-blue-accent">Move Culture.</span>
+                <span className="text-blue-accent">Biggest Bets.</span>
               </AnimatedUnderline>
             </motion.span>
           </motion.span>
@@ -128,9 +110,9 @@ const Hero = () => {
         transition={{ duration: 0.7, delay: 0.8 }}
       >
         <strong className="text-foreground font-medium">
-          Recast is the talent agency connecting the world's top content creators with leading betting and gaming brands.
+          We connect creators with brands across every platform and every industry.
         </strong>{" "}
-        We specialise in high-value partnerships that perform — built on real audiences, real influence, and real results.
+        High-value partnerships built on real audiences and real results.
       </motion.p>
 
       <motion.div

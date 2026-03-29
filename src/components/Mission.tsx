@@ -16,8 +16,7 @@ const Mission = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="w-6 h-[1px] bg-blue-accent" />
-        Who we are
+        . Who we are
       </motion.p>
       <motion.h2
         className="text-[clamp(32px,4vw,56px)] font-display font-bold tracking-[-0.02em] leading-[1.05] max-w-[980px] mb-8"
@@ -33,16 +32,25 @@ const Mission = () => {
         and the world's biggest brands.
       </motion.h2>
       <motion.p
-        className="text-base md:text-lg text-muted-foreground font-light leading-[1.7] max-w-[760px]"
+        className="text-base md:text-lg text-muted-foreground font-light leading-[1.7] max-w-[760px] mb-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
       >
-        Recast was built for a space most agencies don't understand. We know the creators, we know the brands, and we know what it takes to make a partnership land in the betting and gaming world.{" "}
+        Recast is a specialist talent agency built from the ground up for the creator economy.{" "}
         <strong className="text-foreground font-medium">
-          No wasted spend. No misaligned deals. Just the right creators, with the right brands, at the right time.
+          We work with hundreds of creators and brands across every major region, delivering partnerships that don't just generate reach, but drive real conversions.
         </strong>
+      </motion.p>
+      <motion.p
+        className="text-base md:text-lg text-muted-foreground font-light leading-[1.7] max-w-[760px]"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+      >
+        From single-stream integrations to multi-platform campaigns, our deals have collectively generated billions of views worldwide. We don't believe in misaligned partnerships. Every deal we place is built on audience fit, brand trust, and performance.
       </motion.p>
     </section>
   );

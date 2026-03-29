@@ -6,6 +6,42 @@
 
 html { scroll-behavior: smooth; }
 
+/* Reduced motion: disable all animations and transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: hsl(var(--blue-accent));
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Focus visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid hsl(var(--blue-accent));
+  outline-offset: 2px;
+}
+
 @layer base {
   :root {
     --background: 0 0% 0%;
@@ -112,24 +148,15 @@ html { scroll-behavior: smooth; }
     width: 100%;
   }
 
-  /* Gaming dice spin */
-  @keyframes dice-spin {
-    0%, 100% { transform: rotate(0deg) scale(1); }
-    25% { transform: rotate(90deg) scale(1.1); }
-    50% { transform: rotate(180deg) scale(1); }
-    75% { transform: rotate(270deg) scale(1.1); }
+
+  /* Floating suits - GPU composited */
+  @keyframes float-suit {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -12px; }
   }
 
-  .animate-dice {
-    animation: dice-spin 4s ease-in-out infinite;
+  .animate-float-suit {
+    animation: float-suit 7s ease-in-out infinite;
   }
 
-  @keyframes slot-flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-  }
-
-  .animate-slot {
-    animation: slot-flicker 1.5s ease-in-out infinite;
-  }
 }

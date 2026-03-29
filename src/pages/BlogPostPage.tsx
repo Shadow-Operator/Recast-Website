@@ -74,9 +74,9 @@ const BlogPostPage = () => {
   return (
     <main className="overflow-hidden bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>{post.title} – Recast Blog</title>
+        <title>{post.title} - Recast Blog</title>
         <meta name="description" content={post.description} />
-        <link rel="canonical" href={`https://recastgg.lovable.app/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://recast.gg/blog/${post.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -86,7 +86,7 @@ const BlogPostPage = () => {
             datePublished: post.date,
             image: post.image,
             author: { "@type": "Organization", name: "Recast" },
-            publisher: { "@type": "Organization", name: "Recast", url: "https://recastgg.lovable.app" },
+            publisher: { "@type": "Organization", name: "Recast", url: "https://recast.gg" },
           })}
         </script>
       </Helmet>
@@ -106,6 +106,7 @@ const BlogPostPage = () => {
           </span>
           <span className="text-[11px] text-muted-foreground">{formattedDate}</span>
           <span className="text-[11px] text-muted-foreground">{post.readTime}</span>
+          <span className="text-[11px] text-muted-foreground">By {post.author}</span>
         </div>
 
         <h1 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6 leading-tight">
@@ -121,6 +122,30 @@ const BlogPostPage = () => {
         </div>
 
         <div>{renderContent(post.content)}</div>
+
+        {/* CTA Banner */}
+        <div className="mt-16 border border-border p-8 md:p-12 text-center">
+          <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-3">
+            Ready to work with us?
+          </h3>
+          <p className="text-muted-foreground font-light mb-6 max-w-lg mx-auto">
+            Whether you're a creator looking to monetise or a brand looking for the right audience, we'd love to hear from you.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="/creators"
+              className="bg-blue-accent text-white font-semibold text-sm px-8 py-3 hover:bg-blue-glow transition-colors text-center"
+            >
+              Join as a Creator
+            </a>
+            <a
+              href="/brands"
+              className="border border-border text-foreground font-semibold text-sm px-8 py-3 hover:border-blue-accent/40 hover:text-blue-accent transition-all text-center"
+            >
+              Partner as a Brand
+            </a>
+          </div>
+        </div>
       </article>
 
       <Footer />

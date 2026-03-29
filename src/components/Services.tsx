@@ -1,60 +1,39 @@
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
-import FloatingSuits from "./FloatingSuits";
 
 const capabilities = [
   {
     num: "01",
     title: "Creator monetisation",
     sub: "For Creators",
-    body: "We connect Twitch and YouTube creators with diverse revenue streams — from brand deals and sponsorships to ad overlays, affiliate partnerships, and integrated content campaigns.",
+    body: "Brand deals, sponsorships, ad overlays, affiliate partnerships, and integrated campaigns. We unlock every revenue stream for creators across every platform.",
   },
   {
     num: "02",
     title: "Brand partnerships",
     sub: "For Brands",
-    body: "Access a curated network of gaming and betting-aligned creators with real, engaged audiences. We manage the full campaign lifecycle — creator selection, deal negotiation, content integration, and performance reporting.",
+    body: "A curated network of creators with real, engaged audiences across gaming, entertainment, and lifestyle.",
   },
   {
     num: "03",
-    title: "Betting & gaming specialists",
+    title: "Full-service creator agency",
     sub: "Our Speciality",
-    body: "From securing sponsorship deals and managing ad overlays to coordinating content integrations and tracking affiliate performance — we are the only agency built end-to-end for the betting and gaming creator space.",
+    body: "An agency built end-to-end for the creator economy. Sponsorships, overlays, integrations, affiliate tracking, all under one roof.",
   },
 ];
 
 const Services = () => {
   return (
     <section id="brands" className="border-t border-border relative overflow-hidden">
-      {/* Depth layer */}
-      <motion.div
-        className="pointer-events-none absolute -left-24 top-12 h-72 w-72 rounded-full bg-blue-accent/15 blur-3xl"
-        animate={{ x: [0, 45, 0], y: [0, 22, 0], scale: [1, 1.1, 1] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+      {/* Static depth layer */}
+      <div
+        className="pointer-events-none absolute -left-24 top-12 h-72 w-72 rounded-full bg-blue-accent/10 blur-3xl"
         aria-hidden="true"
       />
-      <motion.div
-        className="pointer-events-none absolute -right-20 bottom-14 h-80 w-80 rounded-full bg-blue-accent/10 blur-3xl"
-        animate={{ x: [0, -40, 0], y: [0, -26, 0], scale: [1.05, 0.95, 1.05] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1.1 }}
+      <div
+        className="pointer-events-none absolute -right-20 bottom-14 h-80 w-80 rounded-full bg-blue-accent/8 blur-3xl"
         aria-hidden="true"
       />
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-35"
-        animate={{ backgroundPositionX: ["0%", "100%"] }}
-        transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 18% 30%, hsl(var(--primary) / 0.12) 0%, transparent 45%), radial-gradient(circle at 82% 72%, hsl(var(--primary) / 0.1) 0%, transparent 42%)",
-          backgroundSize: "140% 140%",
-        }}
-        aria-hidden="true"
-      />
-
-      <FloatingSuits suits={[
-        { suit: "♠", x: "90%", y: "15%", className: "text-blue-accent", rotate: -10, delay: 0.5, duration: 8 },
-        { suit: "♦", x: "5%", y: "55%", className: "text-blue-accent", size: "text-[100px] md:text-[150px]", rotate: 12, delay: 2 },
-      ]} />
       <div className="px-5 md:px-12 py-10 md:py-20 max-w-[1400px] mx-auto relative z-10">
         <motion.p
           className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-8 flex items-center gap-4"
@@ -62,8 +41,7 @@ const Services = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <span className="w-6 h-[1px] bg-blue-accent" />
-          What we do
+          . What we do
         </motion.p>
         <motion.h2
           className="font-display font-bold tracking-[-0.02em] leading-[1.05] max-w-[780px] text-4xl"

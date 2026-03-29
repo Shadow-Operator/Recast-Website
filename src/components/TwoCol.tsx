@@ -14,7 +14,7 @@ const TwoCol = () => {
           For creators
         </h3>
         <p className="text-sm md:text-[15px] text-muted-foreground font-light leading-[1.7] mb-6 md:mb-8">
-          Stop leaving money on the table. Recast turns your existing stream into a passive revenue engine — with no extra work, no brand scripts, and no compromise on your content.
+          We handle the brand deals, negotiations, and campaign management so you can focus on creating the content your audience loves.
         </p>
         <a
           href="/creators"
@@ -34,7 +34,7 @@ const TwoCol = () => {
           For brands
         </h3>
         <p className="text-sm md:text-[15px] text-muted-foreground font-light leading-[1.7] mb-6 md:mb-8">
-          Reach highly engaged betting and gaming audiences through creators they already trust. We handle the entire partnership lifecycle — from creator selection to live campaign management and performance reporting.
+          Reach engaged audiences through creators they already trust. We handle everything from creator selection to campaign management and performance reporting.
         </p>
         <a
           href="/brands"

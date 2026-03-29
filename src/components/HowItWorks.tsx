@@ -6,22 +6,17 @@ const steps = [
   {
     num: "Step 01",
     title: "Onboarding",
-    body: "Creators join the Recast network in under 10 minutes. We handle all brand verification and Twitch compliance setup on your behalf.",
+    body: "Creators join the Recast network. We handle all brand verification and compliance setup on your behalf.",
   },
   {
     num: "Step 02",
     title: "Campaign match",
-    body: "We match creators with brands that fit their audience, content style, and platform. No misaligned deals — every partnership is curated for performance.",
+    body: "We match creators with brands that fit their audience, content style, and platform. Every partnership is curated for performance.",
   },
   {
     num: "Step 03",
     title: "Go live",
-    body: "Brand deals, ad overlays, and content integrations go live across your channels. Fully passive — creators stream as normal while revenue builds in real time.",
-  },
-  {
-    num: "Step 04",
-    title: "Get paid",
-    body: "Revenue is calculated on average concurrent viewership with no caps and no ceiling. Payments come directly to creators, transparently, every month.",
+    body: "Brand deals, ad overlays, and content integrations go live across your channels. We get you up and running quickly so you can start earning.",
   },
 ];
 
@@ -39,8 +34,7 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <span className="w-6 h-[1px] bg-blue-accent" />
-          How it works
+          . How it works
         </motion.p>
         <motion.h2
           className="text-[clamp(28px,4vw,56px)] font-display font-bold tracking-[-0.02em] leading-[1.05] max-w-[780px] mb-12 md:mb-20"
@@ -56,7 +50,7 @@ const HowItWorks = () => {
           for brands.
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}

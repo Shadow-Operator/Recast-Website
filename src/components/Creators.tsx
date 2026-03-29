@@ -1,47 +1,55 @@
-import { motion } from "framer-motion";
+import charlotteParkes from "@/assets/charlotte-parkes.webp";
+import teeqo from "@/assets/teeqo.webp";
 
-import charlotteParkes from "@/assets/charlotte-parkes.png";
-import teeqo from "@/assets/teeqo.png";
-import ellieVandeel from "@/assets/ellie-vandeel.png";
-import highsky from "@/assets/highsky.png";
-import kJaneCaron from "@/assets/k-jane-caron.png";
-import temperr from "@/assets/temperr.png";
-import khanada from "@/assets/khanada.png";
-import allinabe from "@/assets/allinabe.png";
-import pGod from "@/assets/p-god.png";
-import samulx from "@/assets/samulx.png";
-import queasy from "@/assets/queasy.png";
-import harrietParkes from "@/assets/harriet-parkes.png";
-import jarvis from "@/assets/jarvis.png";
-import jonathanPeters from "@/assets/jonathan-peters.png";
-import hannahMarbles from "@/assets/hannah-marbles.png";
+import highsky from "@/assets/highsky.webp";
+import kJaneCaron from "@/assets/k-jane-caron.webp";
 
-const creators: { name: string; img: string }[] = [
-  { name: "Charlotte Parkes", img: charlotteParkes },
-  { name: "Teeqo", img: teeqo },
-  { name: "Ellie Vandeel", img: ellieVandeel },
-  { name: "HighSky", img: highsky },
-  { name: "K Jane Caron", img: kJaneCaron },
-  { name: "Temperr", img: temperr },
-  { name: "Khanada", img: khanada },
-  { name: "AllInAbe", img: allinabe },
-  { name: "P God", img: pGod },
-  { name: "Samulx", img: samulx },
-  { name: "Queasy", img: queasy },
-  { name: "Harriet Parkes", img: harrietParkes },
-  { name: "Jarvis", img: jarvis },
-  { name: "Jonathan Peters", img: jonathanPeters },
-  { name: "Hannah Marbles", img: hannahMarbles },
+import khanada from "@/assets/khanada.webp";
+import allinabe from "@/assets/allinabe.webp";
+import pGod from "@/assets/p-god.webp";
+import samulx from "@/assets/samulx.webp";
+
+import harrietParkes from "@/assets/harriet-parkes.webp";
+import jarvis from "@/assets/jarvis.webp";
+import jonathanPeters from "@/assets/jonathan-peters.webp";
+import hannahMarbles from "@/assets/hannah-marbles.webp";
+
+const creators: { name: string; img: string; platform: string; followers: string }[] = [
+  { name: "Charlotte Parkes", img: charlotteParkes, platform: "YouTube", followers: "5.2M" },
+  { name: "Teeqo", img: teeqo, platform: "YouTube", followers: "2.68M" },
+
+  { name: "H1ghSky1", img: highsky, platform: "YouTube", followers: "2.5M" },
+  { name: "K Jane Caron", img: kJaneCaron, platform: "Instagram", followers: "635K" },
+
+  { name: "Khanada", img: khanada, platform: "Twitch", followers: "924K" },
+  { name: "AllInAbe", img: allinabe, platform: "Kick", followers: "135K" },
+  { name: "P God", img: pGod, platform: "Twitch", followers: "856K" },
+  { name: "Samulx", img: samulx, platform: "Kick", followers: "421K" },
+
+  { name: "Harriet Parkes", img: harrietParkes, platform: "Instagram", followers: "165K" },
+  { name: "FaZe Jarvis", img: jarvis, platform: "YouTube", followers: "5.69M" },
+  { name: "Jonathan Peters", img: jonathanPeters, platform: "Instagram", followers: "9M" },
+  { name: "Hannah Marbles", img: hannahMarbles, platform: "YouTube", followers: "1.86M" },
 ];
 
-const CreatorCard = ({ name, img }: { name: string; img: string }) => (
+const CreatorCard = ({ name, img, platform, followers }: { name: string; img: string; platform: string; followers: string }) => (
   <div className="flex-shrink-0 w-44 sm:w-56 md:w-72 group cursor-pointer">
     <div className="relative overflow-hidden rounded-sm border border-border group-hover:border-blue-accent/40 transition-all duration-500">
       <img
         src={img}
-        alt={name}
-        className="w-44 h-56 sm:w-56 sm:h-72 md:w-72 md:h-[28rem] object-cover group-hover:scale-105 transition-transform duration-500"
+        alt={`${name} - ${platform} creator`}
+        loading="lazy"
+        decoding="async"
+        width={288}
+        height={448}
+        className="w-44 h-56 sm:w-56 sm:h-72 md:w-72 md:h-[28rem] object-cover"
       />
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3 md:p-4">
+        <p className="text-white font-display font-bold text-sm md:text-base tracking-tight">{name}</p>
+        <p className="text-white/60 text-[10px] md:text-xs font-medium tracking-wide uppercase">
+          {platform} · {followers}
+        </p>
+      </div>
     </div>
   </div>
 );
@@ -50,15 +58,14 @@ const Creators = () => {
   return (
     <section className="py-4 md:py-6 overflow-hidden bg-background">
       <div className="relative overflow-hidden">
-        <motion.div
-          className="flex gap-0 w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+        <div
+          className="flex gap-0 w-max animate-scroll-right"
+          style={{ willChange: "transform" }}
         >
           {[...creators, ...creators].map((creator, index) => (
-            <CreatorCard key={`${creator.name}-${index}`} name={creator.name} img={creator.img} />
+            <CreatorCard key={`${creator.name}-${index}`} name={creator.name} img={creator.img} platform={creator.platform} followers={creator.followers} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
