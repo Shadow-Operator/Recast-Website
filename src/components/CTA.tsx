@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
-import FloatingSuits from "./FloatingSuits";
+import { Globe } from "./ui/globe";
 import TypeformApplication from "./TypeformApplication";
 
 const brandQuestions = [
@@ -39,31 +39,16 @@ const CTA = () => {
           aria-hidden="true"
         />
 
-        <FloatingSuits suits={[
-          { suit: "♠", x: "5%", y: "20%", className: "text-blue-accent", rotate: -15, delay: 0 },
-          { suit: "♥", x: "90%", y: "15%", className: "text-blue-accent", size: "text-[100px] md:text-[140px]", rotate: 10, delay: 1 },
-          { suit: "♦", x: "8%", y: "70%", className: "text-blue-accent", size: "text-[90px] md:text-[120px]", rotate: 20, delay: 2 },
-          { suit: "♣", x: "85%", y: "65%", className: "text-blue-accent", size: "text-[100px] md:text-[150px]", rotate: -8, delay: 0.5 },
-        ]} />
-
-        {/* Chip stack video */}
+        {/* Interactive globe */}
         <motion.div
-          className="relative z-10 mb-8 mx-auto w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 overflow-hidden"
+          className="relative z-10 mb-4 mx-auto w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96"
           aria-hidden="true"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
-          <video
-            className="w-full h-full object-cover"
-            src="/cta-bg.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/og-image.png"
-          />
+          <Globe />
         </motion.div>
 
         <motion.h2
