@@ -72,9 +72,9 @@ const CTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="block text-[clamp(30px,7vw,96px)]">Stack the chips</span>
+          <span className="block text-[clamp(30px,7vw,96px)]">Ready to</span>
           <AnimatedUnderline delay={0.3}>
-            <span className="block text-blue-accent whitespace-nowrap text-[clamp(22px,4.8vw,68px)]">in your favour.</span>
+            <span className="block text-blue-accent whitespace-nowrap text-[clamp(22px,4.8vw,68px)]">get started?</span>
           </AnimatedUnderline>
         </motion.h2>
 

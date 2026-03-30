@@ -33,7 +33,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              THE AGENCY
+              WE REPRESENT
             </motion.span>
           </motion.span>
           <motion.span
@@ -47,7 +47,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              BEHIND THE
+              CREATORS WHO
             </motion.span>
           </motion.span>
           <motion.span
@@ -62,7 +62,7 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               <AnimatedUnderline delay={0.6} color="blue">
-                <span className="text-blue-accent">Biggest Bets.</span>
+                <span className="text-blue-accent">Move Culture.</span>
               </AnimatedUnderline>
             </motion.span>
           </motion.span>
@@ -79,9 +79,9 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              THE AGENCY
+              WE REPRESENT
               <br />
-              BEHIND THE
+              CREATORS WHO
             </motion.span>
           </motion.span>
           <motion.span
@@ -96,7 +96,7 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               <AnimatedUnderline delay={0.6} color="blue">
-                <span className="text-blue-accent">Biggest Bets.</span>
+                <span className="text-blue-accent">Move Culture.</span>
               </AnimatedUnderline>
             </motion.span>
           </motion.span>

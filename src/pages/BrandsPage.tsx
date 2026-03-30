@@ -9,7 +9,7 @@ import LoopingVideo from "@/components/LoopingVideo";
 
 const stats = [
   { value: "697M+", label: "Combined Reach" },
-  { value: "Billions", label: "Views Generated" },
+  { value: "7.4B+", label: "Views Generated" },
   { value: "20+", label: "Brand Partners" },
 ];
 

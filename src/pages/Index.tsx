@@ -17,8 +17,8 @@ const Index = () => {
     <main className="overflow-hidden bg-background text-foreground">
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <Helmet>
-        <title>Recast - Talent Agency for Gaming & Entertainment Creators</title>
-        <meta name="description" content="Recast connects top streaming creators with the biggest brands. High-value partnerships built on real audiences and real results." />
+        <title>Recast | The Creator Agency</title>
+        <meta name="description" content="Recast connects creators with brands across every platform and every industry. High-value partnerships built on real audiences and real results." />
         <link rel="canonical" href="https://recast.gg/" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
