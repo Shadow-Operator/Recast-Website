@@ -354,26 +354,12 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               <video
-                ref={(el) => {
-                  if (!el) return;
-                  const fadeTime = 0.5;
-                  el.addEventListener("timeupdate", () => {
-                    const remaining = el.duration - el.currentTime;
-                    if (remaining < fadeTime) {
-                      el.style.opacity = String(remaining / fadeTime);
-                    } else if (el.currentTime < fadeTime) {
-                      el.style.opacity = String(el.currentTime / fadeTime);
-                    } else {
-                      el.style.opacity = "1";
-                    }
-                  });
-                }}
                 src="/success-card.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-[400px] h-[400px] md:w-[550px] md:h-[550px] object-contain relative z-10 transition-opacity"
+                className="w-[400px] h-[400px] md:w-[550px] md:h-[550px] object-contain relative z-10"
                 style={{ mixBlendMode: "screen" }}
                 aria-hidden="true"
               />
@@ -386,7 +372,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h3 className="text-2xl md:text-4xl font-display font-extrabold tracking-[-0.03em] uppercase mb-4">
+              <h3 className="text-3xl md:text-5xl font-display font-extrabold tracking-[-0.03em] uppercase mb-4">
                 Application<br />Received.
               </h3>
               <p className="text-muted-foreground text-base font-light leading-relaxed mb-6">
