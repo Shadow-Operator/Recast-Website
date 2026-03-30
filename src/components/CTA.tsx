@@ -62,7 +62,7 @@ const CTA = () => {
             loop
             muted
             playsInline
-            poster="/og-image.jpg"
+            poster="/og-image.png"
           />
         </motion.div>
 
