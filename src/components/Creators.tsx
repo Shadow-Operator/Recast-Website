@@ -4,7 +4,7 @@ import teeqo from "@/assets/teeqo.jpg";
 import highsky from "@/assets/highsky.jpg";
 import kJaneCaron from "@/assets/IMG_6877.jpg";
 
-import khanada from "@/assets/khanada.webp";
+import khanada from "@/assets/Khanada .jpg";
 import allinabe from "@/assets/allinabe.webp";
 import pGod from "@/assets/p-god.jpg";
 import samulx from "@/assets/samulx.webp";
@@ -12,7 +12,7 @@ import samulx from "@/assets/samulx.webp";
 import harrietParkes from "@/assets/harriet-parkes.webp";
 import jarvis from "@/assets/jarvis.webp";
 import jonathanPeters from "@/assets/jonathan-peters.webp";
-import hannahMarbles from "@/assets/hannah-marbles.webp";
+import hannahMarbles from "@/assets/Screenshot 2026-03-30 at 18.29.54.png";
 
 const creators: { name: string; img: string; platform: string; followers: string }[] = [
   { name: "Charlotte Parkes", img: charlotteParkes, platform: "YouTube", followers: "5.2M" },
