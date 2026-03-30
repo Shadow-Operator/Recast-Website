@@ -1,12 +1,12 @@
 import charlotteParkes from "@/assets/charlotte-parkes.webp";
-import teeqo from "@/assets/teeqo.webp";
+import teeqo from "@/assets/teeqo.jpg";
 
-import highsky from "@/assets/highsky.webp";
+import highsky from "@/assets/highsky.jpg";
 import kJaneCaron from "@/assets/k-jane-caron.webp";
 
 import khanada from "@/assets/khanada.webp";
 import allinabe from "@/assets/allinabe.webp";
-import pGod from "@/assets/p-god.webp";
+import pGod from "@/assets/p-god.jpg";
 import samulx from "@/assets/samulx.webp";
 
 import harrietParkes from "@/assets/harriet-parkes.webp";
