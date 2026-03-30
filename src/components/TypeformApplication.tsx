@@ -332,14 +332,13 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="absolute inset-0 rounded-full bg-blue-accent/20 blur-3xl scale-125 pointer-events-none" aria-hidden="true" />
               <video
                 src="/success-card.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-80 h-80 md:w-[420px] md:h-[420px] object-contain relative z-10"
+                className="w-[400px] h-[400px] md:w-[550px] md:h-[550px] object-contain relative z-10"
                 style={{ mixBlendMode: "screen" }}
                 aria-hidden="true"
               />
