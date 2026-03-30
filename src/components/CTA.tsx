@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedUnderline from "./AnimatedUnderline";
-import { Globe } from "./ui/globe";
+import { GlobeLive } from "./ui/globe";
 import TypeformApplication from "./TypeformApplication";
 
 const brandQuestions = [
@@ -28,17 +28,17 @@ const CTA = () => {
   return (
     <section className="relative overflow-visible">
       {/* Visual header */}
-      <div className="pt-2 pb-4 md:pt-4 md:pb-8 px-5 md:px-6 text-center relative overflow-visible">
+      <div className="pt-0 pb-4 md:pt-0 md:pb-8 px-5 md:px-6 text-center relative overflow-visible">
         {/* Interactive globe */}
         <motion.div
-          className="relative z-10 mb-4 mx-auto w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96"
+          className="relative z-10 mb-8 md:mb-12 mx-auto w-56 h-56 sm:w-72 sm:h-72 md:w-[420px] md:h-[420px]"
           aria-hidden="true"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <Globe />
+          <GlobeLive />
         </motion.div>
 
         <motion.h2
