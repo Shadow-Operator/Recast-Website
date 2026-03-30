@@ -100,7 +100,6 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
         phone: formAnswers.phone || null,
         platform: selectedPlatforms.length > 0 ? selectedPlatforms.join(", ") : formAnswers.platform || null,
         handle: platformHandles || formAnswers.handle || null,
-        audience_size: formAnswers.audience || null,
         content_niche: formAnswers.about || null,
         message: brandMessage,
       });
@@ -114,7 +113,6 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
         phone: formAnswers.phone || null,
         platform: selectedPlatforms.length > 0 ? selectedPlatforms.join(", ") : formAnswers.platform || null,
         handle: platformHandles || formAnswers.handle || null,
-        audience_size: formAnswers.audience || null,
         content_niche: formAnswers.about || null,
         message: brandMessage,
         created_at: new Date().toISOString(),

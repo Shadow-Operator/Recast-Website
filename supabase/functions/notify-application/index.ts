@@ -20,7 +20,6 @@ Deno.serve(async (req) => {
     ? `
 Platform: ${record.platform || "-"}
 Handle: ${record.handle || "-"}
-Audience size: ${record.audience_size || "-"}
 Content niche: ${record.content_niche || "-"}
 `
     : "";
