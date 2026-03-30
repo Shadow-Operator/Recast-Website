@@ -22,7 +22,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Recast. All rights reserved.
           </p>
           <p className="text-[10px] text-muted-foreground/50">
-            Recast · Las Vegas, Nevada
+            Recast LLC · Las Vegas, Nevada
           </p>
         </div>
         <div className="flex items-center gap-6">

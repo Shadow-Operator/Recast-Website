@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 const sections = [
   {
     title: "Who We Are",
-    body: `Recast is a talent and influencer agency specializing in gaming, entertainment, and lifestyle. We connect content creators with brands for sponsorship and affiliate partnerships.\n\nFor the purposes of data protection law, the data controller is Recast, based in Las Vegas, Nevada.`,
+    body: `Recast is a talent and influencer agency specializing in gaming, entertainment, and lifestyle. We connect content creators with brands for sponsorship and affiliate partnerships.\n\nFor the purposes of data protection law, the data controller is Recast LLC, based in Las Vegas, Nevada.`,
   },
   {
     title: "What Data We Collect",
