@@ -7,7 +7,7 @@ import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import TwoCol from "@/components/TwoCol";
 import Creators from "@/components/Creators";
-import Testimonials from "@/components/Testimonials";
+// import Testimonials from "@/components/Testimonials";
 
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -40,7 +40,7 @@ const Index = () => {
       <Services />
       <HowItWorks />
       <TwoCol />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CTA />
       <Footer />
     </main>
