@@ -346,7 +346,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            {/* Spinning card + glow */}
+            {/* Spinning holographic logo */}
             <motion.div
               className="shrink-0 relative"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -354,12 +354,26 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               <video
+                ref={(el) => {
+                  if (!el) return;
+                  const fadeTime = 0.5;
+                  el.addEventListener("timeupdate", () => {
+                    const remaining = el.duration - el.currentTime;
+                    if (remaining < fadeTime) {
+                      el.style.opacity = String(remaining / fadeTime);
+                    } else if (el.currentTime < fadeTime) {
+                      el.style.opacity = String(el.currentTime / fadeTime);
+                    } else {
+                      el.style.opacity = "1";
+                    }
+                  });
+                }}
                 src="/success-card.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-[400px] h-[400px] md:w-[550px] md:h-[550px] object-contain relative z-10"
+                className="w-[400px] h-[400px] md:w-[550px] md:h-[550px] object-contain relative z-10 transition-opacity"
                 style={{ mixBlendMode: "screen" }}
                 aria-hidden="true"
               />
