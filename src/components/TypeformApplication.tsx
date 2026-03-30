@@ -90,7 +90,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
         formAnswers.company ? `Company: ${formAnswers.company}` : null,
         formAnswers.budget ? `Budget: ${formAnswers.budget}` : null,
         formAnswers.goals ? `Goals: ${formAnswers.goals}` : null,
-        formAnswers.timeline ? `Timeline: ${formAnswers.timeline}` : null,
+        formAnswers.timeline ? `Timeline: ${formAnswers.timeline}${formAnswers["timeline-specific"] ? ` (${formAnswers["timeline-specific"]})` : ""}` : null,
       ].filter(Boolean).join("\n") || null;
 
       const { error } = await (supabase as any).from("applications").insert({
@@ -209,6 +209,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
     }
 
     if (field.type === "select") {
+      const hasSpecificOption = answers[field.id] === "Specific date or timeframe";
       return (
         <div className="flex flex-col gap-3">
           {field.options?.map((option, i) => (
@@ -221,7 +222,9 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
               }`}
               onClick={() => {
                 setAnswers({ ...answers, [field.id]: option });
-                setTimeout(handleNext, 300);
+                if (option !== "Specific date or timeframe") {
+                  setTimeout(handleNext, 300);
+                }
               }}
             >
               <span className={`shrink-0 w-7 h-7 flex items-center justify-center text-[11px] font-bold tracking-wider border transition-colors ${
@@ -232,6 +235,24 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
               {option}
             </button>
           ))}
+          {hasSpecificOption && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="overflow-hidden"
+            >
+              <input
+                type="text"
+                placeholder="e.g. June 2025, Q3, specific date..."
+                className="w-full bg-transparent border-b-2 border-border focus:border-blue-accent outline-none text-lg md:text-xl text-foreground py-4 placeholder:text-muted-foreground/50 transition-colors"
+                value={answers[`${field.id}-specific`] || ""}
+                onChange={(e) => setAnswers((prev) => ({ ...prev, [`${field.id}-specific`]: e.target.value }))}
+                onKeyDown={handleKeyDown}
+                autoFocus
+              />
+            </motion.div>
+          )}
         </div>
       );
     }
@@ -495,7 +516,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
                       <p className="text-red-400 text-sm mt-4" role="alert">{submitError}</p>
                     )}
 
-                    {currentQuestion.type !== "select" && (
+                    {(currentQuestion.type !== "select" || answers[currentQuestion.id] === "Specific date or timeframe") && (
                       <div className="flex items-center gap-4 mt-10">
                         <button
                           onClick={handleBack}
