@@ -26,19 +26,9 @@ const creatorQuestions = [
 
 const CTA = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-visible">
       {/* Visual header */}
-      <div className="pt-2 pb-4 md:pt-4 md:pb-8 px-5 md:px-6 text-center relative overflow-hidden">
-        {/* Static depth layer */}
-        <div
-          className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-blue-accent/10 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -right-20 bottom-6 h-72 w-72 rounded-full bg-blue-accent/8 blur-3xl"
-          aria-hidden="true"
-        />
-
+      <div className="pt-2 pb-4 md:pt-4 md:pb-8 px-5 md:px-6 text-center relative overflow-visible">
         {/* Interactive globe */}
         <motion.div
           className="relative z-10 mb-4 mx-auto w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96"
