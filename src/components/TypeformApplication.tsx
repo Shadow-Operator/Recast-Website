@@ -103,7 +103,10 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
         content_niche: formAnswers.about || null,
         message: brandMessage,
       });
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase insert error:", error.message, error.code, error.details);
+        throw error;
+      }
 
       // Notify team via edge function (best-effort, don't block success)
       const record = {
