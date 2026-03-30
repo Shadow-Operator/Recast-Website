@@ -1,8 +1,8 @@
-import charlotteParkes from "@/assets/charlotte-parkes.webp";
+import charlotteParkes from "@/assets/IMG_6876.jpg";
 import teeqo from "@/assets/teeqo.jpg";
 
 import highsky from "@/assets/highsky.jpg";
-import kJaneCaron from "@/assets/k-jane-caron.webp";
+import kJaneCaron from "@/assets/IMG_6877.jpg";
 
 import khanada from "@/assets/khanada.webp";
 import allinabe from "@/assets/allinabe.webp";
