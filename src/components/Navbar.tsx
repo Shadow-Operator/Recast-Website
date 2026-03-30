@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import recastIcon from "@/assets/recast-icon.png";
 
 const navLinks = [
@@ -15,6 +15,13 @@ const noiseBackground = `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xm
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [opacity, setOpacity] = useState(1);
+  const location = useLocation();
+
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     let ticking = false;
@@ -50,7 +57,7 @@ const Navbar = () => {
       }}
       aria-label="Main navigation"
     >
-      <Link to="/" className="flex items-center gap-2">
+      <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2">
         <img src={recastIcon} alt="Recast" className="h-14 md:h-16 lg:h-18" />
         <span className="text-foreground font-display font-bold text-xl md:text-2xl tracking-wide uppercase">RECAST</span>
       </Link>
