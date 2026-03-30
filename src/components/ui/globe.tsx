@@ -69,19 +69,19 @@ export function Globe({ className = "" }: { className?: string }) {
       height: width * dpr,
       phi: 0,
       theta: 0.15,
-      dark: 1,
-      diffuse: 0.4,
-      mapSamples: 30000,
-      mapBrightness: 6,
-      baseColor: [0.15, 0.15, 0.2],
-      markerColor: [0.3, 0.6, 1],
-      glowColor: [0.06, 0.06, 0.1],
+      dark: 0,
+      diffuse: 1.2,
+      mapSamples: 40000,
+      mapBrightness: 1.8,
+      baseColor: [1, 1, 1],
+      markerColor: [0.9, 0.15, 0.15],
+      glowColor: [0.9, 0.9, 0.9],
       markers: liveLocations.map((m) => ({
         location: m.location,
-        size: 0.05,
+        size: 0.06,
       })),
       onRender: (state: Record<string, number>) => {
-        phiRef.current += 0.003
+        phiRef.current += 0.004
         state.phi = phiRef.current
         state.theta = 0.15
         state.width = width * dpr
