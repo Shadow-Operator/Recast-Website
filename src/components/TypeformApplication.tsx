@@ -372,7 +372,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h3 className="text-3xl md:text-5xl font-display font-extrabold tracking-[-0.03em] uppercase mb-4">
+              <h3 className="text-3xl font-display font-extrabold tracking-[-0.03em] uppercase mb-4">
                 Application<br />Received.
               </h3>
               <p className="text-muted-foreground text-base font-light leading-relaxed mb-6">
