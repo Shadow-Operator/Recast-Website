@@ -14,15 +14,14 @@ import jarvis from "@/assets/jarvis.webp";
 import jonathanPeters from "@/assets/jonathan-peters.webp";
 import hannahMarbles from "@/assets/Screenshot 2026-03-30 at 18.29.54.png";
 
-const creators: { name: string; img: string; platform: string; followers: string }[] = [
-  { name: "Charlotte Parkes", img: charlotteParkes, platform: "YouTube", followers: "5.2M" },
+const creators: { name: string; img: string; platform: string; followers: string; cropScale?: number }[] = [
   { name: "Teeqo", img: teeqo, platform: "YouTube", followers: "2.68M" },
-
   { name: "H1ghSky1", img: highsky, platform: "YouTube", followers: "2.5M" },
   { name: "K Jane Caron", img: kJaneCaron, platform: "Instagram", followers: "635K" },
 
   { name: "Khanada", img: khanada, platform: "Twitch", followers: "924K" },
   { name: "AllInAbe", img: allinabe, platform: "Kick", followers: "135K" },
+  { name: "Charlotte Parkes", img: charlotteParkes, platform: "YouTube", followers: "5.2M", cropScale: 1.5 },
   { name: "P God", img: pGod, platform: "Twitch", followers: "856K" },
   { name: "Samulx", img: samulx, platform: "Kick", followers: "421K" },
 
@@ -32,7 +31,7 @@ const creators: { name: string; img: string; platform: string; followers: string
   { name: "Hannah Marbles", img: hannahMarbles, platform: "YouTube", followers: "1.86M" },
 ];
 
-const CreatorCard = ({ name, img, platform, followers }: { name: string; img: string; platform: string; followers: string }) => (
+const CreatorCard = ({ name, img, platform, followers, cropScale }: { name: string; img: string; platform: string; followers: string; cropScale?: number }) => (
   <div className="flex-shrink-0 w-44 sm:w-56 md:w-72 group cursor-pointer">
     <div className="relative overflow-hidden rounded-sm border border-border group-hover:border-blue-accent/40 transition-all duration-500">
       <img
@@ -43,6 +42,7 @@ const CreatorCard = ({ name, img, platform, followers }: { name: string; img: st
         width={288}
         height={448}
         className="w-44 h-56 sm:w-56 sm:h-72 md:w-72 md:h-[28rem] object-cover"
+        style={cropScale ? { transform: `scale(${cropScale})`, transformOrigin: "top center" } : undefined}
       />
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3 md:p-4">
         <p className="text-white font-display font-bold text-sm md:text-base tracking-tight">{name}</p>
@@ -63,7 +63,7 @@ const Creators = () => {
           style={{ willChange: "transform" }}
         >
           {[...creators, ...creators].map((creator, index) => (
-            <CreatorCard key={`${creator.name}-${index}`} name={creator.name} img={creator.img} platform={creator.platform} followers={creator.followers} />
+            <CreatorCard key={`${creator.name}-${index}`} name={creator.name} img={creator.img} platform={creator.platform} followers={creator.followers} cropScale={creator.cropScale} />
           ))}
         </div>
       </div>
