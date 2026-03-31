@@ -30,7 +30,7 @@ const sections = [
   },
   {
     title: "Your Rights",
-    body: `Depending on your state of residence, you may have the right to:\n\n• Know what personal data we collect, use, and share\n• Request access to or deletion of your personal data\n• Opt out of the sale or sharing of your personal data\n• Correct inaccurate personal data\n• Non-discrimination for exercising your privacy rights\n\nResidents of states with comprehensive privacy laws (such as California, Nevada, Colorado, Virginia, and others) may have additional rights under applicable law.\n\nTo exercise any of these rights, please contact us at harry@recast.gg. We will respond within the timeframe required by applicable law.`,
+    body: `Depending on your state of residence, you may have the right to:\n\n• Know what personal data we collect, use, and share\n• Request access to or deletion of your personal data\n• Opt out of the sale or sharing of your personal data\n• Correct inaccurate personal data\n• Non-discrimination for exercising your privacy rights\n\nResidents of states with comprehensive privacy laws (such as California, Nevada, Colorado, Virginia, and others) may have additional rights under applicable law.\n\nTo exercise any of these rights, please contact us at sign@recast.gg. We will respond within the timeframe required by applicable law.`,
   },
   {
     title: "Cookies",
@@ -42,7 +42,7 @@ const sections = [
   },
   {
     title: "Contact & Complaints",
-    body: `For any data protection queries, contact us at harry@recast.gg.\n\nIf you believe we have not handled your data correctly, you may file a complaint with your state's Attorney General or the Federal Trade Commission (FTC) at ftc.gov.`,
+    body: `For any data protection queries, contact us at sign@recast.gg.\n\nIf you believe we have not handled your data correctly, you may file a complaint with your state's Attorney General or the Federal Trade Commission (FTC) at ftc.gov.`,
   },
 ];
 

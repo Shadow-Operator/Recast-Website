@@ -1,5 +1,5 @@
 const RESEND_API_KEY = "re_agDdz3Vr_6BoBPur6iFF7j35f8a8muoZ3";
-const NOTIFY_EMAIL = "harry@recast.gg";
+const NOTIFY_EMAIL = "sign@recast.gg";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

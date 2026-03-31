@@ -128,7 +128,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
 
       setSubmitted(true);
     } catch {
-      setSubmitError("Something went wrong. Please try again or email us at harry@recast.gg");
+      setSubmitError("Something went wrong. Please try again or email us at sign@recast.gg");
     } finally {
       setSubmitting(false);
     }
