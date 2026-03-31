@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://recastgg.lovable.app/sitemap.xml
+Sitemap: https://recast.gg/sitemap.xml

@@ -1,43 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://recastgg.lovable.app/</loc>
+    <loc>https://recast.gg/</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://recastgg.lovable.app/brands</loc>
+    <loc>https://recast.gg/brands</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://recastgg.lovable.app/creators</loc>
+    <loc>https://recast.gg/creators</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://recastgg.lovable.app/blog</loc>
+    <loc>https://recast.gg/blog</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://recastgg.lovable.app/blog/what-betting-brands-get-wrong-about-creators</loc>
+    <loc>https://recast.gg/privacy</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://recast.gg/blog/what-betting-brands-get-wrong-about-creators</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://recastgg.lovable.app/blog/live-betting-streams-changing-the-game</loc>
+    <loc>https://recast.gg/blog/live-betting-streams-changing-the-game</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://recastgg.lovable.app/blog/creator-income-beyond-brand-deals</loc>
+    <loc>https://recast.gg/blog/creator-income-beyond-brand-deals</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://recastgg.lovable.app/blog/responsible-gambling-content-matters</loc>
+    <loc>https://recast.gg/blog/responsible-gambling-content-matters</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://recastgg.lovable.app/blog/why-vertical-agencies-win</loc>
+    <loc>https://recast.gg/blog/why-vertical-agencies-win</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://recastgg.lovable.app/blog/how-one-creator-turned-a-brand-deal-into-a-long-term-partnership</loc>
+    <loc>https://recast.gg/blog/how-one-creator-turned-a-brand-deal-into-a-long-term-partnership</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
