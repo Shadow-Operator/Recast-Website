@@ -6,6 +6,9 @@ const brands = [
   "Temu",
   "Rainbet",
   "Fashion Nova",
+  "Kalshi",
+  "Dimebit",
+  "BetOnline",
 ];
 
 const Brands = () => {

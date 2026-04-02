@@ -13,6 +13,12 @@ import harrietParkes from "@/assets/harriet-parkes.webp";
 import jarvis from "@/assets/jarvis.webp";
 import jonathanPeters from "@/assets/jonathan-peters.webp";
 import hannahMarbles from "@/assets/Screenshot 2026-03-30 at 18.29.54.png";
+import frazier from "@/assets/frazier.jpg";
+import elzein from "@/assets/elzein.jpg";
+import sachaumazaki from "@/assets/sachaumazaki.jpg";
+import rdjavi from "@/assets/rdjavi.jpg";
+import nikan from "@/assets/nikan.jpg";
+import azraRamic from "@/assets/azra-ramic.jpg";
 
 const creators: { name: string; img: string; platform: string; followers: string; cropScale?: number }[] = [
   { name: "Teeqo", img: teeqo, platform: "YouTube", followers: "2.68M" },
@@ -29,6 +35,12 @@ const creators: { name: string; img: string; platform: string; followers: string
   { name: "FaZe Jarvis", img: jarvis, platform: "YouTube", followers: "5.69M" },
   { name: "Jonathan Peters", img: jonathanPeters, platform: "Instagram", followers: "9M" },
   { name: "Hannah Marbles", img: hannahMarbles, platform: "YouTube", followers: "1.86M" },
+  { name: "Frazier", img: frazier, platform: "YouTube", followers: "9.2M" },
+  { name: "elzein", img: elzein, platform: "Instagram", followers: "932K" },
+  { name: "sachaumazaki", img: sachaumazaki, platform: "TikTok", followers: "314K" },
+  { name: "RDJavi", img: rdjavi, platform: "Instagram", followers: "1.9M" },
+  { name: "Nikan", img: nikan, platform: "YouTube", followers: "1.3M" },
+  { name: "Azra Ramic", img: azraRamic, platform: "Instagram", followers: "378K" },
 ];
 
 const CreatorCard = ({ name, img, platform, followers, cropScale }: { name: string; img: string; platform: string; followers: string; cropScale?: number }) => (
