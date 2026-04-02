@@ -56,7 +56,7 @@ ${details}
       Authorization: `Bearer ${RESEND_API_KEY}`,
     },
     body: JSON.stringify({
-      from: "Recast Applications <onboarding@resend.dev>",
+      from: "Recast Applications <notifications@recast.gg>",
       to: NOTIFY_EMAIL,
       subject: `New ${isCreator ? "Creator" : "Brand"} Application - ${name}`,
       html,
