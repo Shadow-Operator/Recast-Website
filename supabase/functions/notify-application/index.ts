@@ -1,5 +1,5 @@
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
-const NOTIFY_EMAIL = "sign@recast.gg";
+const NOTIFY_EMAIL = "harry@recast.gg";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "https://recast.gg",
