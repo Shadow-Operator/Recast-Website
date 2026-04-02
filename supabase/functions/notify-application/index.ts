@@ -1,10 +1,19 @@
-const RESEND_API_KEY = "re_agDdz3Vr_6BoBPur6iFF7j35f8a8muoZ3";
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
 const NOTIFY_EMAIL = "sign@recast.gg";
 
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": "https://recast.gg",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -16,20 +25,27 @@ Deno.serve(async (req) => {
 
   const isCreator = record.type === "creator";
 
+  const name = escapeHtml(record.name || "");
+  const email = escapeHtml(record.email || "");
+  const message = escapeHtml(record.message || "-");
+  const platform = escapeHtml(record.platform || "-");
+  const handle = escapeHtml(record.handle || "-");
+  const contentNiche = escapeHtml(record.content_niche || "-");
+
   const details = isCreator
     ? `
-Platform: ${record.platform || "-"}
-Handle: ${record.handle || "-"}
-Content niche: ${record.content_niche || "-"}
+Platform: ${platform}
+Handle: ${handle}
+Content niche: ${contentNiche}
 `
     : "";
 
   const html = `
-<h2>New ${record.type === "creator" ? "Creator" : "Brand"} Application</h2>
-<p><strong>Name:</strong> ${record.name}</p>
-<p><strong>Email:</strong> ${record.email}</p>
+<h2>New ${isCreator ? "Creator" : "Brand"} Application</h2>
+<p><strong>Name:</strong> ${name}</p>
+<p><strong>Email:</strong> ${email}</p>
 ${details}
-<p><strong>Message:</strong> ${record.message || "-"}</p>
+<p><strong>Message:</strong> ${message}</p>
 <p><strong>Submitted:</strong> ${new Date(record.created_at).toLocaleString("en-GB")}</p>
 `;
 
@@ -42,7 +58,7 @@ ${details}
     body: JSON.stringify({
       from: "Recast Applications <onboarding@resend.dev>",
       to: NOTIFY_EMAIL,
-      subject: `New ${record.type === "creator" ? "Creator" : "Brand"} Application - ${record.name}`,
+      subject: `New ${isCreator ? "Creator" : "Brand"} Application - ${name}`,
       html,
     }),
   });
