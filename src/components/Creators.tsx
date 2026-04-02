@@ -19,6 +19,7 @@ import sachaumazaki from "@/assets/sachaumazaki.jpg";
 import rdjavi from "@/assets/rdjavi.jpg";
 import nikan from "@/assets/nikan.jpg";
 import azraRamic from "@/assets/azra-ramic.jpg";
+import bellaRama from "@/assets/bella-rama.jpg";
 
 const creators: { name: string; img: string; platform: string; followers: string; cropScale?: number }[] = [
   { name: "Teeqo", img: teeqo, platform: "YouTube", followers: "2.68M" },
@@ -37,6 +38,7 @@ const creators: { name: string; img: string; platform: string; followers: string
   { name: "Hannah Marbles", img: hannahMarbles, platform: "YouTube", followers: "1.86M" },
   { name: "Frazier", img: frazier, platform: "YouTube", followers: "9.2M" },
   { name: "Elzein", img: elzein, platform: "Instagram", followers: "932K" },
+  { name: "Bella Rama", img: bellaRama, platform: "Instagram", followers: "1.1M" },
   { name: "Sachaumazaki", img: sachaumazaki, platform: "TikTok", followers: "314K" },
   { name: "RDJavi", img: rdjavi, platform: "Instagram", followers: "1.9M" },
   { name: "Nikan", img: nikan, platform: "YouTube", followers: "1.3M" },
