@@ -1,5 +1,5 @@
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
-const NOTIFY_EMAIL = "harry@recast.gg";
+const NOTIFY_EMAILS = ["harry@recast.gg", "sign@recast.gg"];
 const MAX_PAYLOAD_SIZE = 10_000; // 10KB max
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 const RATE_LIMIT_MAX = 5; // max 5 requests per window per IP
@@ -193,7 +193,7 @@ ${details}
     },
     body: JSON.stringify({
       from: "Recast Applications <notifications@recast.gg>",
-      to: NOTIFY_EMAIL,
+      to: NOTIFY_EMAILS,
       subject: `New ${isCreator ? "Creator" : "Brand"} Application - ${escapedName}`,
       html,
     }),
