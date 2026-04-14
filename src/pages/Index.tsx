@@ -27,7 +27,7 @@ const Index = () => {
           "url": "https://recast.gg",
           "description": "Talent agency connecting streaming creators with leading brands.",
           "sameAs": [
-            "https://instagram.com/recastgg"
+            "https://www.instagram.com/recast/"
           ]
         })}</script>
       </Helmet>
