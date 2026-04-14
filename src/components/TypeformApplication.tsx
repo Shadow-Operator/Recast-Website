@@ -45,9 +45,8 @@ const FIELD_MAX_LENGTHS: Record<string, number> = {
 const DEFAULT_MAX_LENGTH = 500;
 const HANDLE_MAX_LENGTH = 200;
 
-const NOTIFY_URL = import.meta.env.VITE_SUPABASE_URL
-  ? `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/notify-application`
-  : "https://itcpjwzqwkvsrenjpppi.supabase.co/functions/v1/notify-application";
+const NOTIFY_URL = import.meta.env.VITE_NOTIFY_FUNCTION_URL
+  || "https://vmqzhkktdvnxjiomhecv.supabase.co/functions/v1/notify-application";
 
 const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSelection }: TypeformApplicationProps) => {
   const [currentStep, setCurrentStep] = useState(0);
