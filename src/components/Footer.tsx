@@ -14,6 +14,7 @@ const Footer = () => {
           <li><a href="/#how" className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase font-medium hover:text-foreground transition-colors">How It Works</a></li>
           <li><Link to="/blog" className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase font-medium hover:text-foreground transition-colors">Blog</Link></li>
           <li><Link to="/privacy" className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase font-medium hover:text-foreground transition-colors">Privacy Policy</Link></li>
+          <li><Link to="/terms" className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase font-medium hover:text-foreground transition-colors">Terms of Use</Link></li>
         </ul>
       </div>
       <div className="w-full flex flex-col items-center gap-4 md:flex-row md:justify-between border-t border-border pt-6">

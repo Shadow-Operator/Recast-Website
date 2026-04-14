@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import WobblyLines from "./WobblyLines";
@@ -33,6 +34,21 @@ const TRUST_SIGNALS = [
 
 const LETTER_KEYS = ["A", "B", "C", "D", "E", "F"];
 
+const FIELD_MAX_LENGTHS: Record<string, number> = {
+  name: 200,
+  email: 254,
+  company: 200,
+  phone: 30,
+  about: 2000,
+  goals: 2000,
+};
+const DEFAULT_MAX_LENGTH = 500;
+const HANDLE_MAX_LENGTH = 200;
+
+const NOTIFY_URL = import.meta.env.VITE_SUPABASE_URL
+  ? `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/notify-application`
+  : "https://itcpjwzqwkvsrenjpppi.supabase.co/functions/v1/notify-application";
+
 const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSelection }: TypeformApplicationProps) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -41,6 +57,8 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
   const [emailError, setEmailError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState("");
+  const [consentChecked, setConsentChecked] = useState(false);
   const activeQuestions = roleSelection && selectedRole
     ? roleSelection.options.find((o) => o.value === selectedRole)?.questions || questions
     : questions;
@@ -78,31 +96,49 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
     return true;
   };
 
+  const sanitize = (value: string | undefined, maxLen: number): string | null => {
+    if (!value) return null;
+    return value.trim().slice(0, maxLen) || null;
+  };
+
   const submitApplication = async (formAnswers: Record<string, string>) => {
+    // Honeypot check - if filled, silently "succeed" without submitting
+    if (honeypot) {
+      setSubmitted(true);
+      return;
+    }
+
     setSubmitting(true);
     setSubmitError(null);
     try {
       const platforms = ["TikTok", "Instagram", "X", "YouTube", "Twitch", "Kick"];
       const selectedPlatforms = platforms.filter((p) => formAnswers[`platform-${p}`] === "true");
-      const platformHandles = selectedPlatforms.map((p) => `${p}: ${formAnswers[`handle-${p}`] || ""}`).join(", ");
+      const platformHandles = selectedPlatforms.map((p) => `${p}: ${sanitize(formAnswers[`handle-${p}`], HANDLE_MAX_LENGTH) || ""}`).join(", ");
+
+      const appType = formAnswers.role || defaultType || null;
+      if (appType && appType !== "creator" && appType !== "brand") {
+        throw new Error("Invalid application type");
+      }
 
       const brandMessage = [
-        formAnswers.company ? `Company: ${formAnswers.company}` : null,
-        formAnswers.budget ? `Budget: ${formAnswers.budget}` : null,
-        formAnswers.goals ? `Goals: ${formAnswers.goals}` : null,
-        formAnswers.timeline ? `Timeline: ${formAnswers.timeline}${formAnswers["timeline-specific"] ? ` (${formAnswers["timeline-specific"]})` : ""}` : null,
+        formAnswers.company ? `Company: ${sanitize(formAnswers.company, FIELD_MAX_LENGTHS.company)}` : null,
+        formAnswers.budget ? `Budget: ${sanitize(formAnswers.budget, DEFAULT_MAX_LENGTH)}` : null,
+        formAnswers.goals ? `Goals: ${sanitize(formAnswers.goals, FIELD_MAX_LENGTHS.goals)}` : null,
+        formAnswers.timeline ? `Timeline: ${sanitize(formAnswers.timeline, DEFAULT_MAX_LENGTH)}${formAnswers["timeline-specific"] ? ` (${sanitize(formAnswers["timeline-specific"], DEFAULT_MAX_LENGTH)})` : ""}` : null,
       ].filter(Boolean).join("\n") || null;
 
-      const { error } = await (supabase as any).from("applications").insert({
-        type: formAnswers.role || defaultType || null,
-        name: formAnswers.name || null,
-        email: formAnswers.email || null,
-        phone: formAnswers.phone || null,
-        platform: selectedPlatforms.length > 0 ? selectedPlatforms.join(", ") : formAnswers.platform || null,
-        handle: platformHandles || formAnswers.handle || null,
-        content_niche: formAnswers.about || null,
-        message: brandMessage,
-      });
+      const insertData = {
+        type: appType,
+        name: sanitize(formAnswers.name, FIELD_MAX_LENGTHS.name),
+        email: sanitize(formAnswers.email, FIELD_MAX_LENGTHS.email),
+        phone: sanitize(formAnswers.phone, FIELD_MAX_LENGTHS.phone),
+        platform: selectedPlatforms.length > 0 ? selectedPlatforms.join(", ").slice(0, DEFAULT_MAX_LENGTH) : sanitize(formAnswers.platform, DEFAULT_MAX_LENGTH),
+        handle: platformHandles ? platformHandles.slice(0, 1000) : sanitize(formAnswers.handle, DEFAULT_MAX_LENGTH),
+        content_niche: sanitize(formAnswers.about, FIELD_MAX_LENGTHS.about),
+        message: brandMessage ? brandMessage.slice(0, 2000) : null,
+      };
+
+      const { error } = await supabase.from("applications" as never).insert(insertData as never);
       if (error) {
         console.error("Supabase insert error:", error.message, error.code, error.details);
         throw error;
@@ -110,17 +146,11 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
 
       // Notify team via edge function (best-effort, don't block success)
       const record = {
-        type: formAnswers.role || defaultType || null,
-        name: formAnswers.name || null,
-        email: formAnswers.email || null,
-        phone: formAnswers.phone || null,
-        platform: selectedPlatforms.length > 0 ? selectedPlatforms.join(", ") : formAnswers.platform || null,
-        handle: platformHandles || formAnswers.handle || null,
-        content_niche: formAnswers.about || null,
-        message: brandMessage,
+        ...insertData,
         created_at: new Date().toISOString(),
+        _website: honeypot, // honeypot field for server-side check
       };
-      fetch("https://vmqzhkktdvnxjiomhecv.supabase.co/functions/v1/notify-application", {
+      fetch(NOTIFY_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ record }),
@@ -194,11 +224,13 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
 
   const renderField = (field: Question, autoFocusField?: boolean) => {
     if (field.type === "textarea") {
+      const maxLen = FIELD_MAX_LENGTHS[field.id] || FIELD_MAX_LENGTHS.about;
       return (
         <textarea
           id={`field-${field.id}`}
           aria-label={field.label}
           aria-required={field.required}
+          maxLength={maxLen}
           className="w-full bg-transparent border-b-2 border-border focus:border-blue-accent outline-none text-lg md:text-xl text-foreground py-4 resize-none min-h-[120px] placeholder:text-muted-foreground/50 transition-colors"
           placeholder={field.placeholder}
           value={answers[field.id] || ""}
@@ -246,6 +278,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
               <input
                 type="text"
                 placeholder="e.g. June 2025, Q3, specific date..."
+                maxLength={DEFAULT_MAX_LENGTH}
                 className="w-full bg-transparent border-b-2 border-border focus:border-blue-accent outline-none text-lg md:text-xl text-foreground py-4 placeholder:text-muted-foreground/50 transition-colors"
                 value={answers[`${field.id}-specific`] || ""}
                 onChange={(e) => setAnswers((prev) => ({ ...prev, [`${field.id}-specific`]: e.target.value }))}
@@ -296,6 +329,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
                     <input
                       type="text"
                       placeholder={`Your ${option} handle`}
+                      maxLength={HANDLE_MAX_LENGTH}
                       className="w-full bg-transparent border-b-2 border-border focus:border-blue-accent outline-none text-base text-foreground py-3 px-5 placeholder:text-muted-foreground/50 transition-colors"
                       value={answers[`handle-${option}`] || ""}
                       onChange={(e) => setAnswers((prev) => ({ ...prev, [`handle-${option}`]: e.target.value }))}
@@ -310,12 +344,14 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
       );
     }
 
+    const maxLen = FIELD_MAX_LENGTHS[field.id] || DEFAULT_MAX_LENGTH;
     return (
       <input
         id={`field-${field.id}`}
         type={field.type}
         aria-label={field.label}
         aria-required={field.required}
+        maxLength={maxLen}
         autoComplete={field.type === "email" ? "email" : field.id === "name" ? "name" : field.id === "company" ? "organization" : undefined}
         className="w-full bg-transparent border-b-2 border-border focus:border-blue-accent outline-none text-lg md:text-xl text-foreground py-4 placeholder:text-muted-foreground/50 transition-colors"
         placeholder={field.placeholder}
@@ -517,6 +553,43 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
                       <p className="text-red-400 text-sm mt-4" role="alert">{submitError}</p>
                     )}
 
+                    {/* Honeypot field - hidden from real users, visible to bots */}
+                    <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px", opacity: 0, height: 0, overflow: "hidden" }}>
+                      <label htmlFor="website">Website</label>
+                      <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                      />
+                    </div>
+
+                    {/* Consent checkbox on final step */}
+                    {questionIndex === activeQuestions.length - 1 && (
+                      <label className="flex items-start gap-3 mt-6 cursor-pointer group">
+                        <input
+                          type="checkbox"
+                          checked={consentChecked}
+                          onChange={(e) => setConsentChecked(e.target.checked)}
+                          className="mt-1 h-4 w-4 shrink-0 accent-blue-accent"
+                        />
+                        <span className="text-muted-foreground text-xs leading-relaxed">
+                          I agree to Recast's{" "}
+                          <Link to="/privacy" target="_blank" className="text-blue-accent hover:underline">
+                            Privacy Policy
+                          </Link>{" "}
+                          and{" "}
+                          <Link to="/terms" target="_blank" className="text-blue-accent hover:underline">
+                            Terms of Use
+                          </Link>
+                          .
+                        </span>
+                      </label>
+                    )}
+
                     {(currentQuestion.type !== "select" || answers[currentQuestion.id] === "Specific date or timeframe") && (
                       <div className="flex items-center gap-4 mt-10">
                         <button
@@ -527,7 +600,7 @@ const TypeformApplication = ({ title, subtitle, questions, defaultType, roleSele
                         </button>
                         <button
                           onClick={handleNext}
-                          disabled={!canProceed() || submitting}
+                          disabled={!canProceed() || submitting || (questionIndex === activeQuestions.length - 1 && !consentChecked)}
                           className="bg-blue-accent text-white font-semibold text-sm px-8 py-3 hover:bg-blue-glow transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                         >
                           {submitting ? "Submitting..." : questionIndex === activeQuestions.length - 1 ? "Submit" : "Next →"}
