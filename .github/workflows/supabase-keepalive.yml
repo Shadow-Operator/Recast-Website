@@ -1,0 +1,98 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Supabase free-tier keepalive
+#
+# WHY THIS EXISTS
+#   Supabase free-tier projects are PAUSED after ~7 consecutive days with no
+#   activity. A paused project stops answering database/API requests, which
+#   breaks the recast.gg application form (it reads/writes Supabase). This
+#   workflow sends a tiny, harmless read query to the database twice a week so
+#   the project never crosses the inactivity threshold — fully automated, no
+#   manual action needed once the two secrets below are set.
+#
+# WHY GITHUB ACTIONS (instead of Vercel Cron or a Supabase scheduled function)
+#   • Independence — it keeps running even if the Vercel deploy, the domain, or
+#     Supabase's own scheduler is misconfigured or down. The safety net should
+#     not live inside the thing it is protecting.
+#   • Free & tiny — a couple of seconds of compute, twice a week; well within
+#     the GitHub Actions free allowance.
+#   • Simplicity — one file, no servers, no extra services, just curl.
+#
+# ── ONE-TIME SETUP — add two repository secrets ──────────────────────────────
+#   GitHub repo → Settings → Secrets and variables → Actions → New repository secret
+#     1) SUPABASE_URL       = https://<project-ref>.supabase.co
+#     2) SUPABASE_ANON_KEY  = the project's anon / public key   (NEVER service_role)
+#
+#   IMPORTANT: use the project your LIVE website actually uses — i.e. the one
+#   that contains the "applications" table — NOT necessarily the one in your
+#   local .env. Get both values from: Supabase dashboard → your project →
+#   Settings → API (Project URL + the "anon"/"public" key). The anon key is the
+#   same public key already shipped in the website's JavaScript, so it is safe
+#   to store as an Actions secret.
+#
+#   Verify immediately: Actions tab → "Supabase keepalive" → "Run workflow".
+#   Green = working. Red = the annotation says exactly what is wrong (most
+#   commonly: secret missing, or pointing at the wrong/empty project).
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: Supabase keepalive
+
+on:
+  schedule:
+    # 12:00 UTC every Monday and Thursday. Gaps are ≤4 days, comfortably under
+    # Supabase's ~7-day inactivity-pause window.
+    - cron: "0 12 * * 1,4"
+  workflow_dispatch: {} # allow manual runs from the Actions tab for testing
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    name: Ping Supabase
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Tiny SELECT to keep the project active
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          set -euo pipefail
+
+          # --- 1. Validate both secrets are present ---
+          if [ -z "${SUPABASE_URL:-}" ]; then
+            echo "::error::SUPABASE_URL secret is not set. Add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          if [ -z "${SUPABASE_ANON_KEY:-}" ]; then
+            echo "::error::SUPABASE_ANON_KEY secret is not set. Add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+
+          # --- 2. Build the endpoint (strip any trailing slash on the URL) ---
+          BASE="${SUPABASE_URL%/}"
+          ENDPOINT="${BASE}/rest/v1/applications?select=id&limit=1"
+          echo "Pinging: ${ENDPOINT}"
+
+          # --- 3. Perform the keepalive query ---
+          # Capture the HTTP status separately from the body. "|| echo 000"
+          # ensures a network/DNS failure yields a clean, non-200 status rather
+          # than aborting the script before we can annotate the failure.
+          : > /tmp/body.txt
+          HTTP_CODE=$(curl -sS -o /tmp/body.txt -w "%{http_code}" \
+            --max-time 30 \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
+            "${ENDPOINT}" || echo "000")
+          BODY="$(cat /tmp/body.txt)"
+
+          echo "HTTP status: ${HTTP_CODE}"
+          echo "Response body: ${BODY}"
+
+          # --- 4. Fail loudly on anything other than 200 so a break is noticed ---
+          if [ "${HTTP_CODE}" != "200" ]; then
+            echo "::error::Supabase keepalive FAILED — expected HTTP 200 but got ${HTTP_CODE}. Likely causes: the project is paused, the SUPABASE_URL/SUPABASE_ANON_KEY secret points at the wrong project, or the 'applications' table / 'id' column is missing. Response body: ${BODY}"
+            exit 1
+          fi
+
+          echo "✅ Supabase keepalive succeeded (HTTP 200) — project is active."
