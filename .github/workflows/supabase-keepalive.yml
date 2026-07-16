@@ -69,21 +69,29 @@ jobs:
             exit 1
           fi
 
-          # --- 2. Build the endpoint (strip any trailing slash on the URL) ---
-          BASE="${SUPABASE_URL%/}"
+          # --- 2. Build the endpoint ---
+          # Normalize the secret to just "https://<host>" so pasted values with
+          # trailing slashes, extra path segments, or stray whitespace still work.
+          CLEAN=$(printf '%s' "${SUPABASE_URL}" | tr -d '[:space:]')
+          BASE=$(printf '%s' "${CLEAN}" | grep -oE 'https?://[A-Za-z0-9.-]+' | head -n1 || true)
+          if [ -z "${BASE}" ]; then
+            echo "::error::SUPABASE_URL secret doesn't look like a URL — expected the form https://<project-ref>.supabase.co"
+            exit 1
+          fi
           ENDPOINT="${BASE}/rest/v1/applications?select=id&limit=1"
           echo "Pinging: ${ENDPOINT}"
 
           # --- 3. Perform the keepalive query ---
-          # Capture the HTTP status separately from the body. "|| echo 000"
-          # ensures a network/DNS failure yields a clean, non-200 status rather
-          # than aborting the script before we can annotate the failure.
+          # Capture the HTTP status separately from the body. "|| true" ensures
+          # a network/DNS failure yields a clean, non-200 status (curl emits
+          # "000") rather than aborting before we can annotate the failure.
           : > /tmp/body.txt
           HTTP_CODE=$(curl -sS -o /tmp/body.txt -w "%{http_code}" \
             --max-time 30 \
             -H "apikey: ${SUPABASE_ANON_KEY}" \
             -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
-            "${ENDPOINT}" || echo "000")
+            "${ENDPOINT}" || true)
+          HTTP_CODE="${HTTP_CODE:-000}"
           BODY="$(cat /tmp/body.txt)"
 
           echo "HTTP status: ${HTTP_CODE}"
